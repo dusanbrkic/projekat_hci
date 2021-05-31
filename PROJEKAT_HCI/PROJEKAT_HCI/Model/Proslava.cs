@@ -10,8 +10,8 @@ namespace PROJEKAT_HCI.Model
     class Proslava
     {
         int Id { get; set; }
-        int IdOrganizatora { get; set; }
-        Klijent Klijent { get; set; }
+        int Organizator { get; set; }
+        int Klijent { get; set; }
         string Opis { get; set; }
         string Naziv { get; set; }
         StatusProslave StatusProslave { get; set; }
