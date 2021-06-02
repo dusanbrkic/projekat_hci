@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\User\Documents\GitHub\projekat_hci\PROJEKAT_HCI\PROJEKAT_HCI\App.xaml
-353472626
+6651665532
 
-191520656210
+22298755747
 17-682815464
-MainWindow.xaml;View\AdminWindow.xaml;View\RegistrationWindow.xaml;
+MainWindow.xaml;View\AdminWindow.xaml;View\DodavanjeKlijentaWindow.xaml;View\DodavanjeOrganizatoraWindow.xaml;View\DodavanjeSaradnikaWindow.xaml;View\RegistrationWindow.xaml;
 
 False
 

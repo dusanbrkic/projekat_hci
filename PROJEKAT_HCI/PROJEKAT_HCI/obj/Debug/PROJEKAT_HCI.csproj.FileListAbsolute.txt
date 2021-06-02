@@ -23,3 +23,9 @@ C:\Users\User\Documents\GitHub\projekat_hci\PROJEKAT_HCI\PROJEKAT_HCI\obj\Debug\
 C:\Users\User\Documents\GitHub\projekat_hci\PROJEKAT_HCI\PROJEKAT_HCI\obj\Debug\View\RegistrationWindow.baml
 C:\Users\User\Documents\GitHub\projekat_hci\PROJEKAT_HCI\PROJEKAT_HCI\obj\Debug\View\AdminWindow.g.cs
 C:\Users\User\Documents\GitHub\projekat_hci\PROJEKAT_HCI\PROJEKAT_HCI\obj\Debug\View\AdminWindow.baml
+C:\Users\User\Documents\GitHub\projekat_hci\PROJEKAT_HCI\PROJEKAT_HCI\obj\Debug\View\DodavanjeKlijentaWindow.g.cs
+C:\Users\User\Documents\GitHub\projekat_hci\PROJEKAT_HCI\PROJEKAT_HCI\obj\Debug\View\DodavanjeOrganizatoraWindow.g.cs
+C:\Users\User\Documents\GitHub\projekat_hci\PROJEKAT_HCI\PROJEKAT_HCI\obj\Debug\View\DodavanjeSaradnikaWindow.g.cs
+C:\Users\User\Documents\GitHub\projekat_hci\PROJEKAT_HCI\PROJEKAT_HCI\obj\Debug\View\DodavanjeKlijentaWindow.baml
+C:\Users\User\Documents\GitHub\projekat_hci\PROJEKAT_HCI\PROJEKAT_HCI\obj\Debug\View\DodavanjeOrganizatoraWindow.baml
+C:\Users\User\Documents\GitHub\projekat_hci\PROJEKAT_HCI\PROJEKAT_HCI\obj\Debug\View\DodavanjeSaradnikaWindow.baml

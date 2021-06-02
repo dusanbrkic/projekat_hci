@@ -71,6 +71,15 @@
     <Compile Include="View\AdminWindow.xaml.cs">
       <DependentUpon>AdminWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\DodavanjeKlijentaWindow.xaml.cs">
+      <DependentUpon>DodavanjeKlijentaWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\DodavanjeOrganizatoraWindow.xaml.cs">
+      <DependentUpon>DodavanjeOrganizatoraWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\DodavanjeSaradnikaWindow.xaml.cs">
+      <DependentUpon>DodavanjeSaradnikaWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\RegistrationWindow.xaml.cs">
       <DependentUpon>RegistrationWindow.xaml</DependentUpon>
     </Compile>
@@ -87,6 +96,18 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="View\AdminWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\DodavanjeKlijentaWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\DodavanjeOrganizatoraWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\DodavanjeSaradnikaWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
