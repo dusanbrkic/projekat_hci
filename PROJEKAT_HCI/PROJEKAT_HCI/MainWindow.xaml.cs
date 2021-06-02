@@ -36,13 +36,15 @@ namespace PROJEKAT_HCI
             {
                 AdminWindow a = new AdminWindow();
                 a.Show();
-                this.Hide();
+                this.Close();
             }
         }
 
         private void registruj_Click(object sender, RoutedEventArgs e)
         {
-
+            RegistrationWindow rw = new RegistrationWindow();
+            rw.Show();
+            this.Close();
         }
     }
 }
