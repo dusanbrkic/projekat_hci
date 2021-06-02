@@ -5,8 +5,76 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PROJEKAT_HCI"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
+        xmlns:apex="clr-namespace:Apex.Controls;assembly=Apex"
+        Title="MainWindow" Height="500" Width="720">
+    <Window.Resources>
+        <Style TargetType="TextBox" x:Key="Textbox1">
+            <Setter Property="Padding" Value="7"/>
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="Foreground" Value="#000"/>
+            <Setter Property="FontSize" Value="15"/>
+            <Setter Property="MinHeight" Value="30"/>
+            <Setter Property="MinWidth" Value="250"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type TextBox}">
+                        <Border x:Name="border"
+                            CornerRadius="10"
+                            BorderBrush="#000"
+                            BorderThickness="2"
+                            Background="#fff">
+
+                            <ScrollViewer x:Name="PART_ContentHost"
+                            Focusable="false"
+                            HorizontalScrollBarVisibility="Hidden"
+                            VerticalScrollBarVisibility="Hidden"/>
+                        </Border>
+
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+
+
+
+
+    </Window.Resources>
+    <Grid Background="MediumPurple">
+        <Grid.RowDefinitions >
+            <RowDefinition  Height="15*" />
+            <RowDefinition Height="85*" />
+
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+
+            <ColumnDefinition Width="100*" />
+        </Grid.ColumnDefinitions>
+
+
+        <Button  Grid.Column="1" Grid.Row="0"  Background="Purple">NAZIV APLIKACIJE</Button>
+        <StackPanel Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"  HorizontalAlignment="Center" VerticalAlignment="Center">
+            <apex:ApexGrid Rows="auto,auto" Columns="auto,auto" Margin="150,0,0,0">
+                <Label Content="Korisnicko ime" HorizontalAlignment="left" VerticalAlignment="Top" Foreground="Black" FontSize="15" Grid.RowSpan="2"/>
+                <TextBox Name="username" Style="{StaticResource Textbox1}"  Margin="150,8,0,0"></TextBox>
+            </apex:ApexGrid>
+            <apex:ApexGrid Rows="auto,auto" Columns="auto,auto" Margin="150,0,0,0">
+
+                <Label Content="Sifra" HorizontalAlignment="left" VerticalAlignment="Top" Foreground="Black" FontSize="15" Grid.RowSpan="2"/>
+                <TextBox Name="password"  Style="{StaticResource Textbox1}" Margin="150,8,0,0"></TextBox>
+
+            </apex:ApexGrid>
+            
+            <StackPanel Orientation="Vertical" Margin="10,10,0,0">
+                <Button Click="Prijava_Click" Name="Prijava" Content="Prijavi se" Width="80" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" Margin="120,0,136,10"  />
+                <Button Click="registruj_Click" x:Name="registruj" Content="Nemas nalog? Registruj se" Width="150" Margin="116,0,136,0"/>
+
+            </StackPanel>
+            
+        </StackPanel>
+
+
+
+
     </Grid>
 </Window>

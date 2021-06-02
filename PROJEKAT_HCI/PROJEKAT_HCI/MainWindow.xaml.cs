@@ -1,4 +1,7 @@
-﻿using System;
+﻿using PROJEKAT_HCI.MENAGER;
+using PROJEKAT_HCI.Model;
+using PROJEKAT_HCI.View;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,14 +18,31 @@ using System.Windows.Shapes;
 
 namespace PROJEKAT_HCI
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
+    
     public partial class MainWindow : Window
     {
+        Korisnik k = null;
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void Prijava_Click(object sender, RoutedEventArgs e)
+        {
+            if (username.Text == "" || password.Text == "")
+                return;
+
+            if(username.Text == "admin" && password.Text == "admin")
+            {
+                AdminWindow a = new AdminWindow();
+                a.Show();
+                this.Hide();
+            }
+        }
+
+        private void registruj_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
