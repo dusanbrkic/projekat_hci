@@ -6,7 +6,62 @@
         xmlns:local="clr-namespace:PROJEKAT_HCI.View"
         mc:Ignorable="d"
         Title="AdminWindow" Height="450" Width="800">
-    <Grid>
-        
+    <Grid Background="MediumPurple">
+
+        <Grid.RowDefinitions >
+            <RowDefinition  Height="16*" />
+            <RowDefinition Height="28*" />
+            <RowDefinition Height="28*" />
+            <RowDefinition Height="28*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="15*" />
+            <ColumnDefinition Width="70*" />
+            <ColumnDefinition Width="15*" />
+        </Grid.ColumnDefinitions>
+        <Label Content="Pregled organizatora" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Background="Purple" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"></Label>
+        <Button Click="OrganizatoriBtn_Click" Name="OrganizatoriBtn" Grid.Column="0" Grid.Row="1" Content="Organizatori" Background="#9b34eb" ></Button>
+        <Button Click="KlijentiBtn_Click" Name="KlijentiBtn" Grid.Column="0" Grid.Row="2" Content="Klijenti" Background="#9b34eb" ></Button>
+        <Button Click="SaradniciBtn_Click" Name="SaradniciBtn" Grid.Column="0" Grid.Row="3" Content="Saradnici" Background="#9b34eb" ></Button>
+        <Button Click="OdjavaBtn_Click" Name="OdjavaBtn" Grid.Column="3" Grid.Row="0" Content="Odjavite se" Background="Red"></Button>
+
+        <DataGrid Name="OrganizatoriTable"  Margin ="10,10,10,50 " Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" Grid.RowSpan="3" >
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Naziv" Width="20*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Tip" Width="20*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Lokacija" Width="20*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Opis" Width="20*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Lista ponuda" Width="20*"></DataGridTextColumn>
+               
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <DataGrid Name="KlijentiTable"  Margin ="10,10,10,50 " Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" Grid.RowSpan="3" >
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Naziv" Width="20*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Tip" Width="20*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Lokacija" Width="20*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Opis" Width="20*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Lista ponuda" Width="20*"></DataGridTextColumn>
+
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <DataGrid Name="SaradniciTable" Margin ="10,10,10,50 " Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" Grid.RowSpan="3" >
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Naziv" Width="20*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Tip" Width="20*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Lokacija" Width="20*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Opis" Width="20*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Lista ponuda" Width="20*"></DataGridTextColumn>
+                
+                    
+            </DataGrid.Columns>
+            
+        </DataGrid>
+
+        <Button Name="DodavanjeSaradnikaBtn" Click="DodavanjeSaradnikaBtn_Click" Margin="7" Grid.Row="3" Grid.Column="1" Width="100" Height="20" HorizontalAlignment="Right" VerticalAlignment="Bottom">Dodaj saradnike</Button>
+        <Button Name="DodavanjeOrganizatoraBtn" Click="DodavanjeOrganizatoraBtn_Click" Margin="7" Grid.Row="3" Grid.Column="1" Width="110" Height="20" HorizontalAlignment="Right" VerticalAlignment="Bottom">Dodaj organizatora</Button>
+        <Button Name="DodavanjeKlijentaBtn" Click="DodavanjeKlijentaBtn_Click" Margin="7" Grid.Row="3" Grid.Column="1" Width="100" Height="20" HorizontalAlignment="Right" VerticalAlignment="Bottom">Dodaj klijenta</Button>
     </Grid>
 </Window>
