@@ -32,13 +32,21 @@ namespace PROJEKAT_HCI
             if (username.Text == "" || password.Text == "")
                 return;
 
-            if(username.Text == "admin" && password.Text == "admin")
+            if (username.Text == "admin" && password.Text == "admin")
             {
                 AdminWindow a = new AdminWindow();
                 a.Show();
                 this.Close();
             }
+            if (username.Text == "org" && password.Text == "org")
+            {
+                OrganizatorWindow or = new OrganizatorWindow();
+                or.Show();
+                or.mw = this;
+                this.Hide();
+            }
         }
+            
 
         private void registruj_Click(object sender, RoutedEventArgs e)
         {
