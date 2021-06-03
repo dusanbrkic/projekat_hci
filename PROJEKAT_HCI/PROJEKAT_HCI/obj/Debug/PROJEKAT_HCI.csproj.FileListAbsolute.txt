@@ -47,3 +47,11 @@ C:\Users\Filip\git\projekat_hci\PROJEKAT_HCI\PROJEKAT_HCI\obj\Debug\PROJEKAT_HCI
 C:\Users\Filip\git\projekat_hci\PROJEKAT_HCI\PROJEKAT_HCI\obj\Debug\PROJEKAT_HCI.csproj.CopyComplete
 C:\Users\Filip\git\projekat_hci\PROJEKAT_HCI\PROJEKAT_HCI\obj\Debug\PROJEKAT_HCI.exe
 C:\Users\Filip\git\projekat_hci\PROJEKAT_HCI\PROJEKAT_HCI\obj\Debug\PROJEKAT_HCI.pdb
+C:\Users\Filip\git\projekat_hci\PROJEKAT_HCI\PROJEKAT_HCI\obj\Debug\View\DodavanjeKlijentaWindow.g.cs
+C:\Users\Filip\git\projekat_hci\PROJEKAT_HCI\PROJEKAT_HCI\obj\Debug\View\DodavanjeOrganizatoraWindow.g.cs
+C:\Users\Filip\git\projekat_hci\PROJEKAT_HCI\PROJEKAT_HCI\obj\Debug\View\DodavanjeSaradnikaWindow.g.cs
+C:\Users\Filip\git\projekat_hci\PROJEKAT_HCI\PROJEKAT_HCI\obj\Debug\View\OrganizatorWindow.g.cs
+C:\Users\Filip\git\projekat_hci\PROJEKAT_HCI\PROJEKAT_HCI\obj\Debug\View\DodavanjeKlijentaWindow.baml
+C:\Users\Filip\git\projekat_hci\PROJEKAT_HCI\PROJEKAT_HCI\obj\Debug\View\DodavanjeOrganizatoraWindow.baml
+C:\Users\Filip\git\projekat_hci\PROJEKAT_HCI\PROJEKAT_HCI\obj\Debug\View\DodavanjeSaradnikaWindow.baml
+C:\Users\Filip\git\projekat_hci\PROJEKAT_HCI\PROJEKAT_HCI\obj\Debug\View\OrganizatorWindow.baml

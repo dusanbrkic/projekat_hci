@@ -11,3 +11,17 @@ PROJEKAT_HCI/.vs/PROJEKAT_HCI/v16/Server/sqlite3/storage.ide-wal
 PROJEKAT_HCI/.vs/PROJEKAT_HCI/v16/.suo
 PROJEKAT_HCI/.vs/PROJEKAT_HCI/v16/.suo
 PROJEKAT_HCI/.vs/PROJEKAT_HCI/v16/.suo
+PROJEKAT_HCI/PROJEKAT_HCI/obj/Debug/MainWindow.baml
+PROJEKAT_HCI/PROJEKAT_HCI/obj/Debug/PROJEKAT_HCI.csprojAssemblyReference.cache
+PROJEKAT_HCI/PROJEKAT_HCI/obj/Debug/PROJEKAT_HCI_MarkupCompile.cache
+PROJEKAT_HCI/PROJEKAT_HCI/obj/Debug/PROJEKAT_HCI_MarkupCompile.lref
+PROJEKAT_HCI/PROJEKAT_HCI/obj/Debug/View/AdminWindow.baml
+PROJEKAT_HCI/PROJEKAT_HCI/obj/Debug/View/DodavanjeKlijentaWindow.baml
+PROJEKAT_HCI/PROJEKAT_HCI/obj/Debug/View/DodavanjeOrganizatoraWindow.baml
+PROJEKAT_HCI/PROJEKAT_HCI/obj/Debug/View/DodavanjeSaradnikaWindow.baml
+PROJEKAT_HCI/PROJEKAT_HCI/obj/Debug/View/RegistrationWindow.baml
+*.baml
+*.cache
+*.lref
+*.ide-shm
+*.ide-wal
