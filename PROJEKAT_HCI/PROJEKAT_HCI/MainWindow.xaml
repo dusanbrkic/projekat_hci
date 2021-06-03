@@ -56,7 +56,7 @@
         <StackPanel Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"  HorizontalAlignment="Center" VerticalAlignment="Center">
             <apex:ApexGrid Rows="auto,auto" Columns="auto,auto" Margin="150,0,0,0">
                 <Label Content="Korisnicko ime" HorizontalAlignment="left" VerticalAlignment="Top" Foreground="Black" FontSize="15" Grid.RowSpan="2"/>
-                <TextBox Name="username" Style="{StaticResource Textbox1}"  Margin="150,8,0,0"></TextBox>
+                <TextBox  Name="username" Style="{StaticResource Textbox1}"  Margin="150,8,0,0"></TextBox>
             </apex:ApexGrid>
             <apex:ApexGrid Rows="auto,auto" Columns="auto,auto" Margin="150,0,0,0">
 

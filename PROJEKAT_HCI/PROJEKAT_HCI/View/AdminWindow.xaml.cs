@@ -93,6 +93,8 @@ namespace PROJEKAT_HCI.View
 
         private void DodavanjeSaradnikaBtn_Click(object sender, RoutedEventArgs e)
         {
+            DodavanjeSaradnikaWindow ds = new DodavanjeSaradnikaWindow();
+            ds.ShowDialog();
 
         }
 
