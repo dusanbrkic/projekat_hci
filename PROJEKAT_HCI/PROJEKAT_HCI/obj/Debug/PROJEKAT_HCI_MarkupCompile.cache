@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Filip\git\projekat_hci\PROJEKAT_HCI\PROJEKAT_HCI\obj\Debug\
+C:\Users\Dusan\Documents\GitHub\projekat_hci\PROJEKAT_HCI\PROJEKAT_HCI\obj\Debug\
 PROJEKAT_HCI
 none
 false
 DEBUG;TRACE
-C:\Users\Filip\git\projekat_hci\PROJEKAT_HCI\PROJEKAT_HCI\App.xaml
+C:\Users\Dusan\Documents\GitHub\projekat_hci\PROJEKAT_HCI\PROJEKAT_HCI\App.xaml
 72142891614
 
 231883571571
-17-1279992308
+1760814054
 MainWindow.xaml;View\AdminWindow.xaml;View\DodavanjeKlijentaWindow.xaml;View\DodavanjeOrganizatoraWindow.xaml;View\DodavanjeSaradnikaWindow.xaml;View\OrganizatorWindow.xaml;View\RegistrationWindow.xaml;
 
-False
+True
 
