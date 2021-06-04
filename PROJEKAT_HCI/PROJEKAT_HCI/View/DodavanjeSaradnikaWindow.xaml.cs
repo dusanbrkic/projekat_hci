@@ -1,4 +1,6 @@
-﻿using System;
+﻿using PROJEKAT_HCI.MENAGER;
+using PROJEKAT_HCI.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,6 +24,34 @@ namespace PROJEKAT_HCI.View
         public DodavanjeSaradnikaWindow()
         {
             InitializeComponent();
+        }
+
+        private void odustao_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void registruj_Click(object sender, RoutedEventArgs e)
+        {
+            
+
+            using (var db = new MangerFactory())
+            {
+
+                foreach (Saradnik sar in db.saradnici)
+                {
+                    if (Naziv.Text == sar.Naziv)//vec postoji korisnik sa istim usernamemom
+                        return;
+
+                }
+
+                //Klijent k = new Klijent { Id = db.klijenti.Count(), Ime = ime.Text, Prezime = prezime.Text, BrojTelefona = brojTelefona.Text, Email = email.Text, Password = password.Text, Username = username.Text };
+
+
+               // db.klijenti.Add(k);
+                //db.SaveChanges();
+            }
+
         }
     }
 }

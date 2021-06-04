@@ -9,12 +9,12 @@ namespace PROJEKAT_HCI.Model
     enum TipSaradnika { RESTORAN, POSLASTICARNICA}
     class Saradnik
     {
-        List<string> Slike { get; set; }
-        int Id { get; set; }
-        string Naziv { get; set; }
-        string Opis { get; set; }
+        public List<string> Slike { get; set; }
+        public int Id { get; set; }
+        public string Naziv { get; set; }
+        public string Opis { get; set; }
 
-        string Lokacija { get; set; }
+        public string Lokacija { get; set; }
         
     }
 }

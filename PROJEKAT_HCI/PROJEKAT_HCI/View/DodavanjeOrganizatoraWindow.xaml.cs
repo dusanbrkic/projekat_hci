@@ -1,4 +1,6 @@
-﻿using System;
+﻿using PROJEKAT_HCI.MENAGER;
+using PROJEKAT_HCI.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,6 +24,42 @@ namespace PROJEKAT_HCI.View
         public DodavanjeOrganizatoraWindow()
         {
             InitializeComponent();
+        }
+
+        private void odustao_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void registruj_Click(object sender, RoutedEventArgs e)
+        {
+            if (username.Text == "" || password.Text == "" || ime.Text == "" || prezime.Text == "" || brojTelefona.Text == "")
+            {
+                Console.WriteLine("Greska");
+                return;
+            }
+
+
+            if (againPassword.Text != password.Text)
+                return;
+
+            using (var db = new MangerFactory())
+            {
+
+                foreach (Organizator org in db.organizatori)
+                {
+                    if (username.Text == org.Username)//vec postoji korisnik sa istim usernamemom
+                        return;
+
+                }
+
+                Organizator k = new Organizator { Id = db.klijenti.Count(), Ime = ime.Text, Prezime = prezime.Text, BrojTelefona = brojTelefona.Text, Email = email.Text, Password = password.Text, Username = username.Text };
+
+
+                db.organizatori.Add(k);
+                db.SaveChanges();
+            }
+
         }
     }
 }

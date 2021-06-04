@@ -5,8 +5,83 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PROJEKAT_HCI.View"
         mc:Ignorable="d"
+         xmlns:apex="clr-namespace:Apex.Controls;assembly=Apex"
         Title="DodavanjeSaradnikaWindow" Height="450" Width="800">
-    <Grid>
-        
+    <Window.Resources>
+        <Style TargetType="TextBox" x:Key="Textbox1">
+            <Setter Property="Padding" Value="7"/>
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="Foreground" Value="#000"/>
+            <Setter Property="FontSize" Value="15"/>
+            <Setter Property="MinHeight" Value="30"/>
+            <Setter Property="MinWidth" Value="250"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type TextBox}">
+                        <Border x:Name="border"
+                            CornerRadius="10"
+                            BorderBrush="#000"
+                            BorderThickness="2"
+                            Background="#fff">
+
+                            <ScrollViewer x:Name="PART_ContentHost"
+                            Focusable="false"
+                            HorizontalScrollBarVisibility="Hidden"
+                            VerticalScrollBarVisibility="Hidden"/>
+                        </Border>
+
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+    </Window.Resources>
+
+    <Grid Background="MediumPurple">
+        <Grid.RowDefinitions >
+            <RowDefinition  Height="13*" />
+            <RowDefinition Height="84*" />
+
+        </Grid.RowDefinitions>
+        <Label Background="Purple" VerticalContentAlignment="Center" HorizontalContentAlignment="Center">Dodavanje saradnika</Label>
+        <StackPanel Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"  HorizontalAlignment="Center" VerticalAlignment="Center">
+            
+            <apex:ApexGrid Rows="auto,auto" Columns="auto,auto" Margin="150,0,0,0">
+                <Label Content="Naziv" HorizontalAlignment="left" VerticalAlignment="Top" Foreground="Black" FontSize="15" Grid.RowSpan="2"/>
+                <TextBox Name="Naziv" Style="{StaticResource Textbox1}"  Margin="150,8,0,0"></TextBox>
+            </apex:ApexGrid>
+            <apex:ApexGrid Rows="auto,auto" Columns="auto,auto" Margin="150,0,0,0">
+
+                <Label Content="Tip" HorizontalAlignment="left" VerticalAlignment="Top" Foreground="Black" FontSize="15" Grid.RowSpan="2"/>
+                <TextBox Name="Tip"  Style="{StaticResource Textbox1}" Margin="150,8,0,0"></TextBox>
+
+            </apex:ApexGrid>
+            <apex:ApexGrid Rows="auto,auto" Columns="auto,auto" Margin="150,0,0,0">
+                <Label Content="Lokacija" HorizontalAlignment="left" VerticalAlignment="Top" Foreground="Black" FontSize="15" Grid.RowSpan="2"/>
+                <TextBox Name="Lokacija"   Style="{StaticResource Textbox1}" Margin="150,8,0,0"></TextBox>
+
+            </apex:ApexGrid>
+            
+            <apex:ApexGrid Rows="auto,auto" Columns="auto,auto" Margin="150,0,0,0">
+                <Label Content="Opis" HorizontalAlignment="left" VerticalAlignment="Top" Foreground="Black" FontSize="15" Grid.RowSpan="2"/>
+                <TextBox TextWrapping="Wrap" AcceptsReturn="True" VerticalScrollBarVisibility="Visible" Name="Opis"  Style="{StaticResource Textbox1}" Margin="150,8,0,0"></TextBox>
+            </apex:ApexGrid>
+            
+
+            
+
+
+
+
+
+            <StackPanel Orientation="Horizontal" Margin="10,10,0,0">
+                <Button Click="odustao_Click" Name="odustao" Content="Odustani" Width="80" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" Margin="116,0,136,0"  />
+                <Button Click="registruj_Click" x:Name="Dodaj_saradnika" Content="Dodaj saradnika" Width="90" Margin="116,0,136,0"/>
+
+            </StackPanel>
+
+        </StackPanel>
+
+
     </Grid>
 </Window>
