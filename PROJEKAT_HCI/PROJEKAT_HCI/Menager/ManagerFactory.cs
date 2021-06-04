@@ -8,12 +8,13 @@ using System.Threading.Tasks;
 
 namespace PROJEKAT_HCI.MENAGER
 {
-    class MangerFactory : DbContext
+    class ManagerFactory : DbContext
     {
         public DbSet<Klijent> klijenti { get; set; }
         public DbSet<Organizator> organizatori { get; set; }
         public DbSet<Admin> admini { get; set; }
 
         public DbSet<Saradnik> saradnici { get; set; }
+
     }
 }

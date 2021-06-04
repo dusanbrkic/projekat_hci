@@ -36,7 +36,7 @@
         <Label Background="Purple" Grid.Column="2" Grid.ColumnSpan="4" Foreground="White" FontSize="17" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">Glavna strana</Label>
 
         <Border BorderBrush="DarkViolet" CornerRadius="8" BorderThickness="7"  Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="2" Grid.RowSpan="2">
-            <Button Name ="Saradnici_Btn"  Background="DarkBlue" Foreground="White" FontSize="27">Saradnici</Button>
+            <Button Click="Saradnici_Btn_Click"  Name ="Saradnici_Btn"  Background="DarkBlue" Foreground="White" FontSize="27">Saradnici</Button>
         </Border>
         <Border BorderBrush="DarkViolet" CornerRadius="8" BorderThickness="7" Grid.Column="5" Grid.Row="2" Grid.ColumnSpan="2" Grid.RowSpan="2">
             <Button Name ="Obav_Btn" Background="DarkBlue" Foreground="White"  FontSize="27">Obaveštenja</Button>

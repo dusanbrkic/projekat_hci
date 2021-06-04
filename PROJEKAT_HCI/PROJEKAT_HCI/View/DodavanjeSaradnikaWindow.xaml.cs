@@ -35,7 +35,7 @@ namespace PROJEKAT_HCI.View
         {
             
 
-            using (var db = new MangerFactory())
+            using (var db = new ManagerFactory())
             {
 
                 foreach (Saradnik sar in db.saradnici)
