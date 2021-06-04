@@ -1,13 +1,4 @@
-*.lock
 PROJEKAT_HCI/PROJEKAT_HCI/bin
-*.ide-wal
 PROJEKAT_HCI/.vs
-PROJEKAT_HCI.sln
 PROJEKAT_HCI/PROJEKAT_HCI/obj
-*.baml
-*.cache
-*.lref
-*.ide-shm
-*.ide-wal
-*.g.cs
 .vs
