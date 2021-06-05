@@ -92,14 +92,34 @@ namespace PROJEKAT_HCI.Model
                     Proslave = new List<Proslava>()
                 };
 
+                
+
                 Saradnik pecenjaraKnin = new Saradnik()
                 {
                     Id = db.Saradnici.Count(),
                     Lokacija = "Republike Srpske 3",
                     Opis = "Nema slavlja bez dobrog pecenja",
                     Naziv = "Pecenjara Knin",
-                    TipSaradnika = TipSaradnika.RESTORAN
+                    TipSaradnika = TipSaradnika.RESTORAN,
+                    
                 };
+                List<Ponuda> ponudeKnina = new List<Ponuda>();
+                Ponuda jagnjecePecenje = new Ponuda()
+                {
+                    Cena = 500,
+                    Opis = "300g jagnjećeg pečenja po osobi",
+                    Saradnik = pecenjaraKnin
+                };
+                Ponuda jarecePecenje = new Ponuda()
+                {
+                    Cena = 450,
+                    Opis = "300g jarećeg pečenja po osobi",
+                    Saradnik = pecenjaraKnin
+                };
+                ponudeKnina.Add(jagnjecePecenje);
+                ponudeKnina.Add(jarecePecenje);
+
+                pecenjaraKnin.Ponude = ponudeKnina;
 
                 Saradnik slatkiDani = new Saradnik()
                 {

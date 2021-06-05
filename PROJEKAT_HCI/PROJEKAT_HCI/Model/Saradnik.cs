@@ -16,6 +16,7 @@ namespace PROJEKAT_HCI.Model
         public string Naziv { get; set; }
         public string Opis { get; set; }
         public string Lokacija { get; set; }
+        public List<Ponuda> Ponude { get; set; }
         public TipSaradnika TipSaradnika { get; set; }
         
     }
