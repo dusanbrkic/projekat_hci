@@ -16,7 +16,7 @@
             <RowDefinition Height="37*"></RowDefinition>
             <RowDefinition Height="178*"></RowDefinition>
         </Grid.RowDefinitions>
-        <Button   Foreground="White" Background="Red" FontSize="17" Grid.Column="2">Nazad na glavnu stranu</Button>
+        <Button  Click="Nazad_Btn_Click" Foreground="White" Background="Red" FontSize="17" Grid.Column="2">Nazad na glavnu stranu</Button>
         <Label Background="Purple" Grid.ColumnSpan="2" Foreground="White" FontSize="17" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">Saradnici</Label>
         <ScrollViewer  Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="3">
             <WrapPanel  Name="wrapper">
