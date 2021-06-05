@@ -25,6 +25,7 @@ namespace PROJEKAT_HCI
 
         public MainWindow()
         {
+            new DataScript().FillInData();
             InitializeComponent();
         }
 

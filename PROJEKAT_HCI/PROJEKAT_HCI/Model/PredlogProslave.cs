@@ -8,16 +8,15 @@ using System.Threading.Tasks;
 
 namespace PROJEKAT_HCI.Model
 {
-    class Ponuda
+    class PredlogProslave
     {
-        [ForeignKey("Zadatak")]
+        [ForeignKey("Proslava")]
         public int Id { get; set; }
-        public List<string> Slike { get; set; }
         public string Opis { get; set; }
-        public int Cena { get; set; }
-        public int ZadatakId { get; set; }
-        public virtual Zadatak Zadatak { get; set; }
-        public virtual Saradnik Saradnik { get; set; }
+        public bool Prihvacen { get; set; }
 
+        public virtual Proslava Proslava { get; set; }
+        public virtual List<Obavestenje> Obavestenja { get; set; }
+        public virtual List<Zadatak> Zadaci { get; set; }
     }
 }

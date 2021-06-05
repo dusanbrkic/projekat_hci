@@ -1,0 +1,132 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using PROJEKAT_HCI.MENAGER;
+
+namespace PROJEKAT_HCI.Model
+{
+    class DataScript
+    {
+        public void FillInData() {
+            using (var db = new ManagerFactory())
+            {
+                // remove the data
+                db.Admini.RemoveRange(db.Admini);
+                db.Klijenti.RemoveRange(db.Klijenti);
+                db.Organizatori.RemoveRange(db.Organizatori);
+                db.Saradnici.RemoveRange(db.Saradnici);
+                db.Proslave.RemoveRange(db.Proslave);
+
+                Admin nemanja = new Admin()
+                {
+                    Id = db.Admini.Count(),
+                    Ime = "Nemanja",
+                    Prezime = "Milutinovic",
+                    BrojTelefona = "0640023344",
+                    Email = "nemanjaRSfighter1389@gmail.com",
+                    Username = "nelenzi",
+                    Password = "nelenzi"
+                };
+
+                Klijent nikola = new Klijent()
+                {
+                    Id = db.Klijenti.Count(),
+                    Ime = "Nikola",
+                    Prezime = "Petrovic",
+                    BrojTelefona = "064123344",
+                    Email = "nikolapigeonman@gmail.com",
+                    Username = "nikola",
+                    Password = "nikola",
+                    Proslave = new List<Proslava>()
+                };
+
+                Klijent dzon = new Klijent()
+                {
+                    Id = db.Klijenti.Count(),
+                    Ime = "Dzon",
+                    Prezime = "Bosnic",
+                    BrojTelefona = "064123344",
+                    Email = "cvetovimaKonopije@gmail.com",
+                    Username = "john",
+                    Password = "john",
+                    Proslave = new List<Proslava>()
+                };
+
+                Organizator brka = new Organizator()
+                {
+                    Id = db.Organizatori.Count(),
+                    Ime = "Dusan",
+                    Prezime = "Brkic",
+                    BrojTelefona = "0640023344",
+                    Email = "brkabigman@gmail.com",
+                    Username = "brka",
+                    Password = "brka",
+                    Proslave = new List<Proslava>()
+                };
+
+                Organizator zivanac = new Organizator()
+                {
+                    Id = db.Organizatori.Count(),
+                    Ime = "Filip",
+                    Prezime = "Zivanac",
+                    BrojTelefona = "0640023344",
+                    Email = "gospodinZivanac@gmail.com",
+                    Username = "filip",
+                    Password = "filip",
+                    Proslave = new List<Proslava>()
+                };
+
+                Saradnik pecenjaraKnin = new Saradnik()
+                {
+                    Id = db.Saradnici.Count(),
+                    Lokacija = "Republike Srpske 3",
+                    Opis = "Nema slavlja bez dobrog pecenja",
+                    Naziv = "Pecenjara Knin",
+                    TipSaradnika = TipSaradnika.RESTORAN
+                };
+
+                Proslava proslava1 = new Proslava()
+                {
+                    Id = db.Proslave.Count(),
+                    Naziv = "Rodjenje Zivancevog sina malog Zivanca",
+                    Opis = "Hteo bih neko skromno slavlje rodjenja mog sina, hocu meze i pecenje.",
+                    ZahtevProslave = new ZahtevProslave() { Prihvacena = false },
+                    PredlogProslave = new PredlogProslave()
+                    {
+                        Opis = "Moze sve moze!",
+                        Prihvacen = false,
+                        Zadaci = new List<Zadatak>()
+                    },
+                    StatusProslave = StatusProslave.U_ORGANIZACIJI,
+                    Klijent = dzon,
+                    Organizator = zivanac
+                };
+
+                proslava1.PredlogProslave.Zadaci.Add(new Zadatak()
+                {
+                    Opis = "Potrebno je odrediti lokaciju",
+                    Status = Status_Zadatka.U_OBRADI,
+                    Ponuda = new Ponuda()
+                    {
+                        Cena = 14000,
+                        Opis = "Mi dajemo prostor",
+                        Saradnik = pecenjaraKnin
+                    }
+                });
+
+
+                //enter data
+                db.Admini.Add(nemanja);
+                db.Klijenti.Add(nikola);
+                db.Klijenti.Add(dzon);
+                db.Organizatori.Add(brka);
+                db.Organizatori.Add(zivanac);
+                db.Saradnici.Add(pecenjaraKnin);
+                db.Proslave.Add(proslava1);
+                db.SaveChanges();
+            }
+        }
+    }
+}

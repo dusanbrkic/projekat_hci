@@ -10,11 +10,11 @@ namespace PROJEKAT_HCI.MENAGER
 {
     class ManagerFactory : DbContext
     {
-        public DbSet<Klijent> klijenti { get; set; }
-        public DbSet<Organizator> organizatori { get; set; }
-        public DbSet<Admin> admini { get; set; }
-
-        public DbSet<Saradnik> saradnici { get; set; }
+        public DbSet<Klijent> Klijenti { get; set; }
+        public DbSet<Organizator> Organizatori { get; set; }
+        public DbSet<Admin> Admini { get; set; }
+        public DbSet<Saradnik> Saradnici { get; set; }
+        public DbSet<Proslava> Proslave { get; set; }
 
     }
 }

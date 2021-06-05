@@ -38,7 +38,7 @@ namespace PROJEKAT_HCI.View
             using (var db = new ManagerFactory())
             {
 
-                foreach (Saradnik sar in db.saradnici)
+                foreach (Saradnik sar in db.Saradnici)
                 {
                     if (Naziv.Text == sar.Naziv)//vec postoji korisnik sa istim usernamemom
                         return;

@@ -68,6 +68,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Model\DataScript.cs" />
     <Compile Include="View\AdminWindow.xaml.cs">
       <DependentUpon>AdminWindow.xaml</DependentUpon>
     </Compile>
@@ -138,11 +139,11 @@
     <Compile Include="Model\Obavestenje.cs" />
     <Compile Include="Model\Organizator.cs" />
     <Compile Include="Model\Ponuda.cs" />
-    <Compile Include="Model\Predlog.cs" />
+    <Compile Include="Model\PredlogProslave.cs" />
     <Compile Include="Model\Proslava.cs" />
     <Compile Include="Model\Saradnik.cs" />
     <Compile Include="Model\Zadatak.cs" />
-    <Compile Include="Model\Zahtev.cs" />
+    <Compile Include="Model\ZahtevProslave.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>

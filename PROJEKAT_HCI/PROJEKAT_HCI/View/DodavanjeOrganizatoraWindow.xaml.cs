@@ -46,17 +46,17 @@ namespace PROJEKAT_HCI.View
             using (var db = new ManagerFactory())
             {
 
-                foreach (Organizator org in db.organizatori)
+                foreach (Organizator org in db.Organizatori)
                 {
                     if (username.Text == org.Username)//vec postoji korisnik sa istim usernamemom
                         return;
 
                 }
 
-                Organizator k = new Organizator { Id = db.klijenti.Count(), Ime = ime.Text, Prezime = prezime.Text, BrojTelefona = brojTelefona.Text, Email = email.Text, Password = password.Text, Username = username.Text };
+                Organizator k = new Organizator { Id = db.Klijenti.Count(), Ime = ime.Text, Prezime = prezime.Text, BrojTelefona = brojTelefona.Text, Email = email.Text, Password = password.Text, Username = username.Text };
 
 
-                db.organizatori.Add(k);
+                db.Organizatori.Add(k);
                 db.SaveChanges();
             }
 
