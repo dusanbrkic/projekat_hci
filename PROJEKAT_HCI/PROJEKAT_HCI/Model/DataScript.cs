@@ -13,11 +13,25 @@ namespace PROJEKAT_HCI.Model
             using (var db = new ProjectDatabase())
             {
                 // remove the data
-                db.Admini.RemoveRange(db.Admini);
-                db.Klijenti.RemoveRange(db.Klijenti);
-                db.Organizatori.RemoveRange(db.Organizatori);
-                db.Saradnici.RemoveRange(db.Saradnici);
-                db.Proslave.RemoveRange(db.Proslave);
+                //db.Admini.RemoveRange(db.Admini);
+                //db.Klijenti.RemoveRange(db.Klijenti);
+                //db.Organizatori.RemoveRange(db.Organizatori);
+                //db.Saradnici.RemoveRange(db.Saradnici);
+                //db.Proslave.RemoveRange(db.Proslave);
+
+
+                Console.WriteLine(db.kofiguracija.Count());
+                if (db.kofiguracija.Count() > 0)
+                {
+                    return;
+                }
+
+                Config cfg = new Config()
+                {
+                    Id = 1,
+                    firstRun = true
+                };
+                db.kofiguracija.Add(cfg);
 
                 Admin nemanja = new Admin()
                 {
@@ -87,6 +101,24 @@ namespace PROJEKAT_HCI.Model
                     TipSaradnika = TipSaradnika.RESTORAN
                 };
 
+                Saradnik slatkiDani = new Saradnik()
+                {
+                    Id = db.Saradnici.Count(),
+                    Lokacija = "Narodnog front 58",
+                    Opis = "Kolačići za debele",
+                    Naziv = "Slatki Dani",
+                    TipSaradnika = TipSaradnika.POSLASTICARNICA
+                };
+
+                Saradnik belaLadja = new Saradnik()
+                {
+                    Id = db.Saradnici.Count(),
+                    Lokacija = "Podunavska 21",
+                    Opis = "Beli lukac i ljuta paprika",
+                    Naziv = "Bela lađa",
+                    TipSaradnika = TipSaradnika.RESTORAN
+                };
+
                 Proslava proslava1 = new Proslava()
                 {
                     Id = db.Proslave.Count(),
@@ -124,6 +156,8 @@ namespace PROJEKAT_HCI.Model
                 db.Organizatori.Add(brka);
                 db.Organizatori.Add(zivanac);
                 db.Saradnici.Add(pecenjaraKnin);
+                db.Saradnici.Add(slatkiDani);
+                db.Saradnici.Add(belaLadja);
                 db.Proslave.Add(proslava1);
                 db.SaveChanges();
             }

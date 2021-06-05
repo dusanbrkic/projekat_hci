@@ -16,6 +16,7 @@ namespace PROJEKAT_HCI.Database
         public DbSet<Saradnik> Saradnici { get; set; }
         public DbSet<Proslava> Proslave { get; set; }
         public DbSet<Obavestenje> Obavestenja { get; set; }
+        public DbSet<Config> kofiguracija { get; set; }
 
     }
 }
