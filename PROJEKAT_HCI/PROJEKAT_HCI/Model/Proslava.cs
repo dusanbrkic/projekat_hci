@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace PROJEKAT_HCI.Model
 {
-    enum StatusProslave { CEKA_SE_ORGANIZATOR, U_ORGANIZACIJI, ORGANIZOVANO,  OTKAZANA}
-    class Proslava
+    public enum StatusProslave { CEKA_SE_ORGANIZATOR, U_ORGANIZACIJI, ORGANIZOVANO,  OTKAZANA}
+    public class Proslava
     {
         public int Id { get; set; }
         public string Opis { get; set; }

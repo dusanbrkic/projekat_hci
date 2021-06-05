@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace PROJEKAT_HCI.Model
 {
-    class Obavestenje
+    public class Obavestenje
     {
         [Key]
         public int Id { get; set; }

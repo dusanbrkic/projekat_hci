@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace PROJEKAT_HCI.Model
 {
-    enum TipSaradnika { RESTORAN, POSLASTICARNICA}
-    class Saradnik
+    public enum TipSaradnika { RESTORAN, POSLASTICARNICA}
+    public class Saradnik
     {
         [Key]
         public int Id { get; set; }

@@ -1,4 +1,4 @@
-﻿using PROJEKAT_HCI.MENAGER;
+﻿using PROJEKAT_HCI.Database;
 using PROJEKAT_HCI.Model;
 using System;
 using System.Collections.Generic;
@@ -43,7 +43,7 @@ namespace PROJEKAT_HCI.View
             if (againPassword.Text != password.Text)
                 return;
 
-            using (var db = new ManagerFactory())
+            using (var db = new ProjectDatabase())
             {
 
                 foreach (Organizator org in db.Organizatori)

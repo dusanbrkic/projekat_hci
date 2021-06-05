@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace PROJEKAT_HCI.Model
 {
-    class Admin : Korisnik
+    public class Admin : Korisnik
     {
         [Key]
         public int Id { get; set; }

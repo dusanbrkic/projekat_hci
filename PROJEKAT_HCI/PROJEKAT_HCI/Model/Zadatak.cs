@@ -8,8 +8,8 @@ using System.Threading.Tasks;
 
 namespace PROJEKAT_HCI.Model
 {
-    enum Status_Zadatka { ZA_URADITI, U_OBRADI, ZA_POSLATI, POSLATI, PRIHVACENO, ZA_IZMENU, ODBIJENO }
-    class Zadatak
+    public enum Status_Zadatka { ZA_URADITI, U_OBRADI, ZA_POSLATI, POSLATI, PRIHVACENO, ZA_IZMENU, ODBIJENO }
+    public class Zadatak
     {
         [Key]
         public int Id { get; set; }

@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using PROJEKAT_HCI.MENAGER;
+using PROJEKAT_HCI.Database;
 
 namespace PROJEKAT_HCI.Model
 {
-    class DataScript
+    public class DataScript
     {
         public void FillInData() {
-            using (var db = new ManagerFactory())
+            using (var db = new ProjectDatabase())
             {
                 // remove the data
                 db.Admini.RemoveRange(db.Admini);

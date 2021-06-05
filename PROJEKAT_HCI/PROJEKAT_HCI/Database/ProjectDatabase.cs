@@ -6,15 +6,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PROJEKAT_HCI.MENAGER
+namespace PROJEKAT_HCI.Database
 {
-    class ManagerFactory : DbContext
+    public class ProjectDatabase : DbContext
     {
         public DbSet<Klijent> Klijenti { get; set; }
         public DbSet<Organizator> Organizatori { get; set; }
         public DbSet<Admin> Admini { get; set; }
         public DbSet<Saradnik> Saradnici { get; set; }
         public DbSet<Proslava> Proslave { get; set; }
+        public DbSet<Obavestenje> Obavestenja { get; set; }
 
     }
 }

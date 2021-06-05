@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace PROJEKAT_HCI.Model
 {
-    class PredlogProslave
+    public class PredlogProslave
     {
         [ForeignKey("Proslava")]
         public int Id { get; set; }

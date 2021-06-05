@@ -39,7 +39,7 @@
             <Button Click="Saradnici_Btn_Click"  Name ="Saradnici_Btn"  Background="DarkBlue" Foreground="White" FontSize="27">Saradnici</Button>
         </Border>
         <Border BorderBrush="DarkViolet" CornerRadius="8" BorderThickness="7" Grid.Column="5" Grid.Row="2" Grid.ColumnSpan="2" Grid.RowSpan="2">
-            <Button Name ="Obav_Btn" Background="DarkBlue" Foreground="White"  FontSize="27">Obaveštenja</Button>
+            <Button Name ="Obav_Btn" Click="Obav_Btn_Click" Background="DarkBlue" Foreground="White"  FontSize="27">Obaveštenja</Button>
         </Border>
         <Border BorderBrush="DarkViolet" CornerRadius="8" BorderThickness="7" Grid.Column="1" Grid.Row="5" Grid.ColumnSpan="2" Grid.RowSpan="2">
                 <Button Name ="Orgp_Btn" Background="DarkBlue" Foreground="White"  FontSize="27">Organizacija proslava</Button>

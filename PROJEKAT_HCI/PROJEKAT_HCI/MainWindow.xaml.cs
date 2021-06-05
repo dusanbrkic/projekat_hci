@@ -1,4 +1,4 @@
-﻿using PROJEKAT_HCI.MENAGER;
+﻿using PROJEKAT_HCI.Database;
 using PROJEKAT_HCI.Model;
 using PROJEKAT_HCI.View;
 using System;
@@ -43,6 +43,10 @@ namespace PROJEKAT_HCI
             if (username.Text == "org" && password.Text == "org")
             {
                 OrganizatorWindow or = new OrganizatorWindow();
+                using (var db = new ProjectDatabase()) {
+                    or.Organizator = db.Organizatori.Find(1);
+                }
+
                 or.Show();
                 or.mw = this;
                 this.Hide();
