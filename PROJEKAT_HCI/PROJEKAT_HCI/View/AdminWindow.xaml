@@ -27,22 +27,22 @@
 
         <DataGrid Name="OrganizatoriTable"  Margin ="10,10,10,50 " Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" Grid.RowSpan="3" >
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Naziv" Width="20*"></DataGridTextColumn>
-                <DataGridTextColumn Header="Tip" Width="20*"></DataGridTextColumn>
-                <DataGridTextColumn Header="Lokacija" Width="20*"></DataGridTextColumn>
-                <DataGridTextColumn Header="Opis" Width="20*"></DataGridTextColumn>
-                <DataGridTextColumn Header="Lista ponuda" Width="20*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Ime" Width="20*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Prezime" Width="20*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Username" Width="20*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Email" Width="20*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Broj telefona" Width="20*"></DataGridTextColumn>
                
             </DataGrid.Columns>
         </DataGrid>
 
         <DataGrid Name="KlijentiTable"  Margin ="10,10,10,50 " Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" Grid.RowSpan="3" >
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Naziv" Width="20*"></DataGridTextColumn>
-                <DataGridTextColumn Header="Tip" Width="20*"></DataGridTextColumn>
-                <DataGridTextColumn Header="Lokacija" Width="20*"></DataGridTextColumn>
-                <DataGridTextColumn Header="Opis" Width="20*"></DataGridTextColumn>
-                <DataGridTextColumn Header="Lista ponuda" Width="20*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Ime" Width="20*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Prezime" Width="20*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Username" Width="20*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Email" Width="20*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Broj telefona" Width="20*"></DataGridTextColumn>
 
             </DataGrid.Columns>
         </DataGrid>
