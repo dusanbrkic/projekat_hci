@@ -23,6 +23,7 @@ namespace PROJEKAT_HCI.View
         public OrganizatorWindow()
         {
             InitializeComponent();
+           
         }
 
         private void Odj_Btn_Click(object sender, RoutedEventArgs e)
@@ -30,6 +31,14 @@ namespace PROJEKAT_HCI.View
             this.Close();
             mw.Show();
             
+        }
+
+        private void Saradnici_Btn_Click(object sender, RoutedEventArgs e)
+        {
+            OrganizatorSaradnici os = new OrganizatorSaradnici();
+            os.ow = this;
+            this.Hide();
+            os.Show();
         }
     }
 }

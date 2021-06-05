@@ -38,7 +38,7 @@ namespace PROJEKAT_HCI.View
             if (againPassword.Text != password.Text)
                 return;
 
-            using (var db = new MangerFactory())
+            using (var db = new ManagerFactory())
             {
 
                 foreach (Klijent klijent in db.klijenti)

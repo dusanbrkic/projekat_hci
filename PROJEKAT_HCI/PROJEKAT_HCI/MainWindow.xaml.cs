@@ -22,6 +22,7 @@ namespace PROJEKAT_HCI
     public partial class MainWindow : Window
     {
         Korisnik k = null;
+
         public MainWindow()
         {
             InitializeComponent();

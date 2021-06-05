@@ -86,6 +86,9 @@
     <Compile Include="View\DodavanjeSaradnikaWindow.xaml.cs">
       <DependentUpon>DodavanjeSaradnikaWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\OrganizatorSaradnici.xaml.cs">
+      <DependentUpon>OrganizatorSaradnici.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\OrganizatorWindow.xaml.cs">
       <DependentUpon>OrganizatorWindow.xaml</DependentUpon>
     </Compile>
@@ -120,6 +123,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\OrganizatorSaradnici.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\OrganizatorWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -130,7 +137,7 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Menager\MangerFactory.cs" />
+    <Compile Include="Menager\ManagerFactory.cs" />
     <Compile Include="Model\Admin.cs" />
     <Compile Include="Model\Klijent.cs" />
     <Compile Include="Model\Korisnik.cs" />
