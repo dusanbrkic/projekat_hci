@@ -82,6 +82,9 @@
     <Compile Include="View\DodavanjeSaradnikaWindow.xaml.cs">
       <DependentUpon>DodavanjeSaradnikaWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\NovaPonudaOrganizator.xaml.cs">
+      <DependentUpon>NovaPonudaOrganizator.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\ObavestenjaWindow.xaml.cs">
       <DependentUpon>ObavestenjaWindow.xaml</DependentUpon>
     </Compile>
@@ -122,6 +125,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\DodavanjeSaradnikaWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\NovaPonudaOrganizator.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -185,7 +192,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Res\Images\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

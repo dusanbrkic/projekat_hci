@@ -30,7 +30,11 @@
                 <StackPanel  Orientation="Vertical">
                 <Label Background="Purple"  Foreground="White" FontSize="17" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">Ponude saradnika</Label>
                 <Border Name="ListaPonuda" BorderBrush="DarkViolet" CornerRadius="8" BorderThickness="7">
-                    <Label></Label>
+                    <ScrollViewer>
+                        <StackPanel Name="Stek" Orientation="Vertical">
+                            
+                        </StackPanel>
+                    </ScrollViewer>
 
                 </Border>
             </StackPanel>

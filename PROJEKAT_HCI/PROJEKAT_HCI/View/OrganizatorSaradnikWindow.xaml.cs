@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using PROJEKAT_HCI.Model;
 using PROJEKAT_HCI.View;
+using PROJEKAT_HCI.Database;
 
 namespace PROJEKAT_HCI.View
 {
@@ -31,6 +32,22 @@ namespace PROJEKAT_HCI.View
             this.Title = Saradnik.Naziv;
             Opis.Content = Saradnik.Opis;
             Lokacija.Content = Saradnik.Lokacija;
+
+            using (var db = new ProjectDatabase())
+            {
+                foreach (var p in (from saradnik in db.Saradnici where saradnik.Id == s.Id select saradnik.Ponude).First())
+                {   
+
+                    Label l = new Label();
+                    l.Content = p.Opis + ", " + p.Cena + " dinara.";
+                    l.Background = Brushes.DarkBlue;
+                    l.Foreground = Brushes.White;
+                    l.HorizontalContentAlignment = HorizontalAlignment.Center;
+                    l.VerticalContentAlignment = VerticalAlignment.Center;
+                    l.FontSize = 17;
+                    Stek.Children.Add(l);
+                }
+            }
         }
 
         private void Nazad_Btn_Click(object sender, RoutedEventArgs e)
@@ -40,7 +57,9 @@ namespace PROJEKAT_HCI.View
         }
         private void NovaPonuda_Btn_Click(object sender, RoutedEventArgs e)
         {
-            
+            NovaPonudaOrganizator npo = new NovaPonudaOrganizator(this, this.Saradnik);
+            this.Hide();
+            npo.Show();
         }
     }
 }
