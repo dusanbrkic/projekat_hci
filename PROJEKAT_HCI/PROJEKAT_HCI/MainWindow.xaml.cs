@@ -21,6 +21,7 @@ namespace PROJEKAT_HCI
     
     public partial class MainWindow : Window
     {
+        
         Korisnik k = null;
 
         public MainWindow()
@@ -75,5 +76,19 @@ namespace PROJEKAT_HCI
             rw.Show();
             this.Close();
         }
+        public static ToastNotifications.Notifier notifier = new ToastNotifications.Notifier(cfg =>
+        {
+            cfg.PositionProvider = new ToastNotifications.Position.WindowPositionProvider(
+                parentWindow: Application.Current.MainWindow,
+                corner: ToastNotifications.Position.Corner.TopRight,
+                offsetX: 10,
+                offsetY: 10);
+
+            cfg.LifetimeSupervisor = new ToastNotifications.Lifetime.TimeAndCountBasedLifetimeSupervisor(
+                notificationLifetime: TimeSpan.FromSeconds(3),
+                maximumNotificationCount: ToastNotifications.Lifetime.MaximumNotificationCount.FromCount(5));
+
+            cfg.Dispatcher = Application.Current.Dispatcher;
+        });
     }
 }

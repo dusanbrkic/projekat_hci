@@ -15,6 +15,7 @@ using PROJEKAT_HCI.Model;
 using PROJEKAT_HCI.Database;
 using Microsoft.Win32;
 using System.IO;
+using ToastNotifications.Messages;
 
 namespace PROJEKAT_HCI.View
 {
@@ -39,6 +40,27 @@ namespace PROJEKAT_HCI.View
             os.Show();
         }
 
+        private void Nova_Ponuda_Btn(object sender, RoutedEventArgs e)
+        {
+            if (Opis.Text.Equals(""))
+            {
+                MainWindow.notifier.ShowWarning("Ponuda mora sadrzati opis!");
+                return;
+            }
+            int i;
+            bool b = int.TryParse(Cena.Text, out i);
+            if (!b)
+            {
+                MainWindow.notifier.ShowWarning("Morate uneti broj za kao cenu ponude!");
+                return;
+            }
+            if (i < 0)
+            {
+                MainWindow.notifier.ShowWarning("Cena mora biti pozitivna!");
+                return;
+            }
+        }
+
         private void Image_Btn_Click(object sender, RoutedEventArgs e)
         {
             OpenFileDialog ofd = new OpenFileDialog();
@@ -48,10 +70,23 @@ namespace PROJEKAT_HCI.View
             if(okdia == true)
             {
                 Random r = new Random();
-                String newPath = "../../Res/Images/" + r.Next(10000, 100000) + ".jpg";
+                String newPath = "../../Res/Images/" + r.Next(10000, 1000000) + ".jpg";
                 
                 File.Copy(ofd.FileName, newPath);
-                
+
+                BitmapImage src = new BitmapImage();
+                src.BeginInit();
+                src.UriSource = new Uri(newPath, UriKind.Relative);
+                src.CacheOption = BitmapCacheOption.OnLoad;
+                src.EndInit();
+                slika.Source = src;
+                Image img = new Image();
+                img.Source = src;
+                img.Stretch = Stretch.Uniform;
+                img.Height = 150;
+                img.Width = 100;
+                //slike.Children.Add(img);
+                //slika.Source = new BitmapImage(new Uri(newPath));
                 //Image_Btn.Background = new ImageBrush(new BitmapImage(newPath));
                 //Console.WriteLine(Directory.GetCurrentDirectory());
             }

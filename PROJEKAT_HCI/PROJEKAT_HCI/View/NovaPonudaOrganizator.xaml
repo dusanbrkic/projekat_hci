@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PROJEKAT_HCI.View"
         mc:Ignorable="d"
-        Title="NovaPonudaOrganizator" Height="450" Width="800">
+        Title="NovaPonudaOrganizator" Height="430" Width="750">
     <Grid Background="MediumPurple">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="82*"></ColumnDefinition>
@@ -16,7 +16,7 @@
             <RowDefinition Height="37*"></RowDefinition>
             <RowDefinition Height="178*"></RowDefinition>
         </Grid.RowDefinitions>
-        <Button  Click="Nazad_Btn_Click" Foreground="White" Background="Red" FontSize="17" Grid.Column="2">Nazad na glavnu stranu</Button>
+        <Button  Click="Nazad_Btn_Click" Foreground="White" Background="Red" FontSize="15" Grid.Column="2" Height="Auto">Nazad na glavnu stranu</Button>
         <Label Background="Purple" Grid.Column="0" Grid.ColumnSpan="2" Foreground="White" FontSize="25" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">Nova ponuda</Label>
         <Grid Grid.Row="1" Grid.ColumnSpan="3">
             <Grid.ColumnDefinitions>
@@ -27,17 +27,21 @@
             <StackPanel Grid.Column="0">
                 <StackPanel Orientation="Horizontal">
                     <Label FontSize="20">Unesite cenu ponude:</Label>
-                    <TextBox Width="300"></TextBox>
+                    <TextBox Name="Cena" Width="300"></TextBox>
                 </StackPanel>
                 <StackPanel>
                     <Label  HorizontalContentAlignment="Center" FontSize="20" >Unesite opis ponude:</Label>
-                    
+
                 </StackPanel>
-                <TextBox Height="150"></TextBox>
-                <Button FontSize="17" Background="DarkGreen" Height="130">Dodajte Novu ponudu</Button>
+                <TextBox Name="Opis" Background="White" Height="150" Margin="0,0"/>
+                <Button Click="Nova_Ponuda_Btn" Margin="0,0" FontSize="17" Background="DarkGreen" Height="130">Dodajte Novu ponudu</Button>
             </StackPanel>
-            <Button  Name="Image_Btn" Click="Image_Btn_Click" Grid.Column="1" FontSize="17 ">Dodajte sliku ponude OVDE</Button>
+            <StackPanel Name="slike" Grid.Column="1">
+                <Button  Name="Image_Btn" Click="Image_Btn_Click" Grid.Column="1" FontSize="17 " Height="53">Dodajte sliku ponude OVDE</Button>
+                <Image VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Name="slika" Source="pack://application:,,,/Res/Images/default.jpg" Height="280"></Image>
+            </StackPanel>
+
         </Grid>
-        
+
     </Grid>
 </Window>
