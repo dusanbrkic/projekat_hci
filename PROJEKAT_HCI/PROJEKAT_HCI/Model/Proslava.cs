@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,6 +14,8 @@ namespace PROJEKAT_HCI.Model
         public string Opis { get; set; }
         public string Naziv { get; set; }
         public StatusProslave StatusProslave { get; set; }
+        [Column(TypeName = "datetime2")]
+        public DateTime DatumOdrzavanja { get; set; }
 
         public virtual Organizator Organizator { get; set; }
         public virtual Klijent Klijent { get; set; }

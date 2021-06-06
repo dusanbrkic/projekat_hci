@@ -13,6 +13,8 @@ namespace PROJEKAT_HCI.Model
         [Key]
         public int Id { get; set; }
         public bool Procitano { get; set; }
+        [Column(TypeName = "datetime2")]
+        public DateTime TimeStamp { get; set; }
         public string Sadrzaj { get; set; }
         public virtual PredlogProslave PredlogProslave { get; set; }
     }

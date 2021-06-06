@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,27 +22,45 @@ namespace PROJEKAT_HCI.View
     /// </summary>
     public partial class ObavestenjaWindow : Window
     {
-        public ObavestenjaWindow()
+        public Organizator Organizator { get; set; }
+
+        public ObavestenjaWindow(Organizator org)
         {
+            Organizator = org;
+
             InitializeComponent();
 
-            var obavestenja = new List<Obavestenje>();
-
             using (var db = new ProjectDatabase()) {
-                obavestenja = (List<Obavestenje>)(from obavestenje in db.Obavestenja
-                               where obavestenje.Procitano == false &&
-                               obavestenje.PredlogProslave.Proslava.Organizator == db.Organizatori.Find(1)
-                               select obavestenje);
-            }
 
-            foreach (var obavestenje in obavestenja)
-            {
-                Button b = new Button();
-                b.Width = 200;
-                b.Height = 140;
-                b.Margin = new Thickness(20);
-                b.Content = obavestenje.Sadrzaj;
-                wrapper.Children.Add(b);
+               var obavestenja = from obavestenje in db.Obavestenja
+                               where obavestenje.PredlogProslave.Proslava.Organizator.Id == Organizator.Id
+                               orderby obavestenje.TimeStamp descending
+                               select obavestenje;
+
+                if (obavestenja == null)
+                    return;
+
+                foreach (var obavestenje in obavestenja)
+                {
+                    Button b = new Button();
+                    b.Width = 200;
+                    b.Height = 140;
+                    b.Margin = new Thickness(20);
+                    if (obavestenje.Procitano == true)
+                    {
+                        b.Content = obavestenje.Sadrzaj + " za proslavu " +
+                            obavestenje.PredlogProslave.Proslava.Naziv + '\n' + obavestenje.TimeStamp;
+                    }
+                    else if (obavestenje.Procitano == false) {
+                        b.Content = "NOVO " + obavestenje.Sadrzaj + " za proslavu " +
+                            obavestenje.PredlogProslave.Proslava.Naziv + '\n' + obavestenje.TimeStamp;
+                    }
+                        wrapper.Children.Add(b);
+                    b.Tag = obavestenje;
+                    b.Click += (object sender, RoutedEventArgs e) => {
+                        obavestenje.Procitano = true;
+                    };
+                }
             }
         }
     }

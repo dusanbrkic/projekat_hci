@@ -85,6 +85,9 @@
     <Compile Include="View\ObavestenjaWindow.xaml.cs">
       <DependentUpon>ObavestenjaWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\OrganizacijaProslavaWindow.xaml.cs">
+      <DependentUpon>OrganizacijaProslavaWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\OrganizatorSaradnici.xaml.cs">
       <DependentUpon>OrganizatorSaradnici.xaml</DependentUpon>
     </Compile>
@@ -125,6 +128,10 @@
     <Page Include="View\ObavestenjaWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\OrganizacijaProslavaWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\OrganizatorSaradnici.xaml">
       <SubType>Designer</SubType>

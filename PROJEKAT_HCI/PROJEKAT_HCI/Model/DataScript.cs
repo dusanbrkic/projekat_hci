@@ -35,7 +35,7 @@ namespace PROJEKAT_HCI.Model
 
                 Admin nemanja = new Admin()
                 {
-                    Id = db.Admini.Count(),
+                    //Id = db.Admini.Count(),
                     Ime = "Nemanja",
                     Prezime = "Milutinovic",
                     BrojTelefona = "0640023344",
@@ -46,7 +46,7 @@ namespace PROJEKAT_HCI.Model
 
                 Klijent nikola = new Klijent()
                 {
-                    Id = db.Klijenti.Count(),
+                    //Id = db.Klijenti.Count(),
                     Ime = "Nikola",
                     Prezime = "Petrovic",
                     BrojTelefona = "064123344",
@@ -58,7 +58,7 @@ namespace PROJEKAT_HCI.Model
 
                 Klijent dzon = new Klijent()
                 {
-                    Id = db.Klijenti.Count(),
+                    //Id = db.Klijenti.Count(),
                     Ime = "Dzon",
                     Prezime = "Bosnic",
                     BrojTelefona = "064123344",
@@ -70,7 +70,7 @@ namespace PROJEKAT_HCI.Model
 
                 Organizator brka = new Organizator()
                 {
-                    Id = db.Organizatori.Count(),
+                    //Id = db.Organizatori.Count(),
                     Ime = "Dusan",
                     Prezime = "Brkic",
                     BrojTelefona = "0640023344",
@@ -82,7 +82,7 @@ namespace PROJEKAT_HCI.Model
 
                 Organizator zivanac = new Organizator()
                 {
-                    Id = db.Organizatori.Count(),
+                    //Id = db.Organizatori.Count(),
                     Ime = "Filip",
                     Prezime = "Zivanac",
                     BrojTelefona = "0640023344",
@@ -96,7 +96,7 @@ namespace PROJEKAT_HCI.Model
 
                 Saradnik pecenjaraKnin = new Saradnik()
                 {
-                    Id = db.Saradnici.Count(),
+                    //Id = db.Saradnici.Count(),
                     Lokacija = "Republike Srpske 3",
                     Opis = "Nema slavlja bez dobrog pecenja",
                     Naziv = "Pecenjara Knin",
@@ -123,7 +123,7 @@ namespace PROJEKAT_HCI.Model
 
                 Saradnik slatkiDani = new Saradnik()
                 {
-                    Id = db.Saradnici.Count(),
+                    //Id = db.Saradnici.Count(),
                     Lokacija = "Narodnog front 58",
                     Opis = "Kolačići za debele",
                     Naziv = "Slatki Dani",
@@ -132,7 +132,7 @@ namespace PROJEKAT_HCI.Model
 
                 Saradnik belaLadja = new Saradnik()
                 {
-                    Id = db.Saradnici.Count(),
+                    //Id = db.Saradnici.Count(),
                     Lokacija = "Podunavska 21",
                     Opis = "Beli lukac i ljuta paprika",
                     Naziv = "Bela lađa",
@@ -141,7 +141,7 @@ namespace PROJEKAT_HCI.Model
 
                 Proslava proslava1 = new Proslava()
                 {
-                    Id = db.Proslave.Count(),
+                    //Id = db.Proslave.Count(),
                     Naziv = "Rodjenje Zivancevog sina malog Zivanca",
                     Opis = "Hteo bih neko skromno slavlje rodjenja mog sina, hocu meze i pecenje.",
                     ZahtevProslave = new ZahtevProslave() { Prihvacena = false },
@@ -149,11 +149,13 @@ namespace PROJEKAT_HCI.Model
                     {
                         Opis = "Moze sve moze!",
                         Prihvacen = false,
-                        Zadaci = new List<Zadatak>()
+                        Zadaci = new List<Zadatak>(),
+                        Obavestenja = new List<Obavestenje>()
                     },
                     StatusProslave = StatusProslave.U_ORGANIZACIJI,
                     Klijent = dzon,
-                    Organizator = zivanac
+                    Organizator = zivanac,
+                    DatumOdrzavanja = DateTime.Now
                 };
 
                 proslava1.PredlogProslave.Zadaci.Add(new Zadatak()
@@ -166,6 +168,26 @@ namespace PROJEKAT_HCI.Model
                         Opis = "Mi dajemo prostor",
                         Saradnik = pecenjaraKnin
                     }
+                });
+
+                proslava1.PredlogProslave.Obavestenja.Add(new Obavestenje() { 
+                    Procitano = false, 
+                    Sadrzaj = "Korisnik je odreagovao na ponudu!",
+                    TimeStamp = DateTime.Now.AddDays(1)
+                });
+
+                proslava1.PredlogProslave.Obavestenja.Add(new Obavestenje()
+                {
+                    Procitano = false,
+                    Sadrzaj = "Korisnik je odreagovao na ponudu!",
+                    TimeStamp =  DateTime.Now.AddMonths(1)
+                });
+
+                proslava1.PredlogProslave.Obavestenja.Add(new Obavestenje()
+                {
+                    Procitano = false,
+                    Sadrzaj = "Korisnik je odreagovao na ponudu!",
+                    TimeStamp =  DateTime.Now
                 });
 
 

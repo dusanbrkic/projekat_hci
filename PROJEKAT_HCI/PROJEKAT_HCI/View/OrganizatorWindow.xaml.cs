@@ -21,12 +21,11 @@ namespace PROJEKAT_HCI.View
     partial class OrganizatorWindow : Window
     {
         public MainWindow mw { get; set; }
-        public Organizator Organizator { get; internal set; }
+        public Organizator Organizator { get; set; }
 
         public OrganizatorWindow()
         {
             InitializeComponent();
-           
         }
 
         private void Odj_Btn_Click(object sender, RoutedEventArgs e)
@@ -45,7 +44,16 @@ namespace PROJEKAT_HCI.View
         }
 
         private void Obav_Btn_Click(object sender, RoutedEventArgs e) {
-            
+            ObavestenjaWindow ow = new ObavestenjaWindow(Organizator);
+            this.Hide();
+            ow.Show();
+        }
+
+        private void Orgp_Btn_Click(object sender, RoutedEventArgs e)
+        {
+            OrganizacijaProslavaWindow opw = new OrganizacijaProslavaWindow(Organizator);
+            this.Hide();
+            opw.Show();
         }
     }
 }

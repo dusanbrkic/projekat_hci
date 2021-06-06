@@ -51,6 +51,21 @@ namespace PROJEKAT_HCI
                 or.mw = this;
                 this.Hide();
             }
+
+            using (var db = new ProjectDatabase()) {
+                var organizator = (from o in db.Organizatori
+                                  where o.Username == username.Text &&
+                                  o.Password == password.Text
+                                  select o).FirstOrDefault();
+
+                if (organizator != null) {
+                    OrganizatorWindow or = new OrganizatorWindow();
+                    or.Organizator = organizator;
+                    or.Show();
+                    or.mw = this;
+                    this.Hide();
+                }
+            }
         }
             
 
