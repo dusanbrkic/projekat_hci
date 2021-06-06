@@ -45,7 +45,8 @@ namespace PROJEKAT_HCI.View
                     Button b = new Button();
                     b.Width = 200;
                     b.Height = 140;
-                    b.Margin = new Thickness(20);
+                    b.Margin = new Thickness(20, 20, 20, 20);
+                    b.VerticalAlignment = VerticalAlignment.Center;
                     if (obavestenje.Procitano == true)
                     {
                         b.Content = obavestenje.Sadrzaj + " za proslavu " +

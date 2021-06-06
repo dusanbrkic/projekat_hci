@@ -36,13 +36,13 @@
         <Label Background="Purple" Grid.Column="2" Grid.ColumnSpan="4" Foreground="White" FontSize="17" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">Glavna strana</Label>
 
         <Border BorderBrush="DarkViolet" CornerRadius="8" BorderThickness="7"  Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="2" Grid.RowSpan="2">
-            <Button Click="Saradnici_Btn_Click"  Name ="Saradnici_Btn"  Background="DarkBlue" Foreground="White" FontSize="27">Saradnici</Button>
+            <Button VerticalAlignment="Center" Click="Saradnici_Btn_Click"  Name ="Saradnici_Btn"  Background="DarkBlue" Foreground="White" FontSize="27">Saradnici</Button>
         </Border>
         <Border BorderBrush="DarkViolet" CornerRadius="8" BorderThickness="7" Grid.Column="5" Grid.Row="2" Grid.ColumnSpan="2" Grid.RowSpan="2">
             <Button Name ="Obav_Btn" Click="Obav_Btn_Click" Background="DarkBlue" Foreground="White"  FontSize="27">Obaveštenja</Button>
         </Border>
         <Border BorderBrush="DarkViolet" CornerRadius="8" BorderThickness="7" Grid.Column="1" Grid.Row="5" Grid.ColumnSpan="2" Grid.RowSpan="2">
-                <Button Name ="Orgp_Btn" Click="Orgp_Btn_Click" Background="DarkBlue" Foreground="White"  FontSize="27">Organizacija proslava</Button>
+            <Button VerticalAlignment = "Center" Name ="Orgp_Btn" Click="Orgp_Btn_Click" Background="DarkBlue" Foreground="White"  FontSize="27" Height="94" Margin="0,3">Organizacija proslava</Button>
         </Border>
         <Border BorderBrush="DarkViolet" CornerRadius="8" BorderThickness="7" Grid.Column="5" Grid.Row="5" Grid.ColumnSpan="2" Grid.RowSpan="2">
             <Button Name="Dpros_Btn" Background="DarkBlue" Foreground="White"  FontSize="27">Dosadašnje proslave</Button>

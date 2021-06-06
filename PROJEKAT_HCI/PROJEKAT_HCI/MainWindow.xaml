@@ -6,7 +6,16 @@
         xmlns:local="clr-namespace:PROJEKAT_HCI"
         mc:Ignorable="d"
         xmlns:apex="clr-namespace:Apex.Controls;assembly=Apex"
-        Title="MainWindow" Height="500" Width="720">
+        Title="MainWindow" Height="500" Width="720"
+         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+         TextElement.FontWeight="Regular"
+         TextElement.FontSize="13"
+         TextOptions.TextFormattingMode="Ideal"
+         TextOptions.TextRenderingMode="Auto"
+         Background="{DynamicResource MaterialDesignPaper}"
+         FontFamily="{DynamicResource MaterialDesignFont}">
+    
     <Window.Resources>
         <Style TargetType="TextBox" x:Key="Textbox1">
             <Setter Property="Padding" Value="7"/>
@@ -41,6 +50,7 @@
 
     </Window.Resources>
     <Grid Background="MediumPurple">
+
         <Grid.RowDefinitions >
             <RowDefinition  Height="15*" />
             <RowDefinition Height="85*" />
