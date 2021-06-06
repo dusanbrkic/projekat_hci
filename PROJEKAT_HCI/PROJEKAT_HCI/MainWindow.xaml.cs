@@ -31,16 +31,16 @@ namespace PROJEKAT_HCI
 
         private void Prijava_Click(object sender, RoutedEventArgs e)
         {
-            if (username.Text == "" || password.Text == "")
+            if (username.Text == "" || password.Password == "")
                 return;
 
-            if (username.Text == "admin" && password.Text == "admin")
+            if (username.Text == "admin" && password.Password == "admin")
             {
                 AdminWindow a = new AdminWindow();
                 a.Show();
                 this.Close();
             }
-            if (username.Text == "org" && password.Text == "org")
+            if (username.Text == "org" && password.Password == "org")
             {
                 OrganizatorWindow or = new OrganizatorWindow();
                 using (var db = new ProjectDatabase()) {
@@ -55,8 +55,8 @@ namespace PROJEKAT_HCI
             using (var db = new ProjectDatabase()) {
                 var organizator = (from o in db.Organizatori
                                   where o.Username == username.Text &&
-                                  o.Password == password.Text
-                                  select o).FirstOrDefault();
+                                  o.Password == password.Password
+                                   select o).FirstOrDefault();
 
                 if (organizator != null) {
                     OrganizatorWindow or = new OrganizatorWindow();
