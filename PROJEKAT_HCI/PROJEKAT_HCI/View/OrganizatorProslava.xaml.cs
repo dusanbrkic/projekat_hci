@@ -31,6 +31,7 @@ namespace PROJEKAT_HCI.View
         public Proslava Proslava{get; set;}
         public Zadatak SelektovanZadatak { get; set; }
         public Zadatak NosenZadatak { get; set; }
+        public Card NosenaKartica { get; set; }
         public OrganizacijaProslavaWindow opw { get; set; }
         public OrganizatorProslava(OrganizacijaProslavaWindow parent, Proslava p)
         {
@@ -95,20 +96,64 @@ namespace PROJEKAT_HCI.View
             Card c = (Card)sender;
             DataObject data = new DataObject(c.Tag);
             //data.
-            Console.WriteLine(((Zadatak)c.Tag).Opis);
+            //Console.WriteLine(((Zadatak)c.Tag).Opis);
             NosenZadatak = (Zadatak)c.Tag;
-            DragDrop.DoDragDrop(c, data, DragDropEffects.Copy);
+            NosenaKartica = c;
+            DragDrop.DoDragDrop(c, data, DragDropEffects.Move);
 
         }
 
-        public void Target_Drop(object sender, DragEventArgs args)
+        public void Target_Drop_U_Obradi(object sender, DragEventArgs args)
         {
-            //Card c = (Card)args.Data.GetDataPresent();
-            Console.WriteLine(args.Data);
-            Zadatak zad = (Zadatak)args.Data.GetData(typeof(Zadatak));
-
-            Console.WriteLine(NosenZadatak.Opis);
-            //U_obradi_stek.Children.Add(c);
+            StackPanel sp = (StackPanel)NosenaKartica.Parent;
+            sp.Children.Remove(NosenaKartica);
+            U_obradi_stek.Children.Add(NosenaKartica);
+            using(var db = new ProjectDatabase())
+            {
+                Zadatak z = db.Zadaci.Find(NosenZadatak.Id);
+                z.Status = Status_Zadatka.U_OBRADI;
+                db.SaveChanges();
+            }
+            NosenZadatak.Status = Status_Zadatka.U_OBRADI;
+        }
+        public void Target_Drop_Za_Uraditi(object sender, DragEventArgs args)
+        {
+            StackPanel sp = (StackPanel)NosenaKartica.Parent;
+            sp.Children.Remove(NosenaKartica);
+            Za_uraditi_stek.Children.Add(NosenaKartica);
+            using (var db = new ProjectDatabase())
+            {
+                Zadatak z = db.Zadaci.Find(NosenZadatak.Id);
+                z.Status = Status_Zadatka.ZA_URADITI;
+                db.SaveChanges();
+            }
+            NosenZadatak.Status = Status_Zadatka.ZA_URADITI;
+        }
+        public void Target_Drop_Za_Poslati(object sender, DragEventArgs args)
+        {
+            StackPanel sp = (StackPanel)NosenaKartica.Parent;
+            sp.Children.Remove(NosenaKartica);
+            Za_poslati_stek.Children.Add(NosenaKartica);
+            using (var db = new ProjectDatabase())
+            {
+                Zadatak z = db.Zadaci.Find(NosenZadatak.Id);
+                z.Status = Status_Zadatka.ZA_POSLATI;
+                db.SaveChanges();
+            }
+            NosenZadatak.Status = Status_Zadatka.ZA_POSLATI;
+        }
+        public void Target_Drop_Za_Izmenu(object sender, DragEventArgs args)
+        {
+            StackPanel sp = (StackPanel)NosenaKartica.Parent;
+            sp.Children.Remove(NosenaKartica);
+            Za_izmenu_stek.Children.Add(NosenaKartica);
+            using (var db = new ProjectDatabase())
+            {
+                Zadatak z = db.Zadaci.Find(NosenZadatak.Id);
+                z.Status = Status_Zadatka.ZA_IZMENU;
+                db.SaveChanges();
+            }
+            NosenZadatak.Status = Status_Zadatka.ZA_IZMENU;
         }
 
         private void Nazad_Click(object sender, RoutedEventArgs e)
