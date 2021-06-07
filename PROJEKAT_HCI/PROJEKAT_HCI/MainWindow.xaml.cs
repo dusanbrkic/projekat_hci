@@ -1,4 +1,4 @@
-﻿using PROJEKAT_HCI.MENAGER;
+﻿using PROJEKAT_HCI.Database;
 using PROJEKAT_HCI.Model;
 using PROJEKAT_HCI.View;
 using System;
@@ -21,27 +21,33 @@ namespace PROJEKAT_HCI
     
     public partial class MainWindow : Window
     {
+        
         Korisnik k = null;
 
         public MainWindow()
         {
+            new DataScript().FillInData();
             InitializeComponent();
         }
 
         private void Prijava_Click(object sender, RoutedEventArgs e)
         {
-            if (username.Text == "" || password.Text == "")
+            if (username.Text == "" || password.Password == "")
                 return;
 
-            if (username.Text == "admin" && password.Text == "admin")
+            if (username.Text == "admin" && password.Password == "admin")
             {
                 AdminWindow a = new AdminWindow();
                 a.Show();
                 this.Close();
             }
-            if (username.Text == "org" && password.Text == "org")
+            if (username.Text == "org" && password.Password == "org")
             {
                 OrganizatorWindow or = new OrganizatorWindow();
+                using (var db = new ProjectDatabase()) {
+                    or.Organizator = db.Organizatori.Find(1);
+                }
+
                 or.Show();
                 or.mw = this;
                 this.Hide();
@@ -53,6 +59,21 @@ namespace PROJEKAT_HCI
                 //kw.mw = this;
                 this.Hide();
             }
+            using (var db = new ProjectDatabase()) {
+                var organizator = (from o in db.Organizatori
+                                  where o.Username == username.Text &&
+                                  o.Password == password.Password
+                                   select o).FirstOrDefault();
+
+                if (organizator != null) {
+                    OrganizatorWindow or = new OrganizatorWindow();
+                    or.Organizator = organizator;
+                    or.Show();
+                    or.mw = this;
+                    this.Hide();
+                }
+
+            }
         }
             
 
@@ -62,5 +83,19 @@ namespace PROJEKAT_HCI
             rw.Show();
             this.Close();
         }
+        public static ToastNotifications.Notifier notifier = new ToastNotifications.Notifier(cfg =>
+        {
+            cfg.PositionProvider = new ToastNotifications.Position.WindowPositionProvider(
+                parentWindow: Application.Current.MainWindow,
+                corner: ToastNotifications.Position.Corner.TopRight,
+                offsetX: 10,
+                offsetY: 10);
+
+            cfg.LifetimeSupervisor = new ToastNotifications.Lifetime.TimeAndCountBasedLifetimeSupervisor(
+                notificationLifetime: TimeSpan.FromSeconds(3),
+                maximumNotificationCount: ToastNotifications.Lifetime.MaximumNotificationCount.FromCount(5));
+
+            cfg.Dispatcher = Application.Current.Dispatcher;
+        });
     }
 }

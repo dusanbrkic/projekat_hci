@@ -7,10 +7,8 @@ using System.Threading.Tasks;
 
 namespace PROJEKAT_HCI.Model
 {
-    class Korisnik
+    public class Korisnik
     {
-        [Key]
-        public int Id { get; set; }
         public string Ime { get; set; }
         public string Prezime { get; set; }
         public string Username { get; set; }

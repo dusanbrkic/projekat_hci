@@ -1,21 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace PROJEKAT_HCI.Model
 {
-    class Ponuda
+    public class Ponuda
     {
-
-        List<string> Slike { get; set; }
-        string Opis { get; set; }
-        int Cena { get; set; }
-
-        Organizator Organizator { get; set; }
-
-        int Id { get; set; }
+        [Key]
+        public int Id { get; set; }
+        public List<string> Slike { get; set; }
+        public string Opis { get; set; }
+        public int Cena { get; set; }
+        public virtual Saradnik Saradnik { get; set; }
 
     }
 }
