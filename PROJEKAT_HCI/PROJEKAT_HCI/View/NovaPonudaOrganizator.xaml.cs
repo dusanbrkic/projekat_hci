@@ -16,6 +16,8 @@ using PROJEKAT_HCI.Database;
 using Microsoft.Win32;
 using System.IO;
 using ToastNotifications.Messages;
+using System.ComponentModel;
+using WPFCustomMessageBox;
 
 namespace PROJEKAT_HCI.View
 {
@@ -27,16 +29,20 @@ namespace PROJEKAT_HCI.View
 
         public OrganizatorSaradnikWindow os { get; set; }
 
+        public String imgSrc { get; set; }
+
         public Saradnik Saradnik;
         public NovaPonudaOrganizator(OrganizatorSaradnikWindow osw, Saradnik s)
         {
             InitializeComponent();
             this.Saradnik = s;
             this.os = osw;
+            this.imgSrc = "";
         }
         private void Nazad_Btn_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+            os.Dodaj_Ponude();
             os.Show();
         }
 
@@ -59,6 +65,37 @@ namespace PROJEKAT_HCI.View
                 MainWindow.notifier.ShowWarning("Cena mora biti pozitivna!");
                 return;
             }
+            if (imgSrc.Equals(""))
+            {
+                MainWindow.notifier.ShowWarning("Ponuda mora imati sliku!");
+                return;
+            }
+            MessageBoxResult res = CustomMessageBox.ShowYesNo( "Jeste li sigurni da zelite da dodate novu ponudu?" ,"Potvrda", "Da", "Ne");
+            if (res == MessageBoxResult.No)
+            {
+                return;
+            }
+            if(res== MessageBoxResult.Yes)
+            {
+                using(var db = new ProjectDatabase())
+                {
+                    Saradnik sk = db.Saradnici.Find(Saradnik.Id);
+                    Ponuda p = new Ponuda()
+                    {
+                        Cena = i,
+                        Opis = Opis.Text,
+                        Slika = imgSrc,
+                        Saradnik = sk
+                    };
+
+                    db.Ponude.Add(p);
+                    db.SaveChanges();
+                }
+            }
+            MainWindow.notifier.ShowSuccess("Uspešno ste dodali ponudu, svaka čast!");
+            this.Close();
+            os.Dodaj_Ponude();
+            os.Show();
         }
 
         private void Image_Btn_Click(object sender, RoutedEventArgs e)
@@ -80,16 +117,15 @@ namespace PROJEKAT_HCI.View
                 src.CacheOption = BitmapCacheOption.OnLoad;
                 src.EndInit();
                 slika.Source = src;
-                Image img = new Image();
-                img.Source = src;
-                img.Stretch = Stretch.Uniform;
-                img.Height = 150;
-                img.Width = 100;
+                imgSrc = newPath;
+                //Image img = new Image();
+                
                 //slike.Children.Add(img);
                 //slika.Source = new BitmapImage(new Uri(newPath));
                 //Image_Btn.Background = new ImageBrush(new BitmapImage(newPath));
                 //Console.WriteLine(Directory.GetCurrentDirectory());
             }
         }
+        
     }
 }

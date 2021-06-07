@@ -12,6 +12,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Drawing;
+using Brushes = System.Windows.Media.Brushes;
+using Color = System.Windows.Media.Color;
+
 namespace PROJEKAT_HCI.View
 {
     public partial class AdminWindow : Window

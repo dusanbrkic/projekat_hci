@@ -32,10 +32,16 @@ namespace PROJEKAT_HCI.View
             this.Title = Saradnik.Naziv;
             Opis.Content = Saradnik.Opis;
             Lokacija.Content = Saradnik.Lokacija;
+            Dodaj_Ponude();
+            
+        }
 
+        public void Dodaj_Ponude()
+        {
+            Stek.Children.Clear();
             using (var db = new ProjectDatabase())
             {
-                foreach (var p in (from saradnik in db.Saradnici where saradnik.Id == s.Id select saradnik.Ponude).First())
+                foreach (var p in (from saradnik in db.Saradnici where saradnik.Id == this.Saradnik.Id select saradnik.Ponude).First())
                 {   
 
                     Label l = new Label();
@@ -48,6 +54,7 @@ namespace PROJEKAT_HCI.View
                     Stek.Children.Add(l);
                 }
             }
+
         }
 
         private void Nazad_Btn_Click(object sender, RoutedEventArgs e)
@@ -61,5 +68,7 @@ namespace PROJEKAT_HCI.View
             this.Hide();
             npo.Show();
         }
+
+
     }
 }

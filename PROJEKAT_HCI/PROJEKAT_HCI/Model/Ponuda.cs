@@ -12,7 +12,7 @@ namespace PROJEKAT_HCI.Model
     {
         [Key]
         public int Id { get; set; }
-        public List<string> Slike { get; set; }
+        public String Slika { get; set; }
         public string Opis { get; set; }
         public int Cena { get; set; }
         public virtual Saradnik Saradnik { get; set; }
