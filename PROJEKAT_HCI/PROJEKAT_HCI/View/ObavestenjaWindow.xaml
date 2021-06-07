@@ -5,22 +5,24 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PROJEKAT_HCI.View"
         mc:Ignorable="d"
-        Title="ObavestenjaWindow" Height="450" Width="800">
+        Title="ObavestenjaWindow" Height="430" Width="750">
     <Grid Background="MediumPurple">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="105*"></ColumnDefinition>
-            <ColumnDefinition Width="454*"></ColumnDefinition>
-            <ColumnDefinition Width="191*"></ColumnDefinition>
+            <ColumnDefinition Width="104*"></ColumnDefinition>
+            <ColumnDefinition Width="473*"></ColumnDefinition>
+            <ColumnDefinition Width="0*"></ColumnDefinition>
+            <ColumnDefinition Width="165*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="37*"></RowDefinition>
             <RowDefinition Height="178*"></RowDefinition>
         </Grid.RowDefinitions>
-        <Button   Foreground="White" Background="Red" FontSize="17" Grid.Column="2">Nazad na glavnu stranu</Button>
-        <Label Background="Purple" Grid.ColumnSpan="2" Foreground="White" FontSize="17" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">Obavestenja</Label>
-        <ScrollViewer  Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="3">
-            <WrapPanel Name="wrapper" Orientation="Horizontal" Margin="0,75,0,0">
+        <Label Background="{DynamicResource PrimaryHueMidBrush}" Grid.ColumnSpan="4" Foreground="White" FontSize="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="OBAVESTENJA"/>
 
+        <Button Click="Nazad_Click"  Foreground="White" Background="Red" FontSize="20" Height="Auto" Content="NAZAD"/>
+        <ScrollViewer Background="White"  Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="4">
+            <WrapPanel Name="wrapper" Orientation="Horizontal" Margin="0,0,0,0" HorizontalAlignment="Center">
+                
             </WrapPanel>
         </ScrollViewer>
     </Grid>
