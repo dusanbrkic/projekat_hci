@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using MaterialDesignThemes.Wpf;
 using PROJEKAT_HCI.Database;
 using PROJEKAT_HCI.Model;
 using PROJEKAT_HCI.View;
@@ -23,10 +24,6 @@ namespace PROJEKAT_HCI.View
     /// </summary>
     public partial class OrganizatorSaradnici : Window
     {
-        public class Dugme : Button
-        {
-            public  Saradnik Saradnik{ get; set; }
-        }
         public OrganizatorWindow ow {get; set;}
         public OrganizatorSaradnici()
         {
@@ -36,25 +33,57 @@ namespace PROJEKAT_HCI.View
             {
                  foreach(Saradnik s in db.Saradnici.ToList())
                  {
-                    Dugme b = new Dugme();
-                    b.Saradnik = s;
+                    Card card = new Card();
+                    card.Width = 340;
+                    card.Height = 200;
+                    card.Margin = new Thickness(5, 5, 5, 5);
+
+                    Button b = new Button();
                     b.Width = 200;
-                    b.Height = 140;
-                    b.Margin = new Thickness(20);
-                    b.Content = s.Naziv;
-                    wrapper.Children.Add(b);
-                    b.Click += new RoutedEventHandler(Saradnik_Btn_Click) ;
-                 }
+                    b.Height = 65;
+                    b.Margin = new Thickness(5, 5, 5, 5);
+                    b.VerticalAlignment = VerticalAlignment.Center;
+                    b.Content = "POGLEDAJ";
+                    b.Tag = s;
+                    b.Click += Saradnik_Btn_Click;
+
+                    TextBox tb = new TextBox()
+                    {
+                        IsEnabled = false,
+                        TextWrapping = TextWrapping.Wrap,
+                        Text = s.Naziv,
+                        Width = 330,
+                        Height = 90,
+                        Margin = new Thickness(10, 10, 10, 10),
+                        Foreground = new SolidColorBrush(Colors.Black),
+                        TextAlignment = TextAlignment.Center,
+                        FontSize = 20,
+                        VerticalScrollBarVisibility = ScrollBarVisibility.Auto,
+                        VerticalAlignment = VerticalAlignment.Stretch,
+                        AcceptsReturn = true
+                    };
+
+
+                    StackPanel sp = new StackPanel() { Orientation = Orientation.Vertical };
+                    sp.Children.Add(tb);
+                    sp.Children.Add(b);
+
+                    Grid g = new Grid();
+                    g.Children.Add(sp);
+
+                    card.Content = g;
+                    wrapper.Children.Add(card);
+                }
             }
             
         }
 
         private void Saradnik_Btn_Click(object sender, RoutedEventArgs e)
         {
-            Dugme b = (Dugme)sender;
-            Console.WriteLine(b.Saradnik.Opis);
+            Button b = (Button)sender;
+            //Console.WriteLine(((Saradnik)b.Tag).Opis);
             
-            OrganizatorSaradnikWindow osw = new OrganizatorSaradnikWindow(b.Saradnik, this);
+            OrganizatorSaradnikWindow osw = new OrganizatorSaradnikWindow(((Saradnik)b.Tag), this);
             this.Hide();
             osw.Show();
         }

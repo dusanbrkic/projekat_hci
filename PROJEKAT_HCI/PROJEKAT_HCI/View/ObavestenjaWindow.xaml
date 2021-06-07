@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:PROJEKAT_HCI.View"
         mc:Ignorable="d"
         Title="ObavestenjaWindow" Height="430" Width="750">
-    <Grid Background="MediumPurple">
+    <Grid Background="{DynamicResource PrimaryHueLightBrush}">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="104*"></ColumnDefinition>
             <ColumnDefinition Width="473*"></ColumnDefinition>
@@ -20,7 +20,7 @@
         <Label Background="{DynamicResource PrimaryHueMidBrush}" Grid.ColumnSpan="4" Foreground="White" FontSize="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="OBAVESTENJA"/>
 
         <Button Click="Nazad_Click"  Foreground="White" Background="Red" FontSize="20" Height="Auto" Content="NAZAD"/>
-        <ScrollViewer Background="White"  Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="4">
+        <ScrollViewer Background="{DynamicResource PrimaryHueLightBrush}"  Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="4">
             <WrapPanel Name="wrapper" Orientation="Horizontal" Margin="0,0,0,0" HorizontalAlignment="Center">
                 
             </WrapPanel>

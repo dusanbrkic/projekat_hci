@@ -15,7 +15,7 @@
          Background="{DynamicResource MaterialDesignPaper}"
          FontFamily="{DynamicResource MaterialDesignFont}"
         >
-    <Grid Background="White">
+    <Grid Background="{DynamicResource PrimaryHueLightBrush}">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="105*"></ColumnDefinition>
             <ColumnDefinition Width="454*"></ColumnDefinition>
@@ -26,7 +26,7 @@
             <RowDefinition Height="178*"></RowDefinition>
         </Grid.RowDefinitions>
         <Label Background="{DynamicResource PrimaryHueMidBrush}" Grid.ColumnSpan="3" Foreground="White" FontSize="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="PROSLAVE ZA ORGANIZACIJU"/>
-        <ScrollViewer Background="White"  Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="3" HorizontalAlignment="Center">
+        <ScrollViewer Background="{DynamicResource PrimaryHueLightBrush}"  Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="3" HorizontalAlignment="Center">
             <WrapPanel  Name="wrapper">
 
             </WrapPanel>
