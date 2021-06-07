@@ -59,6 +59,10 @@ namespace PROJEKAT_HCI.View
                     b.Tag = proslava;
                     b.Click += (object sender, RoutedEventArgs e) => {
                         //TODO otvoriti prozor organizovanja proslave
+                        OrganizatorProslava pros = new OrganizatorProslava(this, proslava);
+                        this.Hide();
+                        pros.Show();
+
                     };
 
                     TextBox tb = new TextBox()
@@ -94,7 +98,7 @@ namespace PROJEKAT_HCI.View
         private void Nazad_Click(object sender, RoutedEventArgs e)
         {
             OrganizatorWindow.Show();
-            this.Hide();
+            this.Close();
         }
     }
 }

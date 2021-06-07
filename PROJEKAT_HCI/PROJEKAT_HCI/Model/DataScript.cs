@@ -53,7 +53,8 @@ namespace PROJEKAT_HCI.Model
                     Email = "nikolapigeonman@gmail.com",
                     Username = "nikola",
                     Password = "nikola",
-                    Proslave = new List<Proslava>()
+                    Proslave = new List<Proslava>(),
+                    Zahtevi = new List<ZahtevProslave>()
                 };
 
                 Klijent dzon = new Klijent()
@@ -65,7 +66,9 @@ namespace PROJEKAT_HCI.Model
                     Email = "cvetovimaKonopije@gmail.com",
                     Username = "john",
                     Password = "john",
-                    Proslave = new List<Proslava>()
+                    Proslave = new List<Proslava>(),
+                    Zahtevi = new List<ZahtevProslave>()
+
                 };
 
                 Organizator brka = new Organizator()
@@ -108,7 +111,8 @@ namespace PROJEKAT_HCI.Model
                 {
                     Cena = 500,
                     Opis = "300g jagnjećeg pečenja po osobi",
-                    Saradnik = pecenjaraKnin
+                    Saradnik = pecenjaraKnin,
+                    Klijent = nikola
                 };
                 Ponuda jarecePecenje = new Ponuda()
                 {
@@ -153,7 +157,7 @@ namespace PROJEKAT_HCI.Model
                         Obavestenja = new List<Obavestenje>()
                     },
                     StatusProslave = StatusProslave.U_ORGANIZACIJI,
-                    Klijent = dzon,
+                    Klijent = nikola,
                     Organizator = zivanac,
                     DatumOdrzavanja = DateTime.Now
                 };
@@ -190,7 +194,24 @@ namespace PROJEKAT_HCI.Model
                     TimeStamp =  DateTime.Now
                 });
 
-
+                Proslava proslava2 = new Proslava()
+                {
+                    //Id = db.Proslave.Count(),
+                    Naziv = "Rodjenje Zivancevog sina malog Zivanca",
+                    Opis = "Hteo bih neko skromno slavlje rodjenja mog sina, hocu meze i pecenje.",
+                    ZahtevProslave = new ZahtevProslave() { Prihvacena = false },
+                    PredlogProslave = new PredlogProslave()
+                    {
+                        Opis = "Moze sve moze!",
+                        Prihvacen = false,
+                        Zadaci = new List<Zadatak>(),
+                        Obavestenja = new List<Obavestenje>()
+                    },
+                    StatusProslave = StatusProslave.U_ORGANIZACIJI,
+                    Klijent = nikola,
+                    Organizator = zivanac,
+                    DatumOdrzavanja = DateTime.Now
+                };
                 //enter data
                 db.Admini.Add(nemanja);
                 db.Klijenti.Add(nikola);
@@ -201,6 +222,7 @@ namespace PROJEKAT_HCI.Model
                 db.Saradnici.Add(slatkiDani);
                 db.Saradnici.Add(belaLadja);
                 db.Proslave.Add(proslava1);
+                db.Proslave.Add(proslava2);
                 db.SaveChanges();
             }
         }

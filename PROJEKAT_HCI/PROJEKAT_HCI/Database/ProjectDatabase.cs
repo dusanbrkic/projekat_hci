@@ -18,6 +18,7 @@ namespace PROJEKAT_HCI.Database
         public DbSet<Obavestenje> Obavestenja { get; set; }
         public DbSet<Ponuda> Ponude { get; set; }
         public DbSet<Config> kofiguracija { get; set; }
-
+        public DbSet<Zadatak> Zadaci { get; set; }
+        public DbSet<PredlogProslave> Predlozi { get; set; }
     }
 }
