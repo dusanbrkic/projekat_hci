@@ -53,7 +53,8 @@ namespace PROJEKAT_HCI.Model
                     Email = "nikolapigeonman@gmail.com",
                     Username = "nikola",
                     Password = "nikola",
-                    Proslave = new List<Proslava>()
+                    Proslave = new List<Proslava>(),
+                    Zahtevi = new List<ZahtevProslave>()
                 };
 
                 Klijent dzon = new Klijent()
@@ -65,7 +66,9 @@ namespace PROJEKAT_HCI.Model
                     Email = "cvetovimaKonopije@gmail.com",
                     Username = "john",
                     Password = "john",
-                    Proslave = new List<Proslava>()
+                    Proslave = new List<Proslava>(),
+                    Zahtevi = new List<ZahtevProslave>()
+
                 };
 
                 Organizator brka = new Organizator()

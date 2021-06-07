@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PROJEKAT_HCI.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,16 +18,23 @@ namespace PROJEKAT_HCI.View
     /// <summary>
     /// Interaction logic for KlijentWindow.xaml
     /// </summary>
+
+
     public partial class KlijentWindow : Window
     {
+        public Klijent klijent { get; set; }
+
+        public MainWindow mw { get; set; }
         public KlijentWindow()
         {
             InitializeComponent();
         }
-
-        private void OdjavaBtn_Click(object sender, RoutedEventArgs e)
+        public KlijentWindow(Klijent klijent)
         {
-
+            this.klijent = klijent;
+            DataContext = klijent;
+            InitializeComponent();
+            
         }
         private void NovaProslavaBtn_Click(object sender, RoutedEventArgs e)
         {
@@ -45,6 +53,21 @@ namespace PROJEKAT_HCI.View
             PregledPonudaWindow ppw = new PregledPonudaWindow();
             ppw.Show();
             this.Close();
+        }
+        private void OdjavaBtn_Click(object sender, RoutedEventArgs e)
+        {
+            klijent = null;
+            this.Close();
+            mw.Show();
+
+        }
+        public String welcomeMessage()
+        {
+            return ("Dobrodosli, " + klijent.Ime + " " + klijent.Prezime);
+        }
+        private String getName(object sender, RoutedEventArgs e)
+        {
+            return klijent.Ime;
         }
     }
 }

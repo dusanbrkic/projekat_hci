@@ -54,9 +54,6 @@
         <Button Click ="NazadBtn_Click" Name="NazadBtn" Grid.Column="4" Grid.Row="0" Content="Nazad" Background="LightBlue" Margin="0,0,0,1"/>
         <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalContentAlignment="Center" Grid.Row="1" Margin="0,0,0,0" RenderTransformOrigin="0.5,0.5" Grid.Column="0" Grid.ColumnSpan="5">
             <StackPanel VerticalAlignment="Top" Background="MediumPurple">
-                <Button  Content="Naziv proslave" Background="LightBlue" Margin="300,0,300,0"/>
-                <Button  Content="Naziv proslave" Background="LightBlue" Margin="500,0,100,0"/>
-
                 <Grid Margin="5,20,20,20" >
                     <Button Content="Naziv proslave" Background="LightBlue" Margin="100,0,499.8,0"/>
                     <Button  Content="Naziv proslave" Background="LightBlue" Margin="300,0,300,0"/>

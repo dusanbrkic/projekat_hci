@@ -15,23 +15,19 @@ using System.Windows.Shapes;
 namespace PROJEKAT_HCI.View
 {
     /// <summary>
-    /// Interaction logic for PregledPonude.xaml
+    /// Interaction logic for PregledProslave.xaml
     /// </summary>
-    public partial class PregledPonude : Window
+    public partial class PregledProslave : Window
     {
-        public PregledPonude()
+        public PregledProslave()
         {
             InitializeComponent();
-
-//            this.ponudaTable.Rows.Add("five", "six", "seven", "eight"); 
-  //          this.ponudaTable.Rows.Insert(0, "one", "two", "three", "four");
         }
-
         private void NazadBtn_Click(object sender, RoutedEventArgs e)
         {
             KlijentWindow kw = new KlijentWindow();
             kw.Show();
-            this.Hide();
+            this.Close();
         }
     }
 }

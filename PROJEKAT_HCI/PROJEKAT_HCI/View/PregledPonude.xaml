@@ -3,18 +3,18 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:PROJEKAT_HCI.View"
+        xmlns:local="clr-namespace:PROJEKAT_HCI.View" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
         Title="PregledPonude" Height="450" Width="800">
     <Window.Resources>
         <ResourceDictionary>
-            <BitmapImage x:Key="accept" UriSource="accept.png">
+            <BitmapImage x:Key="accept" UriSource="/Res/Images/accept.png">
 
             </BitmapImage>
-            <BitmapImage x:Key="decline" UriSource="denied.png">
+            <BitmapImage x:Key="decline" UriSource="/Res/Images/decline.png">
 
             </BitmapImage>
-            <BitmapImage x:Key="comment" UriSource="comment.png">
+            <BitmapImage x:Key="comment" UriSource="/Res/Images/comment.png">
 
             </BitmapImage>
 
@@ -33,29 +33,29 @@
             <ColumnDefinition Width="50"></ColumnDefinition>
             <ColumnDefinition Width="225*"></ColumnDefinition>
             <ColumnDefinition Width="225*"></ColumnDefinition>
-            <ColumnDefinition Width="50*"></ColumnDefinition>
-            <ColumnDefinition Width="50*"></ColumnDefinition>
-            <ColumnDefinition Width="50*"></ColumnDefinition>
+            <ColumnDefinition Width="40*"></ColumnDefinition>
+            <ColumnDefinition Width="40*"></ColumnDefinition>
+            <ColumnDefinition Width="40*"></ColumnDefinition>
             <ColumnDefinition Width="*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <Label Content="Ponuda:" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="6" Background="Purple" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="0,0,0,0.6"/>
         <Label Content="Ponuda:" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" VerticalContentAlignment="Center"/>
         <Button Name="PrihvatiPonuduBtn" Grid.Column="3" Grid.Row="1" Background="Transparent"  BorderThickness="0"  >
             <Viewbox>
-                <Image Source="{StaticResource accept}"></Image>
+                <materialDesign:PackIcon Kind="Check" />
             </Viewbox>
         </Button>
         <Button Name="OdbijPonuduBtn" Grid.Column="4" Grid.Row="1" Background="Transparent"  BorderThickness="0"  >
             <Viewbox>
-                <Image Source="{StaticResource decline}" Height="288" Width="284"></Image>
+                <materialDesign:PackIcon Kind="Close" />
             </Viewbox>
         </Button>
         <Button Name="KomentarPonuduBtn" Grid.Column="5" Grid.Row="1" Background="Transparent"  BorderThickness="0"  >
             <Viewbox>
-                <Image Source="{StaticResource comment}" Height="288" Width="284"></Image>
+                <materialDesign:PackIcon Kind="Comment" />
             </Viewbox>
         </Button>
-        <TextBox Margin="100,5,25,5"  Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2"/>
+        <TextBox Margin="100,5,25,5"  Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" IsReadOnly="True"/>
         <DataGrid Name="ponudaTable" Margin ="10,10,10,50 " Grid.Row="2" Grid.Column="1" HorizontalAlignment="Center" Grid.RowSpan="3" Grid.ColumnSpan="5"
                     ScrollViewer.CanContentScroll="True" 
               ScrollViewer.VerticalScrollBarVisibility="Visible"
@@ -65,12 +65,13 @@
                 <DataGridTextColumn Header="Cena" Width="20*"></DataGridTextColumn>
                 <DataGridTextColumn Header="Zadatak Saradnika" Width="20*"></DataGridTextColumn>
                 <DataGridTextColumn Header="Opis" Width="20*"></DataGridTextColumn>
-                <DataGridTextColumn Header="Postavi Odgovor" Width="20*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Postavi Odgovor" Width="20*">
+                </DataGridTextColumn>
             </DataGrid.Columns>
         </DataGrid>
         <Label Content="Ukupna cena:" Grid.Row="3" Grid.Column="1" VerticalContentAlignment="Center" Margin ="10,5,5,0 "/>
         <Label Content="Cena" Grid.Row="3" Grid.Column="1" VerticalContentAlignment="Center" Margin ="100,5,5,0 "/>
-        <Button Name="NazadBtn" Grid.Column="2" Grid.Row="3" Content="Nazad" Background="LightGray" Margin="50,5,138,5"/>
-        <Button Name="PotvrdiZahtevBtn" Grid.Column="2" Grid.Row="3" Content="Potvrdi zahtev" Background="LightBlue" Margin="200,5,0,5"/>
+        <Button Click="NazadBtn_Click" Name="NazadBtn" Grid.Column="2" Grid.Row="3" Content="Nazad" Background="LightGray" Margin="207,10,42.73,8" Foreground="Black" Grid.ColumnSpan="2"/>
+        <Button Name="PotvrdiZahtevBtn" Grid.Column="3" Grid.Row="3" Content="Potvrdi zahtev" Background="LightBlue" Margin="35,10,9.73,8" Grid.ColumnSpan="3" Foreground="Black"/>
     </Grid>
 </Window>

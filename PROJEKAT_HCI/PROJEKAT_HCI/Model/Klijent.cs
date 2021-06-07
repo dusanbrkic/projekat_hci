@@ -13,5 +13,12 @@ namespace PROJEKAT_HCI.Model
         public int Id { get; set; }
 
         public List<Proslava> Proslave { set; get; }
+
+        public List<ZahtevProslave> Zahtevi { set; get; }
+
+        public String welcomeMessage()
+        {
+            return ("Dobrodosli, " + Ime + " " + Prezime);
+        }
     }
 }

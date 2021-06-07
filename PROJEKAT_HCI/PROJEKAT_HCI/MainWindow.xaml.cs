@@ -52,11 +52,11 @@ namespace PROJEKAT_HCI
                 or.mw = this;
                 this.Hide();
             }
-            if(username.Text == "user" && password.Text == "user")
+            if(username.Text == "user" && password.Password == "user")
             {
                 KlijentWindow kw = new KlijentWindow();
                 kw.Show();
-                //kw.mw = this;
+                kw.mw = this;
                 this.Hide();
             }
             using (var db = new ProjectDatabase()) {
@@ -64,6 +64,10 @@ namespace PROJEKAT_HCI
                                   where o.Username == username.Text &&
                                   o.Password == password.Password
                                    select o).FirstOrDefault();
+                k = (from k in db.Klijenti
+                                   where k.Username == username.Text &&
+                                   k.Password == password.Password
+                                   select k).FirstOrDefault();
 
                 if (organizator != null) {
                     OrganizatorWindow or = new OrganizatorWindow();
@@ -72,6 +76,18 @@ namespace PROJEKAT_HCI
                     or.mw = this;
                     this.Hide();
                 }
+                if (k == null)
+                {
+                    return;
+                }
+                if (typeof(Klijent).IsInstanceOfType(k))
+                {
+                    KlijentWindow kw = new KlijentWindow(k as Klijent);
+                    kw.Show();
+                    kw.mw = this;
+                    this.Hide();
+                }
+
 
             }
         }

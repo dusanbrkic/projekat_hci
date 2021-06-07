@@ -53,6 +53,9 @@
     <Reference Include="MaterialDesignThemes.Wpf, Version=4.1.0.2556, Culture=neutral, PublicKeyToken=df2a72020bd7962a, processorArchitecture=MSIL">
       <HintPath>..\packages\MaterialDesignThemes.4.1.0\lib\net452\MaterialDesignThemes.Wpf.dll</HintPath>
     </Reference>
+    <Reference Include="ShowMeTheXAML, Version=2.0.0.62, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ShowMeTheXAML.2.0.0\lib\net472\ShowMeTheXAML.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
@@ -99,7 +102,7 @@
     </Compile>
     <Compile Include="View\NovaProslavaWindow.xaml.cs">
       <DependentUpon>NovaProslavaWindow.xaml</DependentUpon>
-
+    </Compile>
     <Compile Include="View\NovaPonudaOrganizator.xaml.cs">
       <DependentUpon>NovaPonudaOrganizator.xaml</DependentUpon>
     </Compile>
@@ -126,6 +129,9 @@
     </Compile>
     <Compile Include="View\PregledProslavaWindow.xaml.cs">
       <DependentUpon>PregledProslavaWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\PregledProslave.xaml.cs">
+      <DependentUpon>PregledProslave.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\RegistrationWindow.xaml.cs">
       <DependentUpon>RegistrationWindow.xaml</DependentUpon>
@@ -163,6 +169,7 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\NovaProslavaWindow.xaml">
+    </Page>
     <Page Include="View\NovaPonudaOrganizator.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -196,6 +203,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\PregledProslavaWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\PregledProslave.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -244,19 +255,22 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="View\proslava-18-rodjendana.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="View\denied.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="View\accept.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="View\comment.png" />
-  <ItemGroup />
-  <ItemGroup>
     <Resource Include="Res\Images\default.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Res\Images\accept.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Res\Images\klijentSlika1.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Res\Images\comment.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>
