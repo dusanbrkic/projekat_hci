@@ -98,7 +98,7 @@ namespace PROJEKAT_HCI.View
         private void Nazad_Click(object sender, RoutedEventArgs e)
         {
             OrganizatorWindow.Show();
-            this.Hide();
+            this.Close();
         }
     }
 }

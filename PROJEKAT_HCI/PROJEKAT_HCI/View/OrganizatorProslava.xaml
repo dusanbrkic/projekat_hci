@@ -25,7 +25,7 @@
         <Button Click="Nazad_Click" Grid.Column="0"  Foreground="White" Background="Red" FontSize="20" Height="Auto" Content="NAZAD"/>
         <Button  Grid.Column="2" Foreground="White" Background="Green" FontSize="20" Height="Auto" Content="ZAHTEV PROSLAVE"/>
         <StackPanel  HorizontalAlignment="Stretch" Name="Dugmici" Grid.Row="2" Grid.ColumnSpan="3"  Orientation="Horizontal" Margin="10,0">
-            <Button  Margin="0 5 20 5" Grid.Column="2" Foreground="White"  Background="{DynamicResource PrimaryHueMidBrush}" FontSize="20" Height="Auto" Content="DODAJ ZADATAK" Width="235"/>
+            <Button Click="Dodaj_Zadatak_Click" Margin="0 5 20 5" Grid.Column="2" Foreground="White"  Background="{DynamicResource PrimaryHueMidBrush}" FontSize="20" Height="Auto" Content="DODAJ ZADATAK" Width="235"/>
             <Button  Margin="0 5 20 5" Grid.Column="2" Foreground="White"  Background="{DynamicResource PrimaryHueMidBrush}" FontSize="20" Height="Auto" Content="DETALJI ZADATKA" Width="228"/>
             <Button  Margin="0 5 0 5" Grid.Column="2" Foreground="White"  Background="{DynamicResource PrimaryHueMidBrush}" FontSize="20" Height="Auto" Content="PREDLOG" Width="221"/>
         </StackPanel>
@@ -51,25 +51,25 @@
             <Label  Grid.Column="5" Foreground="White" FontSize="18" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="Obijeno"/>
             <Label  Grid.Column="6" Foreground="White" FontSize="18" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="Prihvaćeno"/>
             <Border CornerRadius="7" BorderBrush="{DynamicResource PrimaryHueMidBrush}" BorderThickness="6" Grid.Row="1" Grid.Column="0">
-                <StackPanel Orientation="Vertical" Background="White"></StackPanel>
+                <StackPanel AllowDrop="True" Name="Za_uraditi_stek" Orientation="Vertical" Background="White"></StackPanel>
             </Border>
             <Border CornerRadius="7" BorderBrush="{DynamicResource PrimaryHueMidBrush}" BorderThickness="6" Grid.Row="1" Grid.Column="1">
-                <StackPanel Orientation="Vertical" Background="White"></StackPanel>
+                <StackPanel Drop="Target_Drop" AllowDrop="True" Name="U_obradi_stek" Orientation="Vertical" Background="White"></StackPanel>
             </Border>
             <Border CornerRadius="7" BorderBrush="{DynamicResource PrimaryHueMidBrush}" BorderThickness="6" Grid.Row="1" Grid.Column="2">
-                <StackPanel Orientation="Vertical" Background="White"></StackPanel>
+                <StackPanel AllowDrop="True" Name="Za_poslati_stek" Orientation="Vertical" Background="White"></StackPanel>
             </Border>
             <Border CornerRadius="7" BorderBrush="{DynamicResource PrimaryHueMidBrush}" BorderThickness="6" Grid.Row="1" Grid.Column="3">
-                <StackPanel Orientation="Vertical" Background="White"></StackPanel>
+                <StackPanel Name="Poslato_stek" Orientation="Vertical" Background="White"></StackPanel>
             </Border>
             <Border CornerRadius="7" BorderBrush="{DynamicResource PrimaryHueMidBrush}" BorderThickness="6" Grid.Row="1" Grid.Column="4">
-                <StackPanel Orientation="Vertical" Background="White"></StackPanel>
+                <StackPanel  Name="Za_izmenu_stek" Orientation="Vertical" Background="White"></StackPanel>
             </Border>
             <Border CornerRadius="7" BorderBrush="{DynamicResource PrimaryHueMidBrush}" BorderThickness="6" Grid.Row="1" Grid.Column="5">
-                <StackPanel Orientation="Vertical" Background="White"></StackPanel>
+                <StackPanel Name="Odbijeno_stek" Orientation="Vertical" Background="White"></StackPanel>
             </Border>
             <Border CornerRadius="7" BorderBrush="{DynamicResource PrimaryHueMidBrush}" BorderThickness="6" Grid.Row="1" Grid.Column="6">
-                <StackPanel Orientation="Vertical" Background="White"></StackPanel>
+                <StackPanel Name="Prihvaceno_stek" Orientation="Vertical" Background="White"></StackPanel>
             </Border>
 
         </Grid>
