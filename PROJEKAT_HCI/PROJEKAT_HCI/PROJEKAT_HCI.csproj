@@ -107,6 +107,9 @@
     <Compile Include="View\OrganizacijaProslavaWindow.xaml.cs">
       <DependentUpon>OrganizacijaProslavaWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\OrganizatorProslava.xaml.cs">
+      <DependentUpon>OrganizatorProslava.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\OrganizatorSaradnici.xaml.cs">
       <DependentUpon>OrganizatorSaradnici.xaml</DependentUpon>
     </Compile>
@@ -156,6 +159,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="View\OrganizacijaProslavaWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\OrganizatorProslava.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
