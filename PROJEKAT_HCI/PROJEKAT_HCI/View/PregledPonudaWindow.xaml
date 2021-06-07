@@ -1,0 +1,12 @@
+﻿<Window x:Class="PROJEKAT_HCI.View.PregledPonudaWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PROJEKAT_HCI.View"
+        mc:Ignorable="d"
+        Title="PregledPonudaWindow" Height="450" Width="800">
+    <Grid>
+        <Button Click="Ponuda_Click" Name="PotvrdiZahtevBtn" Grid.Column="3" Grid.Row="3" Content="Potvrdi zahtev" Background="LightBlue" Margin="0,5,5,5"/>
+    </Grid>
+</Window>

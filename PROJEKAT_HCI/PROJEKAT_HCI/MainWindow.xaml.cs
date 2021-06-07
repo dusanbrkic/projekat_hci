@@ -46,6 +46,13 @@ namespace PROJEKAT_HCI
                 or.mw = this;
                 this.Hide();
             }
+            if(username.Text == "user" && password.Text == "user")
+            {
+                KlijentWindow kw = new KlijentWindow();
+                kw.Show();
+                //kw.mw = this;
+                this.Hide();
+            }
         }
             
 
