@@ -36,6 +36,7 @@ namespace PROJEKAT_HCI.View
 
                 var proslave = from proslava in db.Proslave
                                   where proslava.PredlogProslave.Proslava.Organizator.Id == Organizator.Id
+                                  && proslava.StatusProslave != StatusProslave.ORGANIZOVANO
                                   orderby proslava.DatumOdrzavanja descending
                                   select proslava;
 
