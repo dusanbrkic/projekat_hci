@@ -4,71 +4,41 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PROJEKAT_HCI.View"
-        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-        xmlns:smtx="clr-namespace:ShowMeTheXAML;assembly=ShowMeTheXAML"
         mc:Ignorable="d"
-        Title="PregledPonudaWindow" Height="450" Width="800">
-    <Grid>
+        Title="OrganizatorSaradnikWindow"
+        Height="450"
+        Width="800">
+    <Grid Background="White">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="100"></ColumnDefinition>
-            <ColumnDefinition Width="200*"></ColumnDefinition>
-            <ColumnDefinition Width="200*"></ColumnDefinition>
-            <ColumnDefinition Width="200*"></ColumnDefinition>
-            <ColumnDefinition Width="100"></ColumnDefinition>
+            <ColumnDefinition Width="82*"></ColumnDefinition>
+            <ColumnDefinition Width="213*"></ColumnDefinition>
+            <ColumnDefinition Width="101*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
+            <RowDefinition Height="37*"></RowDefinition>
+            <RowDefinition Height="178*"></RowDefinition>
         </Grid.RowDefinitions>
+        <Label Background="{DynamicResource PrimaryHueDarkBrush}"
+               Grid.ColumnSpan="3"
+               Foreground="White"
+               FontSize="20"
+               HorizontalContentAlignment="Center"
+               VerticalContentAlignment="Center">SARADNIK</Label>
+        <Button  
+                 Foreground="White"
+                 Background="Red"
+                 FontSize="20"
+                 Margin="0,0,59,0"
+                 Height="Auto">NAZAD</Button>
+        <Button  
+                 Foreground="White"
+                 Background="DarkGreen"
+                 FontSize="17"
+                 Grid.Column="2"
+                 Margin="28,0,0,0"
+                 Height="Auto">DODAJ PONUDU</Button>
+        <WrapPanel  Name="wrapper">
 
-<materialDesign:Card
-  Background="{DynamicResource PrimaryHueLightBrush}"
-  Foreground="{DynamicResource PrimaryHueLightForegroundBrush}"
-  Grid.Column="1"
-  Height="200"
-  Padding="8" Margin="5 5 5 5">
-            <StackPanel>
-                <Image Source="/Res/Images/accept.png"
-                 Height="140"
-                 Stretch="UniformToFill"/>
-                <Button
-                    VerticalAlignment="Bottom"
-    FontSize="16"
-    Content="Nova proslava" />
-            </StackPanel>
-
-        </materialDesign:Card>
-        <materialDesign:Card Margin="5 5 5 5"
-  Background="{DynamicResource PrimaryHueLightBrush}"
-  Foreground="{DynamicResource PrimaryHueLightForegroundBrush}"
-  Grid.Column="2"
-  Height="200"
-  Padding="8">
-            <StackPanel>
-                <Image Source="/Res/Images/accept.png"
-                 Height="140"
-                 Stretch="UniformToFill"/>
-                <Button
-                    VerticalAlignment="Bottom"
-    FontSize="16"
-    Content="Pregled proslava" />
-            </StackPanel>
-
-        </materialDesign:Card>
-        <materialDesign:Card Margin="5 5 5 5"
-  Background="{DynamicResource PrimaryHueLightBrush}"
-  Foreground="{DynamicResource PrimaryHueLightForegroundBrush}"
-  Grid.Column="3"
-  Height="200"
-  Padding="8">
-            <StackPanel>
-                <Image Source="/Res/Images/accept.png"
-                 Height="140"
-                 Stretch="UniformToFill"/>
-                <Button
-                    VerticalAlignment="Bottom"
-    FontSize="16"
-    Content="Pregled proslava" />
-            </StackPanel>
-
-        </materialDesign:Card>
+        </WrapPanel>
     </Grid>
 </Window>

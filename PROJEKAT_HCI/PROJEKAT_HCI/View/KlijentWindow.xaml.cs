@@ -44,13 +44,13 @@ namespace PROJEKAT_HCI.View
         }
         private void PregledProslavaBtn_Click(object sender, RoutedEventArgs e)
         {
-            PregledProslavaWindow ppw = new PregledProslavaWindow();
+            PregledProslavaWindow ppw = new PregledProslavaWindow(klijent);
             ppw.Show();
             this.Close();
         }
         private void PregledPonudaBtn_Click(object sender, RoutedEventArgs e)
         {
-            PregledPonudaWindow ppw = new PregledPonudaWindow();
+            PregledPonudaWindow ppw = new PregledPonudaWindow(klijent);
             ppw.Show();
             this.Close();
         }

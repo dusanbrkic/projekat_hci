@@ -16,6 +16,7 @@ namespace PROJEKAT_HCI.Model
         public string Opis { get; set; }
         public int Cena { get; set; }
         public virtual Saradnik Saradnik { get; set; }
+        public virtual Klijent  Klijent { get; set; }
 
     }
 }
