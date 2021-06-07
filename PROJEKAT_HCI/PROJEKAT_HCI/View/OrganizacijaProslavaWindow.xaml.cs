@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using MaterialDesignThemes.Wpf;
 using PROJEKAT_HCI.Database;
 using PROJEKAT_HCI.Model;
 
@@ -22,11 +23,13 @@ namespace PROJEKAT_HCI.View
     public partial class OrganizacijaProslavaWindow : Window
     {
         public Organizator Organizator { get; set; }
-        public OrganizacijaProslavaWindow(Organizator o)
+        public Window OrganizatorWindow { get; set; }
+        public OrganizacijaProslavaWindow(Organizator o, Window ow)
         {
             InitializeComponent();
 
             Organizator = o;
+            OrganizatorWindow = ow;
 
             using (var db = new ProjectDatabase())
             {
@@ -41,18 +44,56 @@ namespace PROJEKAT_HCI.View
 
                 foreach (var proslava in proslave)
                 {
+                    Card card = new Card();
+                    card.Width = 340;
+                    card.Height = 200;
+                    card.Margin = new Thickness(5, 5, 5, 5);
+
                     Button b = new Button();
                     b.Width = 200;
-                    b.Height = 140;
-                    b.Margin = new Thickness(20);
-                    b.Content = proslava.Naziv;
-                    wrapper.Children.Add(b);
+                    b.Height = 65;
+                    b.Margin = new Thickness(5, 5, 5, 5);
+                    b.VerticalAlignment = VerticalAlignment.Center;
+                    b.Content = "POGLEDAJ";
                     b.Tag = proslava;
                     b.Click += (object sender, RoutedEventArgs e) => {
-                        
+                        //TODO otvoriti prozor organizovanja proslave
                     };
+
+                    TextBox tb = new TextBox()
+                    {
+                        IsEnabled = false,
+                        TextWrapping = TextWrapping.Wrap,
+                        Text = proslava.Naziv + "\nDatum odrzavanja: " + proslava.DatumOdrzavanja,
+                        Width = 330,
+                        Height = 90,
+                        Margin = new Thickness(10, 10, 10, 10),
+                        Foreground = new SolidColorBrush(Colors.Black),
+                        TextAlignment = TextAlignment.Center,
+                        FontSize = 16,
+                        VerticalScrollBarVisibility = ScrollBarVisibility.Auto,
+                        VerticalAlignment = VerticalAlignment.Stretch,
+                        AcceptsReturn = true
+                    };
+
+
+                    StackPanel sp = new StackPanel() { Orientation = Orientation.Vertical };
+                    sp.Children.Add(tb);
+                    sp.Children.Add(b);
+
+                    Grid g = new Grid();
+                    g.Children.Add(sp);
+
+                    card.Content = g;
+                    wrapper.Children.Add(card);
                 }
             }
+        }
+
+        private void Nazad_Click(object sender, RoutedEventArgs e)
+        {
+            OrganizatorWindow.Show();
+            this.Hide();
         }
     }
 }

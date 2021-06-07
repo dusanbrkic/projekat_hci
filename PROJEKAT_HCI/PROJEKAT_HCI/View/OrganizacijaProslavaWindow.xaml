@@ -6,16 +6,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PROJEKAT_HCI.View"
         mc:Ignorable="d"
-        Title="OrganizacijaProslavaWindow" Height="450" Width="800"
+        Title="OrganizacijaProslavaWindow" Height="430" Width="750"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
          TextElement.FontWeight="Regular"
-         TextElement.FontSize="13"
+         TextElement.FontSize="16"
          TextOptions.TextFormattingMode="Ideal"
          TextOptions.TextRenderingMode="Auto"
          Background="{DynamicResource MaterialDesignPaper}"
          FontFamily="{DynamicResource MaterialDesignFont}"
         >
-    <Grid Background="MediumPurple">
+    <Grid Background="White">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="105*"></ColumnDefinition>
             <ColumnDefinition Width="454*"></ColumnDefinition>
@@ -25,12 +25,12 @@
             <RowDefinition Height="37*"></RowDefinition>
             <RowDefinition Height="178*"></RowDefinition>
         </Grid.RowDefinitions>
-        <Button   Foreground="White" Background="Red" FontSize="17" Grid.Column="2">Nazad</Button>
-        <Label Background="Purple" Grid.ColumnSpan="2" Foreground="White" FontSize="17" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">Proslave</Label>
-        <ScrollViewer  Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="3">
+        <Label Background="{DynamicResource PrimaryHueMidBrush}" Grid.ColumnSpan="3" Foreground="White" FontSize="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="PROSLAVE ZA ORGANIZACIJU"/>
+        <ScrollViewer Background="White"  Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="3" HorizontalAlignment="Center">
             <WrapPanel  Name="wrapper">
 
             </WrapPanel>
         </ScrollViewer>
+        <Button Click="Nazad_Click"   Foreground="White" Background="Red" FontSize="20" Height="Auto" Content="NAZAD"/>
     </Grid>
 </Window>

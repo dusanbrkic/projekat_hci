@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:PROJEKAT_HCI"
         mc:Ignorable="d"
         xmlns:apex="clr-namespace:Apex.Controls;assembly=Apex"
-        Title="MainWindow" Height="500" Width="720"
+        Title="MainWindow" Height="430" Width="750"
          xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
          TextElement.Foreground="{DynamicResource MaterialDesignBody}"
          TextElement.FontWeight="Regular"
@@ -88,7 +88,7 @@
                   Margin="0 12 0 36"
                   Width="264" />
             <Button Style="{StaticResource MaterialDesignRaisedButton}"
-                        ToolTip="Resource name: MaterialDesignRaisedLightDarkButton" 
+                        
                         Click="Prijava_Click" x:Name="Prijava" Content="Prijavi se" Margin="148,0,140,10"  />
             <Button
                     Style="{StaticResource MaterialDesignRaisedButton}"

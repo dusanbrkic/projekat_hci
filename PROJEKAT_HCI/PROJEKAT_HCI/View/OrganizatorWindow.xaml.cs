@@ -44,14 +44,15 @@ namespace PROJEKAT_HCI.View
         }
 
         private void Obav_Btn_Click(object sender, RoutedEventArgs e) {
-            ObavestenjaWindow ow = new ObavestenjaWindow(Organizator);
-            this.Hide();
+            ObavestenjaWindow ow = new ObavestenjaWindow(Organizator, this);
             ow.Show();
+            this.Hide();
+            
         }
 
         private void Orgp_Btn_Click(object sender, RoutedEventArgs e)
         {
-            OrganizacijaProslavaWindow opw = new OrganizacijaProslavaWindow(Organizator);
+            OrganizacijaProslavaWindow opw = new OrganizacijaProslavaWindow(Organizator, this);
             this.Hide();
             opw.Show();
         }
