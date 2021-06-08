@@ -21,25 +21,23 @@ namespace PROJEKAT_HCI.View
     /// </summary>
     public partial class RegistrationWindow : Window
     {
-        public RegistrationWindow()
+        Window MainWindow { get; set; }
+        public RegistrationWindow(Window mw)
         {
+            MainWindow = mw;
             InitializeComponent();
-        }
-        private void odustao_Click(object sender, RoutedEventArgs e)
-        {
-
         }
 
         private void registruj_Click(object sender, RoutedEventArgs e)
         {
-            if (username.Text == "" || password.Text == "" || ime.Text == "" || prezime.Text == "" || brojTelefona.Text == "")
+            if (Username.Text == "" || Password.Password == "" || Ime.Text == "" || Prezime.Text == "" || BrojTelefona.Text == "")
             {
                 Console.WriteLine("Greska");
                 return;
             }
 
 
-            if (againPassword.Text != password.Text)
+            if (PasswordPotvrda.Password != Password.Password)
                 return;
 
             using (var db = new ProjectDatabase())
@@ -47,17 +45,23 @@ namespace PROJEKAT_HCI.View
 
                 foreach (Klijent klijent in db.Klijenti)
                 {
-                    if (username.Text == klijent.Username)//vec postoji korisnik sa istim usernamemom
+                    if (Username.Text == klijent.Username)//vec postoji korisnik sa istim usernamemom
                         return;
 
                 }
 
-                Klijent k = new Klijent { Id = db.Klijenti.Count(), Ime = ime.Text, Prezime = prezime.Text, BrojTelefona = brojTelefona.Text, Email = email.Text, Password = password.Text, Username = username.Text };
+                Klijent k = new Klijent { Id = db.Klijenti.Count(), Ime = Ime.Text, Prezime = Prezime.Text, BrojTelefona = BrojTelefona.Text, Email = Email.Text, Password = Password.Password, Username = Username.Text };
 
 
                 db.Klijenti.Add(k);
                 db.SaveChanges();
             }
+        }
+
+        private void Nazad_Button_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow.Show();
+            this.Close();
         }
     }
 }

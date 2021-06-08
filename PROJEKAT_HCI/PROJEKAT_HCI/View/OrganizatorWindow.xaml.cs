@@ -56,5 +56,12 @@ namespace PROJEKAT_HCI.View
             this.Hide();
             opw.Show();
         }
+
+        private void Profil_Click(object sender, RoutedEventArgs e)
+        {
+            EditProfile ep = new EditProfile(this, Organizator);
+            ep.Show();
+            this.Hide();
+        }
     }
 }

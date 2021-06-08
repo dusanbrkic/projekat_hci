@@ -23,7 +23,7 @@
 
         <Label Background="{DynamicResource PrimaryHueDarkBrush}" Grid.ColumnSpan="3" Foreground="White" FontSize="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="PROSLAVA"/>
         <Button Click="Nazad_Click" Grid.Column="0"  Foreground="White" Background="Red" FontSize="20" Height="Auto" Content="NAZAD"/>
-        <Button  Grid.Column="2" Foreground="White" Background="Green" FontSize="20" Height="Auto" Content="ZAHTEV PROSLAVE"/>
+        <Button Click="Zahtev_Click"  Grid.Column="2" Foreground="White" Background="Green" FontSize="20" Height="Auto" Content="ZAHTEV PROSLAVE"/>
         <StackPanel  HorizontalAlignment="Stretch" Name="Dugmici" Grid.Row="2" Grid.ColumnSpan="3"  Orientation="Horizontal" Margin="10,0">
             <Button Click="Dodaj_Zadatak_Click" Margin="0 5 20 5" Grid.Column="2" Foreground="White"  Background="{DynamicResource PrimaryHueMidBrush}" FontSize="20" Height="Auto" Content="DODAJ ZADATAK" Width="235"/>
             <Button  Margin="0 5 20 5" Grid.Column="2" Foreground="White"  Background="{DynamicResource PrimaryHueMidBrush}" FontSize="20" Height="Auto" Content="DETALJI ZADATKA" Width="228"/>

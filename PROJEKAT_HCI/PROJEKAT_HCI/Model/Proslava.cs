@@ -21,6 +21,7 @@ namespace PROJEKAT_HCI.Model
         public virtual Klijent Klijent { get; set; }
         public virtual PredlogProslave PredlogProslave { get; set; }
         public virtual ZahtevProslave ZahtevProslave { get; set; }
-    
+        public int BrojGostiju { get;  set; }
+        public double Budzet { get;  set; }
     }
 }

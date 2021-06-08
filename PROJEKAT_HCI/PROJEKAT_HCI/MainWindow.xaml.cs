@@ -95,9 +95,9 @@ namespace PROJEKAT_HCI
 
         private void registruj_Click(object sender, RoutedEventArgs e)
         {
-            RegistrationWindow rw = new RegistrationWindow();
+            RegistrationWindow rw = new RegistrationWindow(this);
             rw.Show();
-            this.Close();
+            this.Hide();
         }
         public static ToastNotifications.Notifier notifier = new ToastNotifications.Notifier(cfg =>
         {

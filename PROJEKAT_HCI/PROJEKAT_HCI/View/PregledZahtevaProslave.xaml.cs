@@ -11,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using PROJEKAT_HCI.Database;
+using PROJEKAT_HCI.Model;
 
 namespace PROJEKAT_HCI.View
 {
@@ -20,10 +22,23 @@ namespace PROJEKAT_HCI.View
     public partial class PregledZahtevaProslave : Window
     {
         Window OrganizatorProslava { get; set; }
-        public PregledZahtevaProslave(Window op)
+        Proslava Proslava { get; set; }
+        public PregledZahtevaProslave(Window op, Proslava p)
         {
+            Proslava = p;
             OrganizatorProslava = op;
             InitializeComponent();
+
+            Naziv.Text = Proslava.Naziv;
+            OpisProslave.Text = Proslava.Opis;
+            Budzet.Text = Proslava.Budzet.ToString();
+            Datum.Text = Proslava.DatumOdrzavanja.ToString();
+            BrGostiju.Text = Proslava.BrojGostiju.ToString();
+            using (var db = new ProjectDatabase())
+            {
+                Proslava = db.Proslave.Find(Proslava.Id);
+                Slavljenik.Text = Proslava.Klijent.Ime + " " + Proslava.Klijent.Prezime + " tel: " + Proslava.Klijent.BrojTelefona;
+            }
         }
 
         private void Nazad_Click(object sender, RoutedEventArgs e)

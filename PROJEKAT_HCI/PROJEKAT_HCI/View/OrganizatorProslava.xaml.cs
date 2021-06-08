@@ -145,5 +145,12 @@ namespace PROJEKAT_HCI.View
         {
 
         }
+
+        private void Zahtev_Click(object sender, RoutedEventArgs e)
+        {
+            PregledZahtevaProslave pzp = new PregledZahtevaProslave(this, Proslava);
+            pzp.Show();
+            this.Hide();
+        }
     }
 }

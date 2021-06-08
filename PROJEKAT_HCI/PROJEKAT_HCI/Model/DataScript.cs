@@ -159,7 +159,9 @@ namespace PROJEKAT_HCI.Model
                     StatusProslave = StatusProslave.U_ORGANIZACIJI,
                     Klijent = nikola,
                     Organizator = zivanac,
-                    DatumOdrzavanja = DateTime.Now
+                    DatumOdrzavanja = DateTime.Now,
+                    Budzet = 12000,
+                    BrojGostiju = 40
                 };
 
                 proslava1.PredlogProslave.Zadaci.Add(new Zadatak()
@@ -197,8 +199,8 @@ namespace PROJEKAT_HCI.Model
                 Proslava proslava2 = new Proslava()
                 {
                     //Id = db.Proslave.Count(),
-                    Naziv = "Rodjenje Zivancevog sina malog Zivanca",
-                    Opis = "Hteo bih neko skromno slavlje rodjenja mog sina, hocu meze i pecenje.",
+                    Naziv = "Ispracanje Nemanje u vojsku",
+                    Opis = "Ispracamo naseg Nemanju u vojsku najjaceg coveka.",
                     ZahtevProslave = new ZahtevProslave() { Prihvacena = false },
                     PredlogProslave = new PredlogProslave()
                     {
@@ -210,7 +212,10 @@ namespace PROJEKAT_HCI.Model
                     StatusProslave = StatusProslave.U_ORGANIZACIJI,
                     Klijent = nikola,
                     Organizator = zivanac,
-                    DatumOdrzavanja = DateTime.Now
+                    DatumOdrzavanja = DateTime.Now,
+                    Budzet = 360000,
+                    BrojGostiju = 120
+
                 };
                 //enter data
                 db.Admini.Add(nemanja);
