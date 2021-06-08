@@ -32,6 +32,7 @@ namespace PROJEKAT_HCI.View
         public Zadatak SelektovanZadatak { get; set; }
         public Zadatak NosenZadatak { get; set; }
         public Card NosenaKartica { get; set; }
+        public Card SelektovanaKartica { get; set; }
         public OrganizacijaProslavaWindow opw { get; set; }
         public OrganizatorProslava(OrganizacijaProslavaWindow parent, Proslava p)
         {
@@ -45,6 +46,7 @@ namespace PROJEKAT_HCI.View
 
         public void Dodaj_Zadatke()
         {
+            Detalji.IsEnabled = false;
             Za_uraditi_stek.Children.Clear();
             U_obradi_stek.Children.Clear();
             Za_poslati_stek.Children.Clear();
@@ -62,6 +64,7 @@ namespace PROJEKAT_HCI.View
                     card.MouseLeftButtonDown += OtpustenMis;
                     card.Content = z.Naziv;
                     card.Tag = z;
+                    card.MouseDoubleClick += Card_Double_Click;
                     switch (z.Status)
                     {
                         case Status_Zadatka.ZA_URADITI:
@@ -89,6 +92,16 @@ namespace PROJEKAT_HCI.View
                 }
 
             }
+        }
+
+        public void Card_Double_Click(object sender, MouseButtonEventArgs e)
+        {
+            Card c = (Card)sender;
+            this.SelektovanaKartica = c;
+            this.SelektovanZadatak = (Zadatak)c.Tag;
+            Console.WriteLine(c.Content);
+            //TODO oznaciti da je kartica selektovana a proslu selektovanu vratiti na staro
+            Detalji.IsEnabled = true;
         }
 
         public void OtpustenMis(object sender, MouseButtonEventArgs args)
@@ -197,6 +210,14 @@ namespace PROJEKAT_HCI.View
             PregledZahtevaProslave pzp = new PregledZahtevaProslave(this, Proslava);
             pzp.Show();
             this.Hide();
+        }
+
+        private void Detalji_Btn_Click(object sender, RoutedEventArgs e)
+        {
+            DetaljiZadatka dz =new DetaljiZadatka(SelektovanZadatak, this);
+            this.Hide();
+            dz.Show();
+
         }
     }
 }
