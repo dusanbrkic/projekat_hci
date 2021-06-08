@@ -69,3 +69,16 @@ C:\Users\User\Documents\GitHub\projekat_hci\PROJEKAT_HCI\PROJEKAT_HCI\bin\Debug\
 C:\Users\User\Documents\GitHub\projekat_hci\PROJEKAT_HCI\PROJEKAT_HCI\bin\Debug\MaterialDesignThemes.Wpf.pdb
 C:\Users\User\Documents\GitHub\projekat_hci\PROJEKAT_HCI\PROJEKAT_HCI\bin\Debug\MaterialDesignThemes.Wpf.xml
 C:\Users\User\Documents\GitHub\projekat_hci\PROJEKAT_HCI\PROJEKAT_HCI\obj\Debug\App.baml
+C:\Users\User\Documents\GitHub\projekat_hci\PROJEKAT_HCI\PROJEKAT_HCI\obj\Debug\View\OrganizatorSaradnici.g.cs
+C:\Users\User\Documents\GitHub\projekat_hci\PROJEKAT_HCI\PROJEKAT_HCI\obj\Debug\View\OrganizatorSaradnici.baml
+C:\Users\User\Documents\GitHub\projekat_hci\PROJEKAT_HCI\PROJEKAT_HCI\bin\Debug\Dragablz.dll
+C:\Users\User\Documents\GitHub\projekat_hci\PROJEKAT_HCI\PROJEKAT_HCI\bin\Debug\Dragablz.pdb
+C:\Users\User\Documents\GitHub\projekat_hci\PROJEKAT_HCI\PROJEKAT_HCI\bin\Debug\Dragablz.xml
+C:\Users\User\Documents\GitHub\projekat_hci\PROJEKAT_HCI\PROJEKAT_HCI\obj\Debug\View\AzuriranjeKlijentaWindow.g.cs
+C:\Users\User\Documents\GitHub\projekat_hci\PROJEKAT_HCI\PROJEKAT_HCI\obj\Debug\View\AzuriranjeKlijentaWindow.baml
+C:\Users\User\Documents\GitHub\projekat_hci\PROJEKAT_HCI\PROJEKAT_HCI\obj\Debug\View\AzuriranjeOrganizatoraWindow.g.cs
+C:\Users\User\Documents\GitHub\projekat_hci\PROJEKAT_HCI\PROJEKAT_HCI\obj\Debug\View\AzuriranjeOrganizatoraWindow.baml
+C:\Users\User\Documents\GitHub\projekat_hci\PROJEKAT_HCI\PROJEKAT_HCI\bin\Debug\BespokeFusion.dll
+C:\Users\User\Documents\GitHub\projekat_hci\PROJEKAT_HCI\PROJEKAT_HCI\bin\Debug\Microsoft.Xaml.Behaviors.dll
+C:\Users\User\Documents\GitHub\projekat_hci\PROJEKAT_HCI\PROJEKAT_HCI\bin\Debug\Microsoft.Xaml.Behaviors.pdb
+C:\Users\User\Documents\GitHub\projekat_hci\PROJEKAT_HCI\PROJEKAT_HCI\bin\Debug\Microsoft.Xaml.Behaviors.xml

@@ -41,6 +41,12 @@
     <Reference Include="Apex, Version=1.5.0.0, Culture=neutral, PublicKeyToken=98d06957926c086d, processorArchitecture=MSIL">
       <HintPath>..\packages\Apex.1.5.0\lib\net40\Apex.dll</HintPath>
     </Reference>
+    <Reference Include="BespokeFusion, Version=3.1.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialMessageBox.4.0.2\lib\net472\BespokeFusion.dll</HintPath>
+    </Reference>
+    <Reference Include="Dragablz, Version=0.0.3.223, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dragablz.0.0.3.223\lib\net45\Dragablz.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -52,6 +58,9 @@
     </Reference>
     <Reference Include="MaterialDesignThemes.Wpf, Version=4.1.0.2556, Culture=neutral, PublicKeyToken=df2a72020bd7962a, processorArchitecture=MSIL">
       <HintPath>..\packages\MaterialDesignThemes.4.1.0\lib\net452\MaterialDesignThemes.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Xaml.Behaviors, Version=1.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Xaml.Behaviors.Wpf.1.1.31\lib\net45\Microsoft.Xaml.Behaviors.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -76,6 +85,12 @@
     </ApplicationDefinition>
     <Compile Include="View\AdminWindow.xaml.cs">
       <DependentUpon>AdminWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\AzuriranjeKlijentaWindow.xaml.cs">
+      <DependentUpon>AzuriranjeKlijentaWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\AzuriranjeOrganizatoraWindow.xaml.cs">
+      <DependentUpon>AzuriranjeOrganizatoraWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\DodavanjeKlijentaWindow.xaml.cs">
       <DependentUpon>DodavanjeKlijentaWindow.xaml</DependentUpon>
@@ -108,6 +123,14 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="View\AdminWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\AzuriranjeKlijentaWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\AzuriranjeOrganizatoraWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

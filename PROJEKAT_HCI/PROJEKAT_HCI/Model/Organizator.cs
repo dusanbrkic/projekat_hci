@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PROJEKAT_HCI.Model
 {
-    class Organizator : Korisnik
+    public class Organizator : Korisnik
     {
     }
 }

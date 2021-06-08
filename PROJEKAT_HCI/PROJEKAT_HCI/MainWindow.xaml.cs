@@ -36,8 +36,9 @@ namespace PROJEKAT_HCI
             if (username.Text == "admin" && password.Text == "admin")
             {
                 AdminWindow a = new AdminWindow();
+                a.mw = this;
                 a.Show();
-                this.Close();
+                this.Hide();
             }
             if (username.Text == "org" && password.Text == "org")
             {

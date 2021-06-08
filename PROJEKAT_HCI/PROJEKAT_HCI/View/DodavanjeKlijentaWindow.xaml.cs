@@ -24,11 +24,13 @@ namespace PROJEKAT_HCI.View
         public DodavanjeKlijentaWindow()
         {
             InitializeComponent();
-        }
 
+        }
+        private Klijent _klijent = null;
+        public Klijent Ret { get { return _klijent; } set { _klijent = value; } }
         private void registruj_Click(object sender, RoutedEventArgs e)
         {
-            if (username.Text == "" || password.Text == "" || ime.Text == "" || prezime.Text == "" || brojTelefona.Text == "")
+           /* if (username.Text == "" || password.Text == "" || ime.Text == "" || prezime.Text == "" || brojTelefona.Text == "")
             {
                 Console.WriteLine("Greska");
                 return;
@@ -36,24 +38,26 @@ namespace PROJEKAT_HCI.View
 
 
             if (againPassword.Text != password.Text)
-                return;
+                return;*/
 
             using (var db = new ManagerFactory())
             {
 
                 foreach (Klijent klijent in db.klijenti)
                 {
-                    if (username.Text == klijent.Username)//vec postoji korisnik sa istim usernamemom
-                        return;
+                    //if (username.Text == klijent.Username)//vec postoji korisnik sa istim usernamemom
+                       // return;
 
                 }
 
                 Klijent k = new Klijent { Id = db.klijenti.Count(), Ime = ime.Text, Prezime = prezime.Text, BrojTelefona = brojTelefona.Text, Email = email.Text, Password = password.Text, Username = username.Text };
-
+                Ret = k;
 
                 db.klijenti.Add(k);
                 db.SaveChanges();
             }
+            
+            this.Close();
 
         }
 

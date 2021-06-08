@@ -26,6 +26,9 @@ namespace PROJEKAT_HCI.View
             InitializeComponent();
         }
 
+        private Organizator _organizator = null;
+        public Organizator Ret { get { return _organizator; } set { _organizator = value; } }
+
         private void odustao_Click(object sender, RoutedEventArgs e)
         {
 
@@ -55,10 +58,15 @@ namespace PROJEKAT_HCI.View
 
                 Organizator k = new Organizator { Id = db.klijenti.Count(), Ime = ime.Text, Prezime = prezime.Text, BrojTelefona = brojTelefona.Text, Email = email.Text, Password = password.Text, Username = username.Text };
 
+                Ret = k;
 
                 db.organizatori.Add(k);
                 db.SaveChanges();
             }
+
+         
+            
+            this.Close();
 
         }
     }
