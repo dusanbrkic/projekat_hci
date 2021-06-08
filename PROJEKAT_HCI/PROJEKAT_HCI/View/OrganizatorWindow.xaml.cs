@@ -11,7 +11,9 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using PROJEKAT_HCI.Database;
 using PROJEKAT_HCI.Model;
+using ToastNotifications.Messages;
 
 namespace PROJEKAT_HCI.View
 {

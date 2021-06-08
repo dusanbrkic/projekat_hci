@@ -55,7 +55,7 @@
             <TextBox
                     Name="Username"
                 FontSize="11"
-                    materialDesign:HintAssist.HelperText="Unesite korisnicko ime"
+                    materialDesign:HintAssist.HelperText="Ne mozete menjati korisnicko ime"
                     Foreground="{DynamicResource PrimaryHueDarkBrush}"
                     materialDesign:HintAssist.IsFloating="True"
                     Margin="50,0,50,5" Height="35" IsEnabled="False"/>

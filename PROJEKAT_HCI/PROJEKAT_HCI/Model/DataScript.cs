@@ -118,7 +118,8 @@ namespace PROJEKAT_HCI.Model
                 {
                     Cena = 450,
                     Opis = "300g jarećeg pečenja po osobi",
-                    Saradnik = pecenjaraKnin
+                    Saradnik = pecenjaraKnin,
+                    Klijent = dzon
                 };
                 ponudeKnina.Add(jagnjecePecenje);
                 ponudeKnina.Add(jarecePecenje);

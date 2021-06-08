@@ -15,6 +15,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using ToastNotifications.Messages;
 
 namespace PROJEKAT_HCI
 {
@@ -56,7 +57,7 @@ namespace PROJEKAT_HCI
             {
                 KlijentWindow kw = new KlijentWindow();
                 kw.Show();
-                kw.mw = this;
+                kw.Mw = this;
                 this.Hide();
             }
             using (var db = new ProjectDatabase()) {
@@ -74,6 +75,17 @@ namespace PROJEKAT_HCI
                     or.Organizator = organizator;
                     or.Show();
                     or.mw = this;
+
+                  
+                        var obavestenja = from obavestenje in db.Obavestenja
+                                          where obavestenje.PredlogProslave.Proslava.Organizator.Id == organizator.Id
+                                          && obavestenje.Procitano == false
+                                          orderby obavestenje.TimeStamp descending
+                                          select obavestenje;
+
+                        if (obavestenja != null && obavestenja.Count()!=0)
+                            MainWindow.notifier.ShowInformation("Imate " + obavestenja.Count().ToString() + " novih obavestenja!");
+
                     this.Hide();
                 }
                 if (k == null)
@@ -84,7 +96,7 @@ namespace PROJEKAT_HCI
                 {
                     KlijentWindow kw = new KlijentWindow(k as Klijent);
                     kw.Show();
-                    kw.mw = this;
+                    kw.Mw = this;
                     this.Hide();
                 }
 
