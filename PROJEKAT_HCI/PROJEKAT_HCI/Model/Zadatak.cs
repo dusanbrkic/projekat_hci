@@ -13,6 +13,7 @@ namespace PROJEKAT_HCI.Model
     {
         [Key]
         public int Id { get; set; }
+        public String Naziv{ get; set; }
         public string Opis { get; set; }
         public Status_Zadatka Status { get; set; }
         public string KomentarKlijenta { get; set; }
