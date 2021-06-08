@@ -94,6 +94,9 @@
     <Compile Include="View\AdminWindow.xaml.cs">
       <DependentUpon>AdminWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\DetaljiZadatka.xaml.cs">
+      <DependentUpon>DetaljiZadatka.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\DodavanjeKlijentaWindow.xaml.cs">
       <DependentUpon>DodavanjeKlijentaWindow.xaml</DependentUpon>
     </Compile>
@@ -164,6 +167,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="View\AdminWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\DetaljiZadatka.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
