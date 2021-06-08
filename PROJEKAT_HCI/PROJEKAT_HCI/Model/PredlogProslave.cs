@@ -13,6 +13,7 @@ namespace PROJEKAT_HCI.Model
         [ForeignKey("Proslava")]
         public int Id { get; set; }
         public string Opis { get; set; }
+        public string KomentarKlijenta { get; set; }
         public bool Prihvacen { get; set; }
 
         public virtual Proslava Proslava { get; set; }

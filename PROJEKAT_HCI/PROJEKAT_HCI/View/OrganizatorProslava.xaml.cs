@@ -45,13 +45,13 @@ namespace PROJEKAT_HCI.View
 
         public void Dodaj_Zadatke()
         {
-            //Za_uraditi_stek.Children.Clear();
-            //U_obradi_stek.Children.Clear();
-            //Za_poslati_stek.Children.Clear();
-            //Poslato_stek.Children.Clear();
-            //Za_izmenu_stek.Children.Clear();
-            //Odbijeno_stek.Children.Clear();
-            //Prihvaceno_stek.Children.Clear();
+            Za_uraditi_stek.Children.Clear();
+            U_obradi_stek.Children.Clear();
+            Za_poslati_stek.Children.Clear();
+            Poslato_stek.Children.Clear();
+            Za_izmenu_stek.Children.Clear();
+            Odbijeno_stek.Children.Clear();
+            Prihvaceno_stek.Children.Clear();
             using(var db =  new ProjectDatabase())
             {
                 Proslava p = db.Proslave.Find(Proslava.Id);
@@ -60,7 +60,7 @@ namespace PROJEKAT_HCI.View
                 {
                     Card card = new Card();
                     card.MouseLeftButtonDown += OtpustenMis;
-                    card.Content = z.Opis;
+                    card.Content = z.Naziv;
                     card.Tag = z;
                     switch (z.Status)
                     {
@@ -176,8 +176,9 @@ namespace PROJEKAT_HCI.View
                 Zadatak z = new Zadatak()
                 {
                     PredlogProslave = p.PredlogProslave,
-                    Opis = odg,
+                    Naziv = odg,
                     Status = Status_Zadatka.ZA_URADITI,
+                    Opis = "",
                 };
                 Console.WriteLine(z.Opis);
                 db.Zadaci.Add(z);

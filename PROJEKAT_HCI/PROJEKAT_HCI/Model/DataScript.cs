@@ -164,15 +164,16 @@ namespace PROJEKAT_HCI.Model
 
                 proslava1.PredlogProslave.Zadaci.Add(new Zadatak()
                 {
-                    Opis = "Potrebno je odrediti lokaciju",
+                    Naziv = "Tepisi",
+                    Opis = "Potrebno je obezbediti tepise",
                     Status = Status_Zadatka.U_OBRADI,
                     Ponuda = new Ponuda()
                     {
                         Cena = 14000,
-                        Opis = "Mi dajemo prostor",
+                        Opis = "Mi dajemo tepise.",
                         Saradnik = pecenjaraKnin
                     }
-                });
+                }); 
 
                 proslava1.PredlogProslave.Obavestenja.Add(new Obavestenje() { 
                     Procitano = false, 
