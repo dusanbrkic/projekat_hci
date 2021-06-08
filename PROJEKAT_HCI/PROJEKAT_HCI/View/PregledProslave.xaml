@@ -1,0 +1,68 @@
+﻿<Window x:Class="PROJEKAT_HCI.View.PregledProslave"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PROJEKAT_HCI.View"
+        mc:Ignorable="d"
+        Title="PregledProslave" Height="450" Width="800">
+    <Grid Background="MediumPurple">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200" />
+            <ColumnDefinition Width="400*" />
+            <ColumnDefinition Width="100" />
+            <ColumnDefinition Width="100" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50" />
+            <RowDefinition Height="350*" />
+            <RowDefinition Height="50" />
+        </Grid.RowDefinitions>
+        <Label Content="Pregled proslave" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Background="Purple" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="0,0,0,0.6"/>
+        <Button Click="NazadBtn_Click" Name="NazadBtn" Grid.Column="3" Grid.Row="0" Content="Nazad" Background="LightBlue" Foreground="Black" Height="Auto"/>
+        <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto"  VerticalContentAlignment="Center" Grid.Row="1" Margin="0,0,0,0" RenderTransformOrigin="0.5,0.5" Grid.Column="0" Grid.ColumnSpan="4">
+            <StackPanel VerticalAlignment="Top" Background="MediumPurple">
+                <Grid Margin="5">
+                    <Label Content="Naziv proslave:"/>
+                    <TextBox Margin="100,0,50,0" Name="NazivProslave"/>
+                </Grid>
+                <Grid Margin="5">
+                    <Label Content="Opis proslave:"/>
+                    <TextBox Margin="100,0,50,0"
+                             Name="OpisProslave" />
+                </Grid>
+                <Grid Margin="5">
+                    <Label Content="Budzet:"/>
+                    <TextBox Margin="100,0,50,0"
+                             Name="Budzet" />
+                </Grid>
+                <Grid Margin="5">
+                    <Label Content="Tema:"/>
+                    <TextBox Margin="100,0,50,0" />
+                </Grid>
+                <Grid Margin="5">
+                    <Label Content="Datum:"/>
+                    <DatePicker Margin="100,0,50,0"  Name="dt_StartDateFrom" ></DatePicker>
+                </Grid>
+                <Grid Margin="5">
+                    <Label Content="Mesto:"/>
+                    <TextBox Margin="100,0,50,0" />
+                </Grid>
+                <Grid Margin="5">
+                    <Label Content="Broj gostiju:"/>
+                    <TextBox Margin="100,0,50,0" />
+                </Grid>
+                <Grid Margin="5">
+                    <Label Content="Pevac:"/>
+                    <TextBox Margin="100,0,50,0" />
+                </Grid>
+                <Grid Margin="5">
+                    <Label Content="Organizator:"/>
+                    <TextBox Margin="100,0,50,0" />
+                </Grid>
+            </StackPanel>
+        </ScrollViewer>
+        <Button Name="PotvrdiZahtevBtn" Grid.Column="2" Grid.Row="2" Content="Otkazi proslavu" Foreground="Black" Background="LightBlue" Margin="0,8,62,10" Grid.ColumnSpan="2" />
+
+    </Grid>
+</Window>

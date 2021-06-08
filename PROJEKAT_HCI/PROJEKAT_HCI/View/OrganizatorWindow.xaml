@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PROJEKAT_HCI.View"
         mc:Ignorable="d"
-        Title="OrganizatorWindow" Height="450" Width="800">
-    <Grid Background="MediumPurple" Height="419" VerticalAlignment="Bottom">
+        Title="OrganizatorWindow" Height="430" Width="750">
+    <Grid Background="White" Height="419" VerticalAlignment="Bottom">
         <Grid.RowDefinitions >
             <RowDefinition  Height="75*" />
             <RowDefinition Height="37*" />
@@ -27,25 +27,25 @@
             <ColumnDefinition Width="139*" />
             <ColumnDefinition Width="56*" />
         </Grid.ColumnDefinitions>
-        <Button Grid.ColumnSpan="2" Background="DarkBlue" Foreground="White" FontSize="17">Uredite svoj profil
-             OVDE!</Button>
-        <Button Name="Odj_Btn" Click="Odj_Btn_Click" Grid.ColumnSpan="2" Grid.Column="6" Foreground="White" Background="Red" FontSize="17" RenderTransformOrigin="0.5,0.5">
-            Odjavite se
-             OVDE!
-        </Button>
-        <Label Background="Purple" Grid.Column="2" Grid.ColumnSpan="4" Foreground="White" FontSize="17" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">Glavna strana</Label>
 
-        <Border BorderBrush="DarkViolet" CornerRadius="8" BorderThickness="7"  Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="2" Grid.RowSpan="2">
-            <Button Click="Saradnici_Btn_Click"  Name ="Saradnici_Btn"  Background="DarkBlue" Foreground="White" FontSize="27">Saradnici</Button>
-        </Border>
-        <Border BorderBrush="DarkViolet" CornerRadius="8" BorderThickness="7" Grid.Column="5" Grid.Row="2" Grid.ColumnSpan="2" Grid.RowSpan="2">
-            <Button Name ="Obav_Btn" Background="DarkBlue" Foreground="White"  FontSize="27">Obaveštenja</Button>
-        </Border>
-        <Border BorderBrush="DarkViolet" CornerRadius="8" BorderThickness="7" Grid.Column="1" Grid.Row="5" Grid.ColumnSpan="2" Grid.RowSpan="2">
-                <Button Name ="Orgp_Btn" Background="DarkBlue" Foreground="White"  FontSize="27">Organizacija proslava</Button>
-        </Border>
-        <Border BorderBrush="DarkViolet" CornerRadius="8" BorderThickness="7" Grid.Column="5" Grid.Row="5" Grid.ColumnSpan="2" Grid.RowSpan="2">
-            <Button Name="Dpros_Btn" Background="DarkBlue" Foreground="White"  FontSize="27">Dosadašnje proslave</Button>
-        </Border>
+        <Label Background="{DynamicResource PrimaryHueMidBrush}" Grid.ColumnSpan="8" Foreground="White" FontSize="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="OBAVESTENJA" Margin="0,21,0,17" Grid.RowSpan="2"/>
+
+        <Button Click="Profil_Click" Grid.ColumnSpan="2" Background="DarkBlue" Foreground="White" FontSize="17" Content="PROFIL" Height="Auto" Margin="5,21,0,17" Grid.RowSpan="2" Grid.Column="6"/>
+        <Button x:Name="Odj_Btn" Click="Odj_Btn_Click" Grid.ColumnSpan="2" Foreground="White" Background="Red" FontSize="17" RenderTransformOrigin="0.5,0.5" Content="ODJAVA" Margin="-5,22,77,16" Height="Auto" Grid.RowSpan="2"/>
+
+        <Button VerticalAlignment="Center" Click="Saradnici_Btn_Click"  x:Name ="Saradnici_Btn"   Foreground="White" FontSize="27" Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="2" Height="122" Grid.RowSpan="2" Content="SARADNICI">
+            
+        </Button>
+
+        <Button x:Name ="Obav_Btn" Click="Obav_Btn_Click" Foreground="White"  FontSize="27" Grid.Column="5" Grid.Row="2" Grid.ColumnSpan="2" Height="Auto" Grid.RowSpan="2" Content="OBAVESTENJA"/>
+
+        <Button VerticalAlignment = "Center" x:Name ="Orgp_Btn" Click="Orgp_Btn_Click" Foreground="White"  FontSize="27" Height="114" Grid.Column="1" Grid.Row="5" Grid.RowSpan="2" Grid.ColumnSpan="2">
+            <TextBlock HorizontalAlignment="Center" TextAlignment="Center">ORGANIZACIJA<LineBreak/>PROSLAVA</TextBlock>
+        </Button>
+
+        <Button x:Name="Dpros_Btn"  Foreground="White"  FontSize="27" Grid.ColumnSpan="2" Grid.Column="5" Margin="0,0,0,34" Grid.Row="5" Height="Auto" Grid.RowSpan="3">
+            <TextBlock HorizontalAlignment="Center" TextAlignment="Center">DOSADASNJE<LineBreak/>PROSLAVE</TextBlock>
+        </Button>
+
     </Grid>
 </Window>

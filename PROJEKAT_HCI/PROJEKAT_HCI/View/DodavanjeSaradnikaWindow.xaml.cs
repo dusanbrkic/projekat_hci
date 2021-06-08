@@ -1,4 +1,4 @@
-﻿using PROJEKAT_HCI.MENAGER;
+﻿using PROJEKAT_HCI.Database;
 using PROJEKAT_HCI.Model;
 using System;
 using System.Collections.Generic;
@@ -35,10 +35,10 @@ namespace PROJEKAT_HCI.View
         {
             
 
-            using (var db = new ManagerFactory())
+            using (var db = new ProjectDatabase())
             {
 
-                foreach (Saradnik sar in db.saradnici)
+                foreach (Saradnik sar in db.Saradnici)
                 {
                     if (Naziv.Text == sar.Naziv)//vec postoji korisnik sa istim usernamemom
                         return;

@@ -1,0 +1,36 @@
+﻿<Window x:Class="PROJEKAT_HCI.View.OrganizacijaProslavaWindow"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PROJEKAT_HCI.View"
+        mc:Ignorable="d"
+        Title="OrganizacijaProslavaWindow" Height="430" Width="750"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+         TextElement.FontWeight="Regular"
+         TextElement.FontSize="16"
+         TextOptions.TextFormattingMode="Ideal"
+         TextOptions.TextRenderingMode="Auto"
+         Background="{DynamicResource MaterialDesignPaper}"
+         FontFamily="{DynamicResource MaterialDesignFont}"
+        >
+    <Grid Background="{DynamicResource PrimaryHueLightBrush}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="105*"></ColumnDefinition>
+            <ColumnDefinition Width="454*"></ColumnDefinition>
+            <ColumnDefinition Width="191*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="37*"></RowDefinition>
+            <RowDefinition Height="178*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Label Background="{DynamicResource PrimaryHueMidBrush}" Grid.ColumnSpan="3" Foreground="White" FontSize="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="PROSLAVE ZA ORGANIZACIJU"/>
+        <ScrollViewer Background="{DynamicResource PrimaryHueLightBrush}"  Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="3" HorizontalAlignment="Center">
+            <WrapPanel  Name="wrapper">
+
+            </WrapPanel>
+        </ScrollViewer>
+        <Button Click="Nazad_Click"   Foreground="White" Background="Red" FontSize="20" Height="Auto" Content="NAZAD"/>
+    </Grid>
+</Window>

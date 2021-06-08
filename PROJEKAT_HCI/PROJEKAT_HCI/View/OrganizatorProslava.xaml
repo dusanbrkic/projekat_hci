@@ -1,0 +1,77 @@
+﻿<Window x:Class="PROJEKAT_HCI.View.OrganizatorProslava"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PROJEKAT_HCI.View"
+        mc:Ignorable="d"
+        Title="OrganizatorProslava" Height="430" Width="750">
+    <Grid Background="MediumPurple">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="61*" ></RowDefinition>
+            <RowDefinition Height="262*"></RowDefinition>
+            <RowDefinition Height="76*"></RowDefinition>
+
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="220*"></ColumnDefinition>
+            <ColumnDefinition Width="311*"></ColumnDefinition>
+            <ColumnDefinition Width="211*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Label Background="{DynamicResource PrimaryHueDarkBrush}" Grid.ColumnSpan="3" Foreground="White" FontSize="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="PROSLAVA"/>
+        <Button  Click="Nazad_Click" Grid.Column="0"  Foreground="White" Background="Red" FontSize="20" Height="Auto" Content="NAZAD"/>
+        <Button Click="Zahtev_Click"  Grid.Column="2" Foreground="White" Background="Green" FontSize="20" Height="Auto" Content="ZAHTEV PROSLAVE"/>
+        <StackPanel  HorizontalAlignment="Stretch" Name="Dugmici" Grid.Row="2" Grid.ColumnSpan="3"  Orientation="Horizontal" Margin="10,0">
+            <Button Click="Dodaj_Zadatak_Click" Margin="0 5 20 5" Grid.Column="2" Foreground="White"  Background="{DynamicResource PrimaryHueMidBrush}" FontSize="20" Height="Auto" Content="DODAJ ZADATAK" Width="235"/>
+            <Button Name="Detalji" Click="Detalji_Btn_Click" Margin="0 5 20 5" Grid.Column="2" Foreground="White"  Background="{DynamicResource PrimaryHueMidBrush}" FontSize="20" Height="Auto" Content="DETALJI ZADATKA" Width="228"/>
+            <Button  Margin="0 5 0 5" Grid.Column="2" Foreground="White"  Background="{DynamicResource PrimaryHueMidBrush}" FontSize="20" Height="Auto" Content="PREDLOG" Width="221"/>
+        </StackPanel>
+        <Grid Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="33*"></RowDefinition>
+                <RowDefinition Height="229*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Label  Grid.Column="0" Foreground="White" FontSize="18" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="Za uraditi"/>
+            <Label  Grid.Column="1" Foreground="White" FontSize="18" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="U obradi"/>
+            <Label  Grid.Column="2" Foreground="White" FontSize="18" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="Za poslati"/>
+            <Label  Grid.Column="3" Foreground="White" FontSize="18" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="Poslato"/>
+            <Label  Grid.Column="4" Foreground="White" FontSize="18" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="Za izmenu"/>
+            <Label  Grid.Column="5" Foreground="White" FontSize="18" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="Obijeno"/>
+            <Label  Grid.Column="6" Foreground="White" FontSize="18" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="Prihvaćeno"/>
+            <Border CornerRadius="7" BorderBrush="{DynamicResource PrimaryHueMidBrush}" BorderThickness="6" Grid.Row="1" Grid.Column="0">
+                <StackPanel Drop="Target_Drop_Za_Uraditi" AllowDrop="True" Name="Za_uraditi_stek" Orientation="Vertical" Background="White"></StackPanel>
+            </Border>
+            <Border CornerRadius="7" BorderBrush="{DynamicResource PrimaryHueMidBrush}" BorderThickness="6" Grid.Row="1" Grid.Column="1">
+                <StackPanel Drop="Target_Drop_U_Obradi" AllowDrop="True" Name="U_obradi_stek" Orientation="Vertical" Background="White"></StackPanel>
+            </Border>
+            <Border CornerRadius="7" BorderBrush="{DynamicResource PrimaryHueMidBrush}" BorderThickness="6" Grid.Row="1" Grid.Column="2">
+                <StackPanel Drop="Target_Drop_Za_Poslati" AllowDrop="True" Name="Za_poslati_stek" Orientation="Vertical" Background="White"></StackPanel>
+            </Border>
+            <Border CornerRadius="7" BorderBrush="{DynamicResource PrimaryHueMidBrush}" BorderThickness="6" Grid.Row="1" Grid.Column="3">
+                <StackPanel Name="Poslato_stek" Orientation="Vertical" Background="White"></StackPanel>
+            </Border>
+            <Border CornerRadius="7" BorderBrush="{DynamicResource PrimaryHueMidBrush}" BorderThickness="6" Grid.Row="1" Grid.Column="4">
+                <StackPanel Drop="Target_Drop_Za_Izmenu" AllowDrop="True" Name="Za_izmenu_stek" Orientation="Vertical" Background="White"></StackPanel>
+            </Border>
+            <Border CornerRadius="7" BorderBrush="{DynamicResource PrimaryHueMidBrush}" BorderThickness="6" Grid.Row="1" Grid.Column="5">
+                <StackPanel Name="Odbijeno_stek" Orientation="Vertical" Background="White"></StackPanel>
+            </Border>
+            <Border  CornerRadius="7" BorderBrush="{DynamicResource PrimaryHueMidBrush}" BorderThickness="6" Grid.Row="1" Grid.Column="6">
+                <StackPanel Name="Prihvaceno_stek" Orientation="Vertical" Background="White"></StackPanel>
+            </Border>
+
+        </Grid>
+    </Grid>
+</Window>

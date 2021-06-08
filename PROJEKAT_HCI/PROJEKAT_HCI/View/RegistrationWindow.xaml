@@ -3,6 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:PROJEKAT_HCI.View"
         mc:Ignorable="d"
         xmlns:apex="clr-namespace:Apex.Controls;assembly=Apex"
@@ -40,7 +41,7 @@
 
 
     </Window.Resources>
-    <Grid Background="MediumPurple">
+    <Grid Background="White">
         <Grid.RowDefinitions >
             <RowDefinition  Height="15*" />
             <RowDefinition Height="85*" />
@@ -51,53 +52,69 @@
             <ColumnDefinition Width="85*" />
         </Grid.ColumnDefinitions>
 
-        <Button  Grid.Column="0" Grid.Row="0" Background="Red">Vratite se nazad</Button>
-        <Label  Grid.Column="1" Grid.Row="0"  Background="Purple" VerticalContentAlignment="Center" HorizontalContentAlignment="Center">Registracija</Label>
-        <StackPanel Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"  HorizontalAlignment="Center" VerticalAlignment="Center">
-            <apex:ApexGrid Rows="auto,auto" Columns="auto,auto" Margin="150,0,0,0">
-                <Label Content="Ime" HorizontalAlignment="left" VerticalAlignment="Top" Foreground="Black" FontSize="15" Grid.RowSpan="2"/>
-                <TextBox Name="ime" Style="{StaticResource Textbox1}"  Margin="150,8,0,0"></TextBox>
-            </apex:ApexGrid>
-            <apex:ApexGrid Rows="auto,auto" Columns="auto,auto" Margin="150,0,0,0">
+        <Label Background="{DynamicResource PrimaryHueMidBrush}" Grid.ColumnSpan="4" Foreground="White" FontSize="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="Registracija"/>
 
-                <Label Content="Prezime" HorizontalAlignment="left" VerticalAlignment="Top" Foreground="Black" FontSize="15" Grid.RowSpan="2"/>
-                <TextBox Name="prezime"  Style="{StaticResource Textbox1}" Margin="150,8,0,0"></TextBox>
+        <Button Click="Nazad_Button_Click"  Foreground="White" Background="Red" FontSize="20" Height="Auto" Content="Nazad"/>
+        <StackPanel  HorizontalAlignment="Center" VerticalAlignment="Center" Grid.ColumnSpan="2" Height="356" Margin="48,0,63,0" Width="681" Grid.Row="1">
+            <TextBox
+                    Name="Ime"
+                    FontSize="11"
+                    materialDesign:HintAssist.HelperText="Unesite ime"
+                    Foreground="{DynamicResource PrimaryHueDarkBrush}"
+                    materialDesign:HintAssist.IsFloating="True"
+                    Margin="50,0,50,5" Height="35" />
 
-            </apex:ApexGrid>
-            <apex:ApexGrid Rows="auto,auto" Columns="auto,auto" Margin="150,0,0,0">
-                <Label Content="Email" HorizontalAlignment="left" VerticalAlignment="Top" Foreground="Black" FontSize="15" Grid.RowSpan="2"/>
-                <TextBox Name="email"   Style="{StaticResource Textbox1}" Margin="150,8,0,0"></TextBox>
+            <TextBox
+                FontSize="11"
+                    Name="Prezime"
+                    materialDesign:HintAssist.HelperText="Unesite prezime"
+                    Foreground="{DynamicResource PrimaryHueDarkBrush}"
+                    materialDesign:HintAssist.IsFloating="True"
+                    Margin="50,0,50,5" Height="35" />
+            <TextBox
+                FontSize="11"
+                    Name="Email"
+                    materialDesign:HintAssist.HelperText="Unesite E-mail"
+                    Foreground="{DynamicResource PrimaryHueDarkBrush}"
+                    materialDesign:HintAssist.IsFloating="True"
+                    Margin="50,0,50,5" Height="35" />
+            <TextBox
+                FontSize="11"
+                    Name="BrojTelefona"
+                    materialDesign:HintAssist.HelperText="Unesite broj telefona"
+                    Foreground="{DynamicResource PrimaryHueDarkBrush}"
+                    materialDesign:HintAssist.IsFloating="True"
+                    Margin="50,0,50,5" Height="35" />
+            <TextBox
+                FontSize="11"
+                    Name="Username"
+                    materialDesign:HintAssist.HelperText="Unesite korisnicko ime"
+                    Foreground="{DynamicResource PrimaryHueDarkBrush}"
+                    materialDesign:HintAssist.IsFloating="True"
+                    Margin="50,0,50,5" Height="35" />
 
-            </apex:ApexGrid>
-            <apex:ApexGrid Rows="auto,auto" Columns="auto,auto" Margin="150,0,0,0">
-                <Label Content="Broj telefona" HorizontalAlignment="left" VerticalAlignment="Top" Foreground="Black" FontSize="15" Grid.RowSpan="2"/>
-                <TextBox Name="brojTelefona"  Style="{StaticResource Textbox1}" Margin="150,8,0,0"></TextBox>
+            <PasswordBox
+                FontSize="11"
+                    Name="Password"
+                    materialDesign:HintAssist.HelperText="Unesite lozinku"
+                    Foreground="{DynamicResource PrimaryHueDarkBrush}"
+                    materialDesign:HintAssist.IsFloating="True"
+                    Margin="50,0,50,5" Height="35" />
 
-            </apex:ApexGrid>
-            <apex:ApexGrid Rows="auto,auto" Columns="auto,auto" Margin="150,0,0,0">
-                <Label Content="Korisnicko ime" HorizontalAlignment="left" VerticalAlignment="Top" Foreground="Black" FontSize="15" Grid.RowSpan="2"/>
-                <TextBox Name="username"   Style="{StaticResource Textbox1}" Margin="150,8,0,0"></TextBox>
-            </apex:ApexGrid>
-
-            <apex:ApexGrid Rows="auto,auto" Columns="auto,auto" Margin="150,0,0,0">
-                <Label Content="Sifra" HorizontalAlignment="left" VerticalAlignment="Top" Foreground="Black" FontSize="15" Grid.RowSpan="2"/>
-                <TextBox Name="password"  Style="{StaticResource Textbox1}" Margin="150,8,0,0"></TextBox>
-            </apex:ApexGrid>
-
-            <apex:ApexGrid Rows="auto,auto" Columns="auto,auto" Margin="150,0,0,0">
-                <Label Content="Potvrdite sifru" HorizontalAlignment="left" VerticalAlignment="Top" Foreground="Black" FontSize="15" Grid.RowSpan="2"/>
-                <TextBox Name="againPassword"   Style="{StaticResource Textbox1}" Margin="150,8,0,0"></TextBox>
-            </apex:ApexGrid>
+            <PasswordBox
+                FontSize="11"
+                    Name="PasswordPotvrda"
+                    materialDesign:HintAssist.HelperText="Potvrdite lozinku"
+                    Foreground="{DynamicResource PrimaryHueDarkBrush}"
+                    materialDesign:HintAssist.IsFloating="True"
+                    Margin="50,0,50,5" Height="35" />
 
 
 
 
 
-            <StackPanel Orientation="Horizontal" Margin="10,10,0,0">
-                <Button Click="odustao_Click" Name="odustao" Content="Odustani" Width="80" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" Margin="116,0,136,0"  />
-                <Button Click="registruj_Click" x:Name="registruj" Content="Registruj se" Width="80" Margin="116,0,136,0"/>
 
-            </StackPanel>
+            <Button Click="registruj_Click" x:Name="registruj" Content="Registruj se" Width="500" Margin="90,20,91,10" Height="45"/>
 
         </StackPanel>
 

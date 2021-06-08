@@ -41,12 +41,6 @@
     <Reference Include="Apex, Version=1.5.0.0, Culture=neutral, PublicKeyToken=98d06957926c086d, processorArchitecture=MSIL">
       <HintPath>..\packages\Apex.1.5.0\lib\net40\Apex.dll</HintPath>
     </Reference>
-    <Reference Include="BespokeFusion, Version=3.1.3.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\MaterialMessageBox.4.0.2\lib\net472\BespokeFusion.dll</HintPath>
-    </Reference>
-    <Reference Include="Dragablz, Version=0.0.3.223, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Dragablz.0.0.3.223\lib\net45\Dragablz.dll</HintPath>
-    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -59,12 +53,15 @@
     <Reference Include="MaterialDesignThemes.Wpf, Version=4.1.0.2556, Culture=neutral, PublicKeyToken=df2a72020bd7962a, processorArchitecture=MSIL">
       <HintPath>..\packages\MaterialDesignThemes.4.1.0\lib\net452\MaterialDesignThemes.Wpf.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Xaml.Behaviors, Version=1.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Xaml.Behaviors.Wpf.1.1.31\lib\net45\Microsoft.Xaml.Behaviors.dll</HintPath>
+    <Reference Include="ShowMeTheXAML, Version=2.0.0.62, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ShowMeTheXAML.2.0.0\lib\net472\ShowMeTheXAML.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -74,23 +71,31 @@
     <Reference Include="System.Xaml">
       <RequiredTargetFramework>4.0</RequiredTargetFramework>
     </Reference>
+    <Reference Include="ToastNotifications, Version=2.5.1.0, Culture=neutral, PublicKeyToken=e89d9d7314a7c797, processorArchitecture=MSIL">
+      <HintPath>..\packages\ToastNotifications.2.5.1\lib\net40\ToastNotifications.dll</HintPath>
+    </Reference>
+    <Reference Include="ToastNotifications.Messages, Version=2.5.1.0, Culture=neutral, PublicKeyToken=e89d9d7314a7c797, processorArchitecture=MSIL">
+      <HintPath>..\packages\ToastNotifications.Messages.2.5.1\lib\net40\ToastNotifications.Messages.dll</HintPath>
+    </Reference>
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
+    <Reference Include="WPFCustomMessageBox, Version=1.0.7.39267, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\WPFCustomMessageBox.1.0.7\lib\WPFCustomMessageBox.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Model\Config.cs" />
+    <Compile Include="Model\DataScript.cs" />
     <Compile Include="View\AdminWindow.xaml.cs">
       <DependentUpon>AdminWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\AzuriranjeKlijentaWindow.xaml.cs">
-      <DependentUpon>AzuriranjeKlijentaWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\AzuriranjeOrganizatoraWindow.xaml.cs">
-      <DependentUpon>AzuriranjeOrganizatoraWindow.xaml</DependentUpon>
+    <Compile Include="View\DetaljiZadatka.xaml.cs">
+      <DependentUpon>DetaljiZadatka.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\DodavanjeKlijentaWindow.xaml.cs">
       <DependentUpon>DodavanjeKlijentaWindow.xaml</DependentUpon>
@@ -101,11 +106,50 @@
     <Compile Include="View\DodavanjeSaradnikaWindow.xaml.cs">
       <DependentUpon>DodavanjeSaradnikaWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\EditProfile.xaml.cs">
+      <DependentUpon>EditProfile.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\KlijentWindow.xaml.cs">
+      <DependentUpon>KlijentWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\NovaProslavaWindow.xaml.cs">
+      <DependentUpon>NovaProslavaWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\NovaPonudaOrganizator.xaml.cs">
+      <DependentUpon>NovaPonudaOrganizator.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ObavestenjaWindow.xaml.cs">
+      <DependentUpon>ObavestenjaWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\OrganizacijaProslavaWindow.xaml.cs">
+      <DependentUpon>OrganizacijaProslavaWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\OrganizatorProslava.xaml.cs">
+      <DependentUpon>OrganizatorProslava.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\OrganizatorSaradnici.xaml.cs">
       <DependentUpon>OrganizatorSaradnici.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\OrganizatorSaradnikWindow.xaml.cs">
+      <DependentUpon>OrganizatorSaradnikWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\OrganizatorWindow.xaml.cs">
       <DependentUpon>OrganizatorWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\PregledPonudaWindow.xaml.cs">
+      <DependentUpon>PregledPonudaWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\PregledPonude.xaml.cs">
+      <DependentUpon>PregledPonude.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\PregledProslavaWindow.xaml.cs">
+      <DependentUpon>PregledProslavaWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\PregledProslave.xaml.cs">
+      <DependentUpon>PregledProslave.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\PregledZahtevaProslave.xaml.cs">
+      <DependentUpon>PregledZahtevaProslave.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\RegistrationWindow.xaml.cs">
       <DependentUpon>RegistrationWindow.xaml</DependentUpon>
@@ -126,11 +170,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\AzuriranjeKlijentaWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\AzuriranjeOrganizatoraWindow.xaml">
+    <Page Include="View\DetaljiZadatka.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -146,11 +186,61 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\EditProfile.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\KlijentWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\NovaProslavaWindow.xaml">
+    </Page>
+    <Page Include="View\NovaPonudaOrganizator.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ObavestenjaWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\OrganizacijaProslavaWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\OrganizatorProslava.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\OrganizatorSaradnici.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\OrganizatorSaradnikWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\OrganizatorWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\PregledPonudaWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\PregledPonude.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\PregledProslavaWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\PregledProslave.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\PregledZahtevaProslave.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -160,18 +250,18 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Menager\ManagerFactory.cs" />
+    <Compile Include="Database\ProjectDatabase.cs" />
     <Compile Include="Model\Admin.cs" />
     <Compile Include="Model\Klijent.cs" />
     <Compile Include="Model\Korisnik.cs" />
     <Compile Include="Model\Obavestenje.cs" />
     <Compile Include="Model\Organizator.cs" />
     <Compile Include="Model\Ponuda.cs" />
-    <Compile Include="Model\Predlog.cs" />
+    <Compile Include="Model\PredlogProslave.cs" />
     <Compile Include="Model\Proslava.cs" />
     <Compile Include="Model\Saradnik.cs" />
     <Compile Include="Model\Zadatak.cs" />
-    <Compile Include="Model\Zahtev.cs" />
+    <Compile Include="Model\ZahtevProslave.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -198,7 +288,26 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Res\Images\default.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Res\Images\accept.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Res\Images\klijentSlika1.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Res\Images\comment.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

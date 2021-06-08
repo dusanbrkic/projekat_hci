@@ -12,60 +12,83 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Drawing;
-using System.Collections.ObjectModel;
-using PROJEKAT_HCI.Model;
-using PROJEKAT_HCI.MENAGER;
-using BespokeFusion;
+using Brushes = System.Windows.Media.Brushes;
+using Color = System.Windows.Media.Color;
 
 namespace PROJEKAT_HCI.View
 {
     public partial class AdminWindow : Window
     {
-         public ObservableCollection<Klijent> Klijenti
-        {
-            get;
-            set;
-        }
-
-        public MainWindow mw { get; set; }
-        public ObservableCollection<Organizator> Organizatori
-        {
-            get;
-            set;
-        }
-
         public AdminWindow()
         {
-            
             InitializeComponent();
-            this.DataContext = this;
-            
-           
-            using (var db = new ManagerFactory())
-            {
+            OrganizatoriTable.Visibility = Visibility.Visible;
+            KlijentiTable.Visibility = Visibility.Hidden;
+            SaradniciTable.Visibility = Visibility.Hidden;
+            OrganizatoriBtn.Background =  new SolidColorBrush(Color.FromRgb(203, 159, 237));
+            DodavanjeKlijentaBtn.IsEnabled = false;
+            DodavanjeKlijentaBtn.Visibility = Visibility.Hidden;
+            DodavanjeSaradnikaBtn.IsEnabled = false;
+            DodavanjeSaradnikaBtn.Visibility = Visibility.Hidden;
+        }
 
-                Klijenti = new ObservableCollection<Klijent>((from k in db.klijenti select k).ToList());
-                Organizatori = new ObservableCollection<Organizator>((from k in db.organizatori select k).ToList());
+        private void OrganizatoriBtn_Click(object sender, RoutedEventArgs e)
+        {
+            DodavanjeOrganizatoraBtn.IsEnabled = true;
+            DodavanjeOrganizatoraBtn.Visibility = Visibility.Visible;
+            DodavanjeKlijentaBtn.IsEnabled = false;
+            DodavanjeKlijentaBtn.Visibility = Visibility.Hidden;
+            DodavanjeSaradnikaBtn.IsEnabled = false;
+            DodavanjeSaradnikaBtn.Visibility = Visibility.Hidden;
 
-
-            }
-
-
-
-
-            
+            Button btn = sender as Button;
+            btn.Background = new SolidColorBrush(Color.FromRgb(203, 159, 237));
+            SaradniciBtn.Background = Brushes.Purple;
+            KlijentiBtn.Background = Brushes.Purple;
+            OrganizatoriTable.Visibility = Visibility.Visible;
+            KlijentiTable.Visibility = Visibility.Hidden;
+            SaradniciTable.Visibility = Visibility.Hidden;
             
         }
-        
 
-       
+        private void KlijentiBtn_Click(object sender, RoutedEventArgs e)
+        {
+            DodavanjeKlijentaBtn.IsEnabled = true;
+            DodavanjeKlijentaBtn.Visibility = Visibility.Visible;
+            DodavanjeOrganizatoraBtn.IsEnabled = false;
+            DodavanjeOrganizatoraBtn.Visibility = Visibility.Hidden;
+            DodavanjeSaradnikaBtn.IsEnabled = false;
+            DodavanjeSaradnikaBtn.Visibility = Visibility.Hidden;
+            Button btn = sender as Button;
+            btn.Background = new SolidColorBrush(Color.FromRgb(203, 159, 237));
+            SaradniciBtn.Background = Brushes.Purple;
+            OrganizatoriBtn.Background = Brushes.Purple;
+            OrganizatoriTable.Visibility = Visibility.Hidden;
+            KlijentiTable.Visibility = Visibility.Visible;
+            SaradniciTable.Visibility = Visibility.Hidden;
+        }
 
-       
+        private void SaradniciBtn_Click(object sender, RoutedEventArgs e)
+        {
+            DodavanjeKlijentaBtn.IsEnabled = false;
+            DodavanjeKlijentaBtn.Visibility = Visibility.Hidden;
+            DodavanjeOrganizatoraBtn.IsEnabled = false;
+            DodavanjeOrganizatoraBtn.Visibility = Visibility.Hidden;
+            DodavanjeSaradnikaBtn.IsEnabled = true;
+            DodavanjeSaradnikaBtn.Visibility = Visibility.Visible;
+            Button btn = sender as Button;
+            btn.Background = new SolidColorBrush(Color.FromRgb(203, 159, 237));
+            OrganizatoriBtn.Background = Brushes.Purple;
+            KlijentiBtn.Background = Brushes.Purple;
+            OrganizatoriTable.Visibility = Visibility.Hidden;
+            KlijentiTable.Visibility = Visibility.Hidden;
+            SaradniciTable.Visibility = Visibility.Visible;
+        }
 
         private void OdjavaBtn_Click(object sender, RoutedEventArgs e)
         {
             
-            
+            MainWindow mw = new MainWindow();
             mw.Show();
             this.Close();
 
@@ -78,137 +101,14 @@ namespace PROJEKAT_HCI.View
 
         }
 
-        
+        private void DodavanjeOrganizatoraBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
 
         private void DodavanjeKlijentaBtn_Click(object sender, RoutedEventArgs e)
         {
-            DodavanjeKlijentaWindow dw = new DodavanjeKlijentaWindow();
-            dw.ShowDialog();
-            Klijent tmp = dw.Ret;
-            if (tmp == null)
-                return;
-            
 
-            /*using (var db = new ManagerFactory())
-            {
-                db.klijenti.Add(tmp);
-                db.SaveChanges();
-            }*/
-
-            Klijenti.Add(tmp);
-
-            
-        }
-
-        private void KlijentiTable_AutoGeneratingColumn(object sender, DataGridAutoGeneratingColumnEventArgs e)
-        {
-            if (e.PropertyName == "Id")
-                e.Cancel = true;
-
-            if (e.PropertyName == "Password")
-                e.Cancel = true;
-
-            if (e.PropertyName == "BrojTelefona")
-                e.Column.Header = "Broj telefona";
-
-            if (e.PropertyName == "Username")
-                e.Column.Header = "Korisničko ime";
-
-
-        }
-
-        private void AzurirajKlijentaBtn_Click(object sender, RoutedEventArgs e)
-        {
-            Klijent k = (Klijent) KlijentiTable.SelectedItem;
-            if (k == null)
-            {
-                MaterialMessageBox.Show("Odaberite klijenta iz tabele", "Obavještenje", true);
-
-                
-                return;
-            }
-                
-
-            AzuriranjeKlijentaWindow az = new AzuriranjeKlijentaWindow(k);
-            az.ShowDialog();
-
-            var k2 = Klijenti.FirstOrDefault(i => i.Id == k.Id);
-            using (var db = new ManagerFactory())
-            {
-                var item = db.klijenti.First(i => i.Id == k.Id);
-                k2.Ime = item.Ime;
-                k2.Prezime = item.Prezime;
-                k2.BrojTelefona = item.BrojTelefona;
-                k2.Email = item.Email;
-                k2.Username = item.Username;
-                
-            }
-
-        }
-
-        private void OrganizatoriTable_AutoGeneratingColumn(object sender, DataGridAutoGeneratingColumnEventArgs e)
-        {
-            if (e.PropertyName == "Id")
-                e.Cancel = true;
-
-            if (e.PropertyName == "Password")
-                e.Cancel = true;
-
-            if (e.PropertyName == "BrojTelefona")
-                e.Column.Header = "Broj telefona";
-
-            if (e.PropertyName == "Username")
-                e.Column.Header = "Korisničko ime";
-
-        }
-
-        private void DodavanjeOrganizatoraBtn_Click(object sender, RoutedEventArgs e)
-        {
-            DodavanjeOrganizatoraWindow dw = new DodavanjeOrganizatoraWindow();
-            dw.ShowDialog();
-            Organizator tmp = dw.Ret;
-            if (tmp == null)
-                return;
-
-
-           
-
-            Organizatori.Add(tmp);
-        }
-
-        private void AzurirajOrganizatoraBtn_Click(object sender, RoutedEventArgs e)
-        {
-            Organizator k = (Organizator) OrganizatoriTable.SelectedItem;
-            if (k == null)
-            {
-                MaterialMessageBox.Show("Odaberite organizatora iz tabele", "Obavještenje", true);
-                return;
-            }
-
-
-            AzuriranjeOrganizatoraWindow az = new AzuriranjeOrganizatoraWindow(k);
-            az.ShowDialog();
-
-            var k2 = Organizatori.FirstOrDefault(i => i.Id == k.Id);
-            using (var db = new ManagerFactory())
-            {
-                var item = db.organizatori.First(i => i.Id == k.Id);
-                k2.Ime = item.Ime;
-                k2.Prezime = item.Prezime;
-                k2.BrojTelefona = item.BrojTelefona;
-                k2.Email = item.Email;
-                k2.Username = item.Username;
-
-            }
-        }
-
-        
-
-        private void Odjava_Click(object sender, RoutedEventArgs e)
-        {
-            this.Close();
-            MainWindow mw = new MainWindow();
-            mw.ShowDialog();
         }
     }
 }

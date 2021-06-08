@@ -1,0 +1,197 @@
+﻿<Window x:Class="PROJEKAT_HCI.View.KlijentWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PROJEKAT_HCI.View"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:smtx="clr-namespace:ShowMeTheXAML;assembly=ShowMeTheXAML"
+        mc:Ignorable="d"
+        Title="KlijentWindow"
+        Height="450"
+        Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition Width="60*"></ColumnDefinition>
+            <ColumnDefinition Width="150*"></ColumnDefinition>
+            <ColumnDefinition Width="150*"></ColumnDefinition>
+            <ColumnDefinition Width="150*"></ColumnDefinition>
+            <ColumnDefinition Width="60*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50*"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="245*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Label Content="Glavna stranica"
+               Foreground="White"
+               Grid.Row="0"
+               Grid.Column="0"
+               Grid.ColumnSpan="6"
+               FontSize="20"
+               Background="{DynamicResource PrimaryHueMidBrush}"
+               HorizontalContentAlignment="Center"
+               VerticalContentAlignment="Center"
+               Margin="0,0,0,0" />
+        <Button Name="UrediProfilBtn"
+                Grid.Column="1"
+                Grid.Row="0"
+                Background="{DynamicResource PrimaryHueMidBrush}"
+                Height="Auto"
+                HorizontalAlignment="Left"
+                Margin="0.4,0,0,0.4"
+                Width="82">
+            <Viewbox>
+                <materialDesign:PackIcon Kind="Account" />
+            </Viewbox>
+        </Button>
+        <Button Click="OdjavaBtn_Click"
+                Name="OdjavaBtn"
+                Grid.Column="6"
+                Grid.Row="0"
+                Background="{DynamicResource PrimaryHueMidBrush}"
+                Height="Auto">
+            <Viewbox>
+                <materialDesign:PackIcon Kind="Logout" />
+            </Viewbox>
+        </Button>
+       <!-- <ScrollViewer  Grid.Column="0"
+                       Grid.Row="2"
+                       Grid.RowSpan="2"
+                       Grid.ColumnSpan="6"
+                       VerticalScrollBarVisibility="Auto"
+                       HorizontalScrollBarVisibility="Auto">
+            <WrapPanel  Name="wrapper"
+                        HorizontalAlignment="Center">
+
+            </WrapPanel>
+        </ScrollViewer> -->
+        <ScrollViewer  Grid.Column="0"
+                       Grid.Row="2"
+                       Grid.RowSpan="2"
+                       Grid.ColumnSpan="6"
+                       VerticalScrollBarVisibility="Auto"
+                       HorizontalScrollBarVisibility="Auto">
+            <WrapPanel  Name="wrapper"
+                        HorizontalAlignment="Center">
+                <materialDesign:Card Width="200"
+                                     Height="300"
+                                     Margin="5 5 5 5">
+                    <StackPanel Orientation="Vertical">
+                        <Image Width="200"
+                               Height="220"
+                               Margin="5,5,-5,5"
+                               VerticalAlignment="Center"
+                               Stretch="UniformToFill"
+                               Source="/Res/Images/klijentSlika1.jpg" />
+                        <Button Margin="5 20 5 5"
+                                Width="200"
+                                Height="30"
+                                Content="Nova proslava"
+                                Click="NovaProslavaBtn_Click" />
+                    </StackPanel>
+                </materialDesign:Card>
+                <materialDesign:Card Width="200"
+                                     Height="300"
+                                     Margin="5 5 5 5">
+                    <StackPanel Orientation="Vertical">
+                        <Image Width="200"
+                               Height="220"
+                               Margin="5 5 5 5"
+                               VerticalAlignment="Center"
+                               Stretch="UniformToFill"
+                               Source="/Res/Images/klijentSlika1.jpg">
+                        </Image>
+                        <Button Margin="5 20 5 5"
+                                Click="PregledProslavaBtn_Click"
+                                Width="200"
+                                Height="30">
+                            Pregled proslava
+                        </Button>
+                    </StackPanel>
+                </materialDesign:Card>
+                <materialDesign:Card Width="200"
+                                     Height="300"
+                                     Margin="5 5 5 5">
+                    <StackPanel Orientation="Vertical">
+                        <Image Width="200"
+                               Height="220"
+                               Margin="5 5 5 5"
+                               VerticalAlignment="Center"
+                               Stretch="UniformToFill"
+                               Source="/Res/Images/klijentSlika1.jpg">
+                        </Image>
+                        <Button Margin="5 20 5 5"
+                                Width="200"
+                                Height="30">
+                            Pregled odrzanih proslava
+                        </Button>
+                    </StackPanel>
+                </materialDesign:Card>
+            </WrapPanel>
+        </ScrollViewer>
+        <!--<materialDesign:Card Background="{DynamicResource PrimaryHueLightBrush}"
+                             Foreground="{DynamicResource PrimaryHueLightForegroundBrush}"
+                             Grid.Column="2"
+                             Grid.Row="2"
+                             Grid.RowSpan="1"
+                             Padding="8"
+                             Margin="5 25 5 5">
+
+            <StackPanel VerticalAlignment="Bottom">
+                <Image Source="/Res/Images/accept.png"
+                       Height="140"
+                       Stretch="UniformToFill"
+                       Margin="5 5 50 5" />
+                <Button VerticalAlignment="Bottom"
+                        FontSize="16"
+                        Content="Nova proslava"
+                        Click="NovaProslavaBtn_Click" />
+            </StackPanel>
+        </materialDesign:Card>
+        <materialDesign:Card Background="{DynamicResource PrimaryHueLightBrush}"
+                             Foreground="{DynamicResource PrimaryHueLightForegroundBrush}"
+                             Grid.Column="3"
+                             Grid.Row="2"
+                             Grid.RowSpan="1"
+                             Padding="8"
+                             Margin="5 25 5 5">
+            <StackPanel VerticalAlignment="Bottom">
+                <Image  Source="/Res/Images/klijentSlika1.jpg"
+                       Stretch="Fill"
+                       Margin="5 5 5 20"
+                        Height="150" />
+                <Button VerticalAlignment="Bottom"
+                        Click="PregledProslavaBtn_Click"
+                        FontSize="16"
+                        Content="Pregled proslava" />
+            </StackPanel>
+        </materialDesign:Card>
+        <materialDesign:Card Background="{DynamicResource PrimaryHueLightBrush}"
+                             Foreground="{DynamicResource PrimaryHueLightForegroundBrush}"
+                             Grid.Column="4"
+                             Grid.Row="2"
+                             Grid.RowSpan="1"
+                             Padding="8"
+                             Margin="5 25 5 5">
+            <StackPanel VerticalAlignment="Bottom">
+                <Image Source="/Res/Images/accept.png"
+                       Height="133"
+                       Stretch="Fill"
+                       Margin="0,5" />
+                <Button VerticalAlignment="Bottom"
+                        Click="PregledPonudaBtn_Click"
+                        FontSize="16"
+                        Content="Pregled Ponuda" />
+            </StackPanel>
+        </materialDesign:Card> -->
+
+        <!-- <Image Margin="11.8,10,4.4,35" Grid.Column="1" RenderTransformOrigin="0.534,0.506" Grid.RowSpan="4" d:IsHidden="True">
+            <Image.Source>
+                <BitmapImage  UriSource="/Res/Images/proslava-18-rodjendana.jpg" BaseUri="/Res/Images/proslava-18-rodjendana.jpg" />
+            </Image.Source>
+        </Image> -->
+
+    </Grid>
+</Window>

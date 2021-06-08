@@ -1,0 +1,115 @@
+﻿<Window x:Class="PROJEKAT_HCI.View.PregledPonude"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PROJEKAT_HCI.View" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        Title="Pregled ponude proslave" Height="450" Width="800">
+    <Window.Resources>
+        <ResourceDictionary>
+            <BitmapImage x:Key="accept" UriSource="/Res/Images/accept.png">
+
+            </BitmapImage>
+            <BitmapImage x:Key="decline" UriSource="/Res/Images/decline.png">
+
+            </BitmapImage>
+            <BitmapImage x:Key="comment" UriSource="/Res/Images/comment.png">
+
+            </BitmapImage>
+
+        </ResourceDictionary>
+
+
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="271" />
+            <RowDefinition Height="50" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="50"></ColumnDefinition>
+            <ColumnDefinition Width="225*"></ColumnDefinition>
+            <ColumnDefinition Width="225*"></ColumnDefinition>
+            <ColumnDefinition Width="40*"></ColumnDefinition>
+            <ColumnDefinition Width="40*"></ColumnDefinition>
+            <ColumnDefinition Width="40*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Label Content="Ponuda:" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="6" Background="Purple" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="0,0,0,0.6"/>
+        <Label Content="Opis Ponude:" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" VerticalContentAlignment="Center"/>
+        <Button Name="PrihvatiPonuduBtn" Grid.Column="3" Grid.Row="1" Background="Transparent"  BorderThickness="0"  Foreground="Green">
+            <Viewbox>
+                <materialDesign:PackIcon Kind="Check" />
+            </Viewbox>
+        </Button>
+        <Button Name="OdbijPonuduBtn" Grid.Column="4" Grid.Row="1" Background="Transparent"  BorderThickness="0" Foreground="Red" >
+            <Viewbox>
+                <materialDesign:PackIcon Kind="Close" />
+            </Viewbox>
+        </Button>
+        <Button Name="KomentarPonuduBtn" Grid.Column="5" Grid.Row="1" Background="Transparent"  BorderThickness="0" Foreground="LightGray" >
+            <Viewbox>
+                <materialDesign:PackIcon Kind="Comment" />
+            </Viewbox>
+        </Button>
+        <TextBox Name="OpisProslave" Margin="100,5,25,5"  Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" IsReadOnly="True"/>
+        <DataGrid Name="ponudaTable"
+                  Margin="10,10,10,50"
+                  ItemsSource="{Binding Path=Ponude}"
+                  IsReadOnly="True"
+                  Grid.Row="2" Grid.Column="1" HorizontalAlignment="Center" Grid.RowSpan="3" Grid.ColumnSpan="5"
+                    ScrollViewer.CanContentScroll="True" 
+              ScrollViewer.VerticalScrollBarVisibility="Visible"
+              ScrollViewer.HorizontalScrollBarVisibility="Auto" BorderThickness="3">
+            <DataGrid.Columns>
+             <!--   <DataGridTextColumn Header="Saradnik" Width="20*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Cena" Width="20*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Zadatak Saradnika" Width="20*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Opis" Width="20*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Postavi Odgovor"
+                                    Width="20*" /> -->
+
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <Button Margin="5 5 5 5"
+                                        Background="White"
+                                        BorderThickness="0"
+                                        Foreground="Green"
+                                        Click="ShowHideDetails">
+                                    <Viewbox>
+                                        <materialDesign:PackIcon Kind="Check" />
+                                    </Viewbox>
+                                </Button>
+                                <Button Margin="5 5 5 5" Background="White" BorderThickness="0" Foreground="Red"
+                                        Click="ShowHideDetails">
+                                    <Viewbox>
+                                        <materialDesign:PackIcon Kind="Close" />
+                                    </Viewbox>
+                                </Button>
+                                <Button Margin="5 5 5 5"
+                                        Background="White"
+                                        BorderThickness="0"
+                                        Foreground="LightGray"
+                                        Click="ShowHideDetails">
+                                    <Viewbox>
+                                        <materialDesign:PackIcon Kind="Comment" />
+                                    </Viewbox>
+                                </Button>
+                            </StackPanel>
+
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Label Content="Ukupna cena:" Grid.Row="3" Grid.Column="1" VerticalContentAlignment="Center" Margin ="10,5,5,0 "/>
+        <Label Content="Cena" Grid.Row="3" Grid.Column="1" VerticalContentAlignment="Center" Margin ="100,5,5,0 "/>
+        <Button Click="NazadBtn_Click" Name="NazadBtn" Grid.Column="2" Grid.Row="3" Content="Nazad" Background="LightGray" Margin="207,10,42.73,8" Foreground="Black" Grid.ColumnSpan="2"/>
+        <Button Name="PotvrdiZahtevBtn" Grid.Column="3" Grid.Row="3" Content="Potvrdi zahtev" Background="LightBlue" Margin="35,10,9.73,8" Grid.ColumnSpan="3" Foreground="Black"/>
+    </Grid>
+</Window>
