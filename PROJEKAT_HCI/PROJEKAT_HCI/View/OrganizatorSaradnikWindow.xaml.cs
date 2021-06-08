@@ -75,7 +75,7 @@ namespace PROJEKAT_HCI.View
 
                     TextBox tb = new TextBox()
                     {
-                        IsEnabled = false,
+                        IsReadOnly = true,
                         TextWrapping = TextWrapping.Wrap,
                         Text = p.Opis + ", " + p.Cena + " dinara.",
                         Width = 330,

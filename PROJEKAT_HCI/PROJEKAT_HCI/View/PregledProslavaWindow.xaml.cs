@@ -41,7 +41,7 @@ namespace PROJEKAT_HCI.View
                     card.Margin = new Thickness(5, 5, 5, 5);
                     TextBox tb = new TextBox()
                     {
-                        IsEnabled = false,
+                        IsReadOnly = true,
                         TextWrapping = TextWrapping.Wrap,
                         Text = p.Naziv,
                         Width = 200,

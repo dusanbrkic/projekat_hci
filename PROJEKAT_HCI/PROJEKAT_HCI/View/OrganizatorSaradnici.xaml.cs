@@ -49,7 +49,7 @@ namespace PROJEKAT_HCI.View
 
                     TextBox tb = new TextBox()
                     {
-                        IsEnabled = false,
+                        IsReadOnly = true,
                         TextWrapping = TextWrapping.Wrap,
                         Text = s.Naziv,
                         Width = 330,

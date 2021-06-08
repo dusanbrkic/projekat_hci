@@ -61,8 +61,18 @@ namespace PROJEKAT_HCI.View
                 foreach(Zadatak z in zadaci)
                 {
                     Card card = new Card();
+                    card.Margin = new Thickness(5, 5, 5, 5);
+                    card.Height = 50;
+                    card.BorderThickness = new Thickness(1,1,1,1);
+                    card.BorderBrush = Brushes.Black;
                     card.MouseLeftButtonDown += OtpustenMis;
-                    card.Content = z.Naziv;
+                    card.Content = new TextBlock() {
+                        Text = z.Naziv,
+                        TextAlignment = TextAlignment.Center,
+                        VerticalAlignment = VerticalAlignment.Center
+                    };
+                    card.VerticalContentAlignment = VerticalAlignment.Center;
+                    card.HorizontalContentAlignment = System.Windows.HorizontalAlignment.Center;
                     card.Tag = z;
                     card.MouseDoubleClick += Card_Double_Click;
                     switch (z.Status)
@@ -97,10 +107,12 @@ namespace PROJEKAT_HCI.View
         public void Card_Double_Click(object sender, MouseButtonEventArgs e)
         {
             Card c = (Card)sender;
+            if (this.SelektovanaKartica!=null)
+                this.SelektovanaKartica.Background = Brushes.Transparent;
             this.SelektovanaKartica = c;
             this.SelektovanZadatak = (Zadatak)c.Tag;
             Console.WriteLine(c.Content);
-            //TODO oznaciti da je kartica selektovana a proslu selektovanu vratiti na staro
+            this.SelektovanaKartica.Background = Brushes.Aqua;
             Detalji.IsEnabled = true;
         }
 

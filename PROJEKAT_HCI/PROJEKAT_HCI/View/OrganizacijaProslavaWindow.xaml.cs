@@ -67,7 +67,7 @@ namespace PROJEKAT_HCI.View
 
                     TextBox tb = new TextBox()
                     {
-                        IsEnabled = false,
+                        IsReadOnly = true,
                         TextWrapping = TextWrapping.Wrap,
                         Text = proslava.Naziv + "\nDatum odrzavanja: " + proslava.DatumOdrzavanja,
                         Width = 330,

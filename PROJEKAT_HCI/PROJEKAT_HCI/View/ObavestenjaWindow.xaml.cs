@@ -37,6 +37,7 @@ namespace PROJEKAT_HCI.View
 
                var obavestenja = from obavestenje in db.Obavestenja
                                where obavestenje.PredlogProslave.Proslava.Organizator.Id == Organizator.Id
+                               && obavestenje.Procitano == false
                                orderby obavestenje.TimeStamp descending
                                select obavestenje;
 
@@ -63,19 +64,19 @@ namespace PROJEKAT_HCI.View
                     };
 
                     TextBox tb = new TextBox() {
-                        IsEnabled = false,
                         TextWrapping = TextWrapping.Wrap,
                         Text = obavestenje.Sadrzaj + "\nProslava: " +
                             obavestenje.PredlogProslave.Proslava.Naziv + "\nVreme: " + obavestenje.TimeStamp,
                         Width = 330,
                         Height = 90,
-                        Margin = new Thickness(10,10,10,10),
+                        Margin = new Thickness(10, 10, 10, 10),
                         Foreground = new SolidColorBrush(Colors.Black),
                         TextAlignment = TextAlignment.Center,
                         FontSize = 16,
                         VerticalScrollBarVisibility = ScrollBarVisibility.Auto,
                         VerticalAlignment = VerticalAlignment.Stretch,
-                        AcceptsReturn = true
+                        AcceptsReturn = true,
+                        IsReadOnly = true
                     };
                     
 
