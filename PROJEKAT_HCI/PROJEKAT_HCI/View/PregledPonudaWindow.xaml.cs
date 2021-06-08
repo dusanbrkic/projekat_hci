@@ -25,7 +25,7 @@ namespace PROJEKAT_HCI.View
         private Klijent klijent { get; set; }
         public class Dugme : Button
         {
-            public Proslava Proslava { get; set; }
+            public Ponuda Ponuda { get; set; }
         }
         public PregledPonudaWindow(Klijent k)
         {
@@ -34,14 +34,14 @@ namespace PROJEKAT_HCI.View
             using (var db = new ProjectDatabase())
             {
                 //var proslave = (from p in db.Proslave where p.Klijent.Id == klijent.Id select p);
-                foreach(Proslava p in (from p in db.Proslave where p.Klijent.Id == klijent.Id select p).ToList())
+                foreach(Ponuda p in (from p in db.Ponude where p.Klijent.Id == klijent.Id select p).ToList())
                 {
                     Dugme b = new Dugme();
-                    b.Proslava = p;
+                    b.Ponuda = p;
                     b.Width = 200;
                     b.Height = 140;
                     b.Margin = new Thickness(20);
-                    b.Content = p.Naziv;
+                    b.Content = p.Opis;
                     wrapper.Children.Add(b);
                     b.Click += new RoutedEventHandler(Proslava_Btn_Click);
                 }
@@ -65,6 +65,12 @@ namespace PROJEKAT_HCI.View
         {
             PregledPonude pp = new PregledPonude();
             pp.Show();
+            this.Close();
+        }
+        private void NazadBtn_Click(object sender, RoutedEventArgs e)
+        {
+            KlijentWindow kw = new KlijentWindow(klijent);
+            kw.Show();
             this.Close();
         }
     }

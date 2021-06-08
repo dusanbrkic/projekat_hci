@@ -56,7 +56,7 @@ namespace PROJEKAT_HCI
             {
                 KlijentWindow kw = new KlijentWindow();
                 kw.Show();
-                kw.mw = this;
+                kw.Mw = this;
                 this.Hide();
             }
             using (var db = new ProjectDatabase()) {
@@ -84,7 +84,7 @@ namespace PROJEKAT_HCI
                 {
                     KlijentWindow kw = new KlijentWindow(k as Klijent);
                     kw.Show();
-                    kw.mw = this;
+                    kw.Mw = this;
                     this.Hide();
                 }
 

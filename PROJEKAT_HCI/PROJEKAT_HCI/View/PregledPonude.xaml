@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PROJEKAT_HCI.View" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="PregledPonude" Height="450" Width="800">
+        Title="Pregled ponude proslave" Height="450" Width="800">
     <Window.Resources>
         <ResourceDictionary>
             <BitmapImage x:Key="accept" UriSource="/Res/Images/accept.png">
@@ -22,11 +22,11 @@
 
 
     </Window.Resources>
-    <Grid Background="MediumPurple">
+    <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="50" />
             <RowDefinition Height="50" />
-            <RowDefinition Height="350*" />
+            <RowDefinition Height="271" />
             <RowDefinition Height="50" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
@@ -39,34 +39,72 @@
             <ColumnDefinition Width="*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <Label Content="Ponuda:" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="6" Background="Purple" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="0,0,0,0.6"/>
-        <Label Content="Ponuda:" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" VerticalContentAlignment="Center"/>
-        <Button Name="PrihvatiPonuduBtn" Grid.Column="3" Grid.Row="1" Background="Transparent"  BorderThickness="0"  >
+        <Label Content="Opis Ponude:" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" VerticalContentAlignment="Center"/>
+        <Button Name="PrihvatiPonuduBtn" Grid.Column="3" Grid.Row="1" Background="Transparent"  BorderThickness="0"  Foreground="Green">
             <Viewbox>
                 <materialDesign:PackIcon Kind="Check" />
             </Viewbox>
         </Button>
-        <Button Name="OdbijPonuduBtn" Grid.Column="4" Grid.Row="1" Background="Transparent"  BorderThickness="0"  >
+        <Button Name="OdbijPonuduBtn" Grid.Column="4" Grid.Row="1" Background="Transparent"  BorderThickness="0" Foreground="Red" >
             <Viewbox>
                 <materialDesign:PackIcon Kind="Close" />
             </Viewbox>
         </Button>
-        <Button Name="KomentarPonuduBtn" Grid.Column="5" Grid.Row="1" Background="Transparent"  BorderThickness="0"  >
+        <Button Name="KomentarPonuduBtn" Grid.Column="5" Grid.Row="1" Background="Transparent"  BorderThickness="0" Foreground="LightGray" >
             <Viewbox>
                 <materialDesign:PackIcon Kind="Comment" />
             </Viewbox>
         </Button>
-        <TextBox Margin="100,5,25,5"  Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" IsReadOnly="True"/>
-        <DataGrid Name="ponudaTable" Margin ="10,10,10,50 " Grid.Row="2" Grid.Column="1" HorizontalAlignment="Center" Grid.RowSpan="3" Grid.ColumnSpan="5"
+        <TextBox Name="OpisProslave" Margin="100,5,25,5"  Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" IsReadOnly="True"/>
+        <DataGrid Name="ponudaTable"
+                  Margin="10,10,10,50"
+                  ItemsSource="{Binding Path=Ponude}"
+                  IsReadOnly="True"
+                  Grid.Row="2" Grid.Column="1" HorizontalAlignment="Center" Grid.RowSpan="3" Grid.ColumnSpan="5"
                     ScrollViewer.CanContentScroll="True" 
               ScrollViewer.VerticalScrollBarVisibility="Visible"
-              ScrollViewer.HorizontalScrollBarVisibility="Auto">
+              ScrollViewer.HorizontalScrollBarVisibility="Auto" BorderThickness="3">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Saradnik" Width="20*"></DataGridTextColumn>
+             <!--   <DataGridTextColumn Header="Saradnik" Width="20*"></DataGridTextColumn>
                 <DataGridTextColumn Header="Cena" Width="20*"></DataGridTextColumn>
                 <DataGridTextColumn Header="Zadatak Saradnika" Width="20*"></DataGridTextColumn>
                 <DataGridTextColumn Header="Opis" Width="20*"></DataGridTextColumn>
-                <DataGridTextColumn Header="Postavi Odgovor" Width="20*">
-                </DataGridTextColumn>
+                <DataGridTextColumn Header="Postavi Odgovor"
+                                    Width="20*" /> -->
+
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <Button Margin="5 5 5 5"
+                                        Background="White"
+                                        BorderThickness="0"
+                                        Foreground="Green"
+                                        Click="ShowHideDetails">
+                                    <Viewbox>
+                                        <materialDesign:PackIcon Kind="Check" />
+                                    </Viewbox>
+                                </Button>
+                                <Button Margin="5 5 5 5" Background="White" BorderThickness="0" Foreground="Red"
+                                        Click="ShowHideDetails">
+                                    <Viewbox>
+                                        <materialDesign:PackIcon Kind="Close" />
+                                    </Viewbox>
+                                </Button>
+                                <Button Margin="5 5 5 5"
+                                        Background="White"
+                                        BorderThickness="0"
+                                        Foreground="LightGray"
+                                        Click="ShowHideDetails">
+                                    <Viewbox>
+                                        <materialDesign:PackIcon Kind="Comment" />
+                                    </Viewbox>
+                                </Button>
+                            </StackPanel>
+
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
         <Label Content="Ukupna cena:" Grid.Row="3" Grid.Column="1" VerticalContentAlignment="Center" Margin ="10,5,5,0 "/>

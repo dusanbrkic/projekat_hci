@@ -24,15 +24,17 @@
             <StackPanel VerticalAlignment="Top" Background="MediumPurple">
                 <Grid Margin="5">
                     <Label Content="Naziv proslave:"/>
-                    <TextBox Margin="100,0,50,0" />
+                    <TextBox Margin="100,0,50,0" Name="NazivProslave"/>
                 </Grid>
                 <Grid Margin="5">
                     <Label Content="Opis proslave:"/>
-                    <TextBox Margin="100,0,50,0" />
+                    <TextBox Margin="100,0,50,0"
+                             Name="OpisProslave" />
                 </Grid>
                 <Grid Margin="5">
                     <Label Content="Budzet:"/>
-                    <TextBox Margin="100,0,50,0" />
+                    <TextBox Margin="100,0,50,0"
+                             Name="Budzet" />
                 </Grid>
                 <Grid Margin="5">
                     <Label Content="Tema:"/>
