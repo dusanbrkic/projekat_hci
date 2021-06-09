@@ -33,19 +33,38 @@ namespace PROJEKAT_HCI.View
         {
 
             InitializeComponent();
-            Ponuda pt;
+            Ponuda pt = null;
             Saradnik sk;
+            //z.Ponuda = pt;
+
             using(var db = new ProjectDatabase())
             {
                 Zadatak t = db.Zadaci.Find(z.Id);
-                pt = db.Ponude.Find(t.Ponuda.Id);
-                sk = db.Saradnici.Find(pt.Saradnik.Id);
-                
+                if (t.Ponuda != null)
+                {
+                    pt = db.Ponude.Find(t.Ponuda.Id);
+                    sk = db.Saradnici.Find(pt.Saradnik.Id);
+                    z.Ponuda = pt;
+                    z.Ponuda.Saradnik = sk;
+                    if (pt == null)
+                    {
+                    
+                    }
+                    else
+                    {
+                        Ponuda_Text.Text = pt.Opis + ", " + pt.Cena + " dinara, " + pt.Saradnik.Naziv;
+                    }
+
+
+                }
+                else
+                {
+                    Ponuda_Text.Text = "Nije odabrana nijedna ponuda";
+
+                }
                 
             }
-            z.Ponuda = pt;
-            z.Ponuda.Saradnik = sk;
-
+            
             this.Zadatak = z;
             this.op = op;
             this.Search = "";
@@ -57,15 +76,8 @@ namespace PROJEKAT_HCI.View
             {
                 this.Editable = true;
             }
-            Ponuda p = z.Ponuda;
-            if (p == null)
-            {
-                Ponuda_Text.Text = "Nije odabrana nijedna ponuda";
-            }
-            else
-            {
-                Ponuda_Text.Text = p.Opis + ", " + p.Cena + " dinara, " + p.Saradnik.Naziv;
-            }
+            //Ponuda p = z.Ponuda;
+            
             Naziv_Zadatka.Text = z.Naziv;
             if (z.Opis == null)
             {
