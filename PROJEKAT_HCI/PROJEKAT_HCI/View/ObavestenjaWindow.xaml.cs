@@ -59,8 +59,16 @@ namespace PROJEKAT_HCI.View
                     b.Content = "POGLEDAJ";
                     b.Tag = obavestenje;
                     b.Click += (object sender, RoutedEventArgs e) => {
-                        obavestenje.Procitano = true;
+                        using (var database = new ProjectDatabase())
+                        {
+                            var ob = (from o in database.Obavestenja where o.Id == obavestenje.Id select o).FirstOrDefault();
+                            ob.Procitano = true;
+                            database.SaveChanges();
+                        }
                         //TODO otvoriti prozor organizovanja proslave
+                        var noviProzor = new OrganizatorProslava(OrganizatorWindow, obavestenje.PredlogProslave.Proslava);
+                        this.Close();
+                        noviProzor.Show();
                     };
 
                     TextBox tb = new TextBox() {
