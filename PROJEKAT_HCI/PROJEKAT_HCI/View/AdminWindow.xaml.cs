@@ -22,7 +22,12 @@ namespace PROJEKAT_HCI.View
 {
     public partial class AdminWindow : Window
     {
-         public ObservableCollection<Klijent> Klijenti
+        public ObservableCollection<Saradnik> Saradnici
+        {
+            get;
+            set;
+        }
+        public ObservableCollection<Klijent> Klijenti
         {
             get;
             set;
@@ -47,7 +52,7 @@ namespace PROJEKAT_HCI.View
 
                 Klijenti = new ObservableCollection<Klijent>((from k in db.Klijenti select k).ToList());
                 Organizatori = new ObservableCollection<Organizator>((from k in db.Organizatori select k).ToList());
-
+                Saradnici = new ObservableCollection<Saradnik>((from k in db.Saradnici select k).ToList());
 
             }
 
@@ -76,7 +81,11 @@ namespace PROJEKAT_HCI.View
         {
             DodavanjeSaradnikaWindow ds = new DodavanjeSaradnikaWindow();
             ds.ShowDialog();
+            Saradnik tmp = ds.Ret;
+            if (tmp == null)
+                return;
 
+            Saradnici.Add(tmp);
         }
 
         
@@ -210,6 +219,24 @@ namespace PROJEKAT_HCI.View
             this.Close();
             MainWindow mw = new MainWindow();
             mw.ShowDialog();
+        }
+
+        private void SaradniciTable_AutoGeneratingColumn(object sender, DataGridAutoGeneratingColumnEventArgs e)
+        {
+            if (e.PropertyName == "Id")
+                e.Cancel = true;
+
+            if (e.PropertyName == "Slike")
+                e.Cancel = true;
+
+            if (e.PropertyName == "Ponude")
+                e.Cancel = true;
+
+        }
+
+        private void AzuriranjeSaradnikaBtn_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

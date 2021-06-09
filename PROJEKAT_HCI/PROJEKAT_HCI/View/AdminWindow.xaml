@@ -65,8 +65,8 @@
                     <DataGrid x:Name="KlijentiTable" ItemsSource="{Binding Path=Klijenti}" AutoGeneratingColumn="KlijentiTable_AutoGeneratingColumn"  IsReadOnly="True" Margin ="10,10,10,50 " Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" Grid.RowSpan="3" >
                        
                     </DataGrid>
-                    <Button Name="AzurirajKlijentaBtn" Click="AzurirajKlijentaBtn_Click" Margin="7,7,7,7" HorizontalContentAlignment="Center" Grid.Row="3" Grid.Column="1" Width="130" Height="25" HorizontalAlignment="Left" VerticalAlignment="Bottom">Azuriraj klijenta</Button>
-                    <Button Name="DodavanjeKlijentaBtn" Click="DodavanjeKlijentaBtn_Click" HorizontalContentAlignment="Center" Margin="7,7,7,7" Grid.Row="3" Grid.Column="1" Width="130" Height="25" HorizontalAlignment="Right" VerticalAlignment="Bottom">Dodaj klijenta</Button>
+                    <Button Name="AzurirajKlijentaBtn" Click="AzurirajKlijentaBtn_Click" Margin="7,7,7,7" HorizontalContentAlignment="Center" Grid.Row="3" Grid.Column="1" Width="130" Height="30" HorizontalAlignment="Left" VerticalAlignment="Bottom">Azuriraj klijenta</Button>
+                    <Button Name="DodavanjeKlijentaBtn" Click="DodavanjeKlijentaBtn_Click" HorizontalContentAlignment="Center" Margin="7,7,7,7" Grid.Row="3" Grid.Column="1" Width="130" Height="30" HorizontalAlignment="Right" VerticalAlignment="Bottom">Dodaj klijenta</Button>
                 </Grid>
                
                 
@@ -76,24 +76,19 @@
             
             <TabItem Header="Saradnici">
                 <Grid>
-                    <DataGrid  Name="SaradniciTable" Margin ="10,10,10,50 " Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" Grid.RowSpan="3" >
-                        <DataGrid.Columns>
-                            <DataGridTextColumn  Header="Naziv" Width="20*"></DataGridTextColumn>
-                            <DataGridTextColumn   Header="Tip" Width="20*"></DataGridTextColumn>
-                            <DataGridTextColumn   Header="Lokacija" Width="20*"></DataGridTextColumn>
-                            <DataGridTextColumn   Header="Opis" Width="20*"></DataGridTextColumn>
-                            <DataGridTextColumn   Header="Lista ponuda" Width="20*"></DataGridTextColumn>
-
-
-                        </DataGrid.Columns>
+                    <DataGrid  ItemsSource="{Binding Path=Saradnici}" AutoGeneratingColumn="SaradniciTable_AutoGeneratingColumn"  IsReadOnly="True" Name="SaradniciTable" Margin ="10,10,10,50 " Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" Grid.RowSpan="3" >
+                        
 
                     </DataGrid>
 
-                    <Button Name="DodavanjeSaradnikaBtn" Click="DodavanjeSaradnikaBtn_Click" Margin="7" Grid.Row="3" Grid.Column="1" Width="100" Height="20" HorizontalAlignment="Right" VerticalAlignment="Bottom">Dodaj saradnike</Button>
-
+                    <Button Name="DodavanjeSaradnikaBtn" Click="DodavanjeSaradnikaBtn_Click" Margin="7,7,7,7" Grid.Row="3" Grid.Column="1" Width="150" Height="30" HorizontalAlignment="Right" VerticalAlignment="Bottom">Dodaj saradnike</Button>
+                    <Button Name="AzuriranjeSaradnikaBtn" Click="AzuriranjeSaradnikaBtn_Click" Margin="7,7,7,7" Grid.Row="3" Grid.Column="1" Width="150" Height="30" HorizontalAlignment="Left" VerticalAlignment="Bottom">Ažuriraj saradnika</Button>
 
                 </Grid>
                
+            </TabItem>
+            <TabItem Header="Ponude">
+                
             </TabItem>
 
 

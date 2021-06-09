@@ -48,17 +48,27 @@
         <StackPanel Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"  HorizontalAlignment="Center" VerticalAlignment="Center">
             
             <apex:ApexGrid Rows="auto,auto" Columns="auto,auto" Margin="150,0,0,0">
-                <Label Content="Naziv" HorizontalAlignment="left" VerticalAlignment="Top" Foreground="Black" FontSize="15" Grid.RowSpan="2"/>
+                <Label Content="Naziv" HorizontalAlignment="left" VerticalAlignment="Center" Foreground="Black" FontSize="15" Grid.RowSpan="2"/>
                 <TextBox Name="Naziv" Style="{StaticResource Textbox1}"  Margin="150,8,0,0"></TextBox>
             </apex:ApexGrid>
             <apex:ApexGrid Rows="auto,auto" Columns="auto,auto" Margin="150,0,0,0">
 
-                <Label Content="Tip" HorizontalAlignment="left" VerticalAlignment="Top" Foreground="Black" FontSize="15" Grid.RowSpan="2"/>
-                <TextBox Name="Tip"  Style="{StaticResource Textbox1}" Margin="150,8,0,0"></TextBox>
+                <Label  Content="Tip" HorizontalAlignment="left" VerticalAlignment="Center" Foreground="Black" FontSize="15" Grid.RowSpan="2"/>
+                <ComboBox Margin="150,20,20,0"
+                    x:Name="Tip"
+                    Style="{StaticResource MaterialDesignComboBox}" 
+                    
+                    HorizontalContentAlignment="Center"
+                    VerticalContentAlignment="Center"
+                    
+                    Width="256" Height="35" Background="White">
+                    <ComboBoxItem >RESTORAN</ComboBoxItem>
+                    <ComboBoxItem>POSLASTIČARNICA</ComboBoxItem>
+                </ComboBox>
 
             </apex:ApexGrid>
             <apex:ApexGrid Rows="auto,auto" Columns="auto,auto" Margin="150,0,0,0">
-                <Label Content="Lokacija" HorizontalAlignment="left" VerticalAlignment="Top" Foreground="Black" FontSize="15" Grid.RowSpan="2"/>
+                <Label Content="Lokacija" HorizontalAlignment="left" VerticalAlignment="Center" Foreground="Black" FontSize="15" Grid.RowSpan="2"/>
                 <TextBox Name="Lokacija"   Style="{StaticResource Textbox1}" Margin="150,8,0,0"></TextBox>
 
             </apex:ApexGrid>
@@ -71,6 +81,7 @@
 
 
                 <TextBox
+                        Name="Opis"
                         Style="{StaticResource MaterialDesignOutlinedTextBox}"
                         VerticalAlignment="Top"
                                         HorizontalAlignment="Right"
@@ -78,7 +89,7 @@
                         AcceptsReturn="True"
                         TextWrapping="Wrap"
                         VerticalScrollBarVisibility="Auto"
-                        materialDesign:HintAssist.Hint="This is a text area"  
+                        materialDesign:HintAssist.Hint="Opišite saradnika"  
                         Margin="100,10,10,10"
                     Background="White"
                          />
@@ -92,8 +103,8 @@
 
 
             <StackPanel Orientation="Horizontal" Margin="10,10,0,0">
-                <Button Click="odustao_Click" Name="odustao" Content="Odustani" Width="80" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" Margin="116,0,136,0"  />
-                <Button Click="registruj_Click" x:Name="Dodaj_saradnika" Content="Dodaj saradnika" Width="90" Margin="116,0,136,0"/>
+                <Button Click="odustao_Click" Name="odustao" Width="140" Content="Odustani"  Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" Margin="116,0,136,0"  />
+                <Button Click="Dodaj_saradnika_Click" x:Name="Dodaj_saradnika" Content="Dodaj saradnika" Width="140" Margin="116,0,136,0"/>
 
             </StackPanel>
 

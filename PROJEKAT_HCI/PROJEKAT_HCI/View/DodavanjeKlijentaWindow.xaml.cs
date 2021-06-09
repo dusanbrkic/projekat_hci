@@ -29,9 +29,16 @@ namespace PROJEKAT_HCI.View
         }
         private Klijent _klijent = null;
         public Klijent Ret { get { return _klijent; } set { _klijent = value; } }
-        private void registruj_Click(object sender, RoutedEventArgs e)
+        
+
+        private void odustao_Click(object sender, RoutedEventArgs e)
         {
-           /* if (username.Text == "" || password.Text == "" || ime.Text == "" || prezime.Text == "" || brojTelefona.Text == "")
+            this.Close();
+        }
+
+        private void dodajKlijenta_Click(object sender, RoutedEventArgs e)
+        {
+            /* if (username.Text == "" || password.Text == "" || ime.Text == "" || prezime.Text == "" || brojTelefona.Text == "")
             {
                 Console.WriteLine("Greska");
                 return;
@@ -47,7 +54,7 @@ namespace PROJEKAT_HCI.View
                 foreach (Klijent klijent in db.Klijenti)
                 {
                     //if (username.Text == klijent.Username)//vec postoji korisnik sa istim usernamemom
-                       // return;
+                    // return;
 
                 }
 
@@ -57,14 +64,9 @@ namespace PROJEKAT_HCI.View
                 db.Klijenti.Add(k);
                 db.SaveChanges();
             }
-            
+
             this.Close();
 
-        }
-
-        private void odustao_Click(object sender, RoutedEventArgs e)
-        {
-            this.Close();
         }
     }
 }
