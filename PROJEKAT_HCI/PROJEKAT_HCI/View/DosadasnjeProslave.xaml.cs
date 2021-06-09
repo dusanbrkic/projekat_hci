@@ -18,13 +18,15 @@ using PROJEKAT_HCI.Model;
 namespace PROJEKAT_HCI.View
 {
     /// <summary>
-    /// Interaction logic for OrganizacijaProslavaWindow.xaml
+    /// Interaction logic for DosadasnjeProslave.xaml
     /// </summary>
-    public partial class OrganizacijaProslavaWindow : Window
+    /// 
+    
+    public partial class DosadasnjeProslave : Window
     {
         public Organizator Organizator { get; set; }
         public Window OrganizatorWindow { get; set; }
-        public OrganizacijaProslavaWindow(Organizator o, Window ow)
+        public DosadasnjeProslave(Organizator o, Window ow)
         {
             InitializeComponent();
 
@@ -35,10 +37,10 @@ namespace PROJEKAT_HCI.View
             {
 
                 var proslave = from proslava in db.Proslave
-                                  where proslava.PredlogProslave.Proslava.Organizator.Id == Organizator.Id
-                                  && proslava.StatusProslave == StatusProslave.U_ORGANIZACIJI
-                                  orderby proslava.DatumOdrzavanja descending
-                                  select proslava;
+                               where proslava.PredlogProslave.Proslava.Organizator.Id == Organizator.Id
+                               && proslava.StatusProslave == StatusProslave.ORGANIZOVANO
+                               orderby proslava.DatumOdrzavanja descending
+                               select proslava;
 
                 if (proslave == null)
                     return;

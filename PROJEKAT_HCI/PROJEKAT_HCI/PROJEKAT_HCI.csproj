@@ -133,6 +133,9 @@
     <Compile Include="View\DodavanjeSaradnikaWindow.xaml.cs">
       <DependentUpon>DodavanjeSaradnikaWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\DosadasnjeProslave.xaml.cs">
+      <DependentUpon>DosadasnjeProslave.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\EditProfile.xaml.cs">
       <DependentUpon>EditProfile.xaml</DependentUpon>
     </Compile>
@@ -236,6 +239,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\DodavanjeSaradnikaWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\DosadasnjeProslave.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

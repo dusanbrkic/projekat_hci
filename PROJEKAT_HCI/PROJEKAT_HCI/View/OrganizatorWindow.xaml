@@ -43,7 +43,7 @@
             <TextBlock HorizontalAlignment="Center" TextAlignment="Center">ORGANIZACIJA<LineBreak/>PROSLAVA</TextBlock>
         </Button>
 
-        <Button x:Name="Dpros_Btn"  Foreground="White"  FontSize="27" Grid.ColumnSpan="2" Grid.Column="5" Margin="0,0,0,34" Grid.Row="5" Height="Auto" Grid.RowSpan="3">
+        <Button x:Name="Dpros_Btn" Click="Dosadasnje_Proslave_Click"  Foreground="White"  FontSize="27" Grid.ColumnSpan="2" Grid.Column="5" Margin="0,0,0,34" Grid.Row="5" Height="Auto" Grid.RowSpan="3">
             <TextBlock HorizontalAlignment="Center" TextAlignment="Center">DOSADASNJE<LineBreak/>PROSLAVE</TextBlock>
         </Button>
 

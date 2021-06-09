@@ -33,8 +33,8 @@ namespace PROJEKAT_HCI.View
         public Zadatak NosenZadatak { get; set; }
         public Card NosenaKartica { get; set; }
         public Card SelektovanaKartica { get; set; }
-        public OrganizacijaProslavaWindow opw { get; set; }
-        public OrganizatorProslava(OrganizacijaProslavaWindow parent, Proslava p)
+        public Window opw { get; set; }
+        public OrganizatorProslava(Window parent, Proslava p)
         {
             this.opw = parent;
             this.Proslava = p;
