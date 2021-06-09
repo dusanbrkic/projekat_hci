@@ -31,19 +31,19 @@ namespace PROJEKAT_HCI.View
 
         private void odustao_Click(object sender, RoutedEventArgs e)
         {
-
+            this.Close();
         }
 
         private void registruj_Click(object sender, RoutedEventArgs e)
         {
-            if (username.Text == "" || password.Text == "" || ime.Text == "" || prezime.Text == "" || brojTelefona.Text == "")
+            if (username.Text == "" || password.Password == "" || ime.Text == "" || prezime.Text == "" || brojTelefona.Text == "")
             {
                 Console.WriteLine("Greska");
                 return;
             }
 
 
-            if (againPassword.Text != password.Text)
+            if (againPassword.Password != password.Password)
                 return;
 
             using (var db = new ProjectDatabase())
@@ -56,7 +56,7 @@ namespace PROJEKAT_HCI.View
 
                 }
 
-                Organizator k = new Organizator { Id = db.Klijenti.Count(), Ime = ime.Text, Prezime = prezime.Text, BrojTelefona = brojTelefona.Text, Email = email.Text, Password = password.Text, Username = username.Text };
+                Organizator k = new Organizator { Id = db.Klijenti.Count(), Ime = ime.Text, Prezime = prezime.Text, BrojTelefona = brojTelefona.Text, Email = email.Text, Password = password.Password, Username = username.Text };
 
                 Ret = k;
 

@@ -273,7 +273,7 @@ namespace PROJEKAT_HCI.View
         }
         private void PregledPonudaBtn_Click(object sender, RoutedEventArgs e)
         {
-            PregledPonudaWindow ppw = new PregledPonudaWindow(klijent);
+            PregledOdrzanihProslava ppw = new PregledOdrzanihProslava(klijent);
             ppw.Show();
             this.Close();
         }

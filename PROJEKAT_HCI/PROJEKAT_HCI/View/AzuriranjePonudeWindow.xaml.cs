@@ -82,7 +82,7 @@ namespace PROJEKAT_HCI.View
 
         private void odustao_Click(object sender, RoutedEventArgs e)
         {
-
+            this.Close();
         }
 
         private void Dodaj_slikuBtn_Click(object sender, RoutedEventArgs e)

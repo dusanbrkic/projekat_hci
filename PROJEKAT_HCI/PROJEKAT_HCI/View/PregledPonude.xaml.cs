@@ -119,7 +119,7 @@ namespace PROJEKAT_HCI.View
                 Text = "Opis ponude : " + z.Ponuda.Opis + "\n" + "Cena: " + z.Ponuda.Cena,
 
                 Width = 330,
-                Height = 45,
+                Height = 65,
                 Margin = new Thickness(10, 10, 10, 10),
                 Foreground = new SolidColorBrush(Colors.Black),
                 TextAlignment = TextAlignment.Center,
@@ -131,10 +131,13 @@ namespace PROJEKAT_HCI.View
             Label l = new Label();
             Dugme b = new Dugme();
             b.Zadatak = z;
-            b.Width = 50;
-            b.Height = 50;
+            b.Width = 30;
+            b.Height = 30;
             b.Margin = new Thickness(0, 0, 150, 0);
             b.Click += new RoutedEventHandler(prihvatiPonudu);
+            b.Background = Brushes.Gray;
+            b.Foreground = Brushes.White;
+            b.IsEnabled = false;
             Viewbox viewbox = new Viewbox();
             PackIcon packIcon = new PackIcon();
             packIcon.Kind = PackIconKind.Check;
@@ -144,8 +147,11 @@ namespace PROJEKAT_HCI.View
 
             Dugme b1 = new Dugme();
             b1.Zadatak = z;
-            b1.Width = 50;
-            b1.Height = 50;
+            b1.Width = 30;
+            b1.Height = 30;
+            b1.Background = Brushes.Gray;
+            b1.Foreground = Brushes.White;
+            b1.IsEnabled = false;
             b1.Click += new RoutedEventHandler(OdbijPonudu);
             Viewbox viewbox1 = new Viewbox();
             PackIcon packIcon1 = new PackIcon();
@@ -157,10 +163,13 @@ namespace PROJEKAT_HCI.View
 
 
             Dugme b2 = new Dugme();
-            b2.Width = 50;
-            b2.Height = 50;
+            b2.Width = 30;
+            b2.Height =30;
             b2.Margin = new Thickness(150, 0, 0, 0);
             b2.Zadatak = z;
+            b1.Background = Brushes.Gray;
+            b1.Foreground = Brushes.White;
+            b1.IsEnabled = false;
             Viewbox viewbox2 = new Viewbox();
             PackIcon packIcon2 = new PackIcon();
             packIcon2.Kind = PackIconKind.Comment;
@@ -213,7 +222,7 @@ namespace PROJEKAT_HCI.View
                 Text = "Opis ponude : " + z.Ponuda.Opis + "\n" + "Cena: " + z.Ponuda.Cena,
 
                 Width = 330,
-                Height = 45,
+                Height = 65,
                 Margin = new Thickness(10, 10, 10, 10),
                 Foreground = new SolidColorBrush(Colors.Black),
                 TextAlignment = TextAlignment.Center,
@@ -226,7 +235,7 @@ namespace PROJEKAT_HCI.View
             Label l = new Label
             {
                 Width = 300,
-                Height = 50,
+                Height = 30,
                 Content = "Prihvaceno",
                 FontSize = 20,
                 HorizontalAlignment = HorizontalAlignment.Center,
@@ -273,7 +282,7 @@ namespace PROJEKAT_HCI.View
                 Text = "Opis ponude : " + z.Ponuda.Opis + "\n" + "Cena: " + z.Ponuda.Cena,
 
                 Width = 330,
-                Height = 45,
+                Height = 65,
                 Margin = new Thickness(10, 10, 10, 10),
                 Foreground = new SolidColorBrush(Colors.Black),
                 TextAlignment = TextAlignment.Center,
@@ -285,8 +294,10 @@ namespace PROJEKAT_HCI.View
             Label l = new Label();
             Dugme b = new Dugme();
             b.Zadatak = z;
-            b.Width = 50;
-            b.Height = 50;
+            b.Width = 30;
+            b.Height = 30;
+            b.Background = Brushes.Green;
+            b.Foreground = Brushes.White;
             b.Margin = new Thickness(0, 0, 150, 0);
             b.Click += new RoutedEventHandler(prihvatiPonudu);
             Viewbox viewbox = new Viewbox();
@@ -298,8 +309,10 @@ namespace PROJEKAT_HCI.View
 
             Dugme b1 = new Dugme();
             b1.Zadatak = z;
-            b1.Width = 50;
-            b1.Height = 50;
+            b1.Width = 30;
+            b1.Height = 30;
+            b1.Background = Brushes.Red;
+            b1.Foreground = Brushes.White;
             b1.Click += new RoutedEventHandler(OdbijPonudu);
             Viewbox viewbox1 = new Viewbox();
             PackIcon packIcon1 = new PackIcon();
@@ -311,10 +324,12 @@ namespace PROJEKAT_HCI.View
 
 
             Dugme b2 = new Dugme();
-            b2.Width = 50;
-            b2.Height = 50;
+            b2.Width = 30;
+            b2.Height = 30;
             b2.Margin = new Thickness(150, 0, 0, 0);
             b2.Zadatak = z;
+            b2.Background = Brushes.LightGray;
+            b2.Foreground = Brushes.White;
             Viewbox viewbox2 = new Viewbox();
             PackIcon packIcon2 = new PackIcon();
             packIcon2.Kind = PackIconKind.Comment;
@@ -420,7 +435,7 @@ namespace PROJEKAT_HCI.View
         }
         private void NazadBtn_Click(object sender, RoutedEventArgs e)
         {
-            KlijentWindow kw = new KlijentWindow(klijent);
+            PregledProslavaWindow kw = new PregledProslavaWindow(klijent);
             kw.Show();
             this.Hide();
         }
@@ -536,11 +551,19 @@ namespace PROJEKAT_HCI.View
                             zad.Status = Status_Zadatka.PRIHVACENO;
                             db.SaveChanges();
                         }
-
+                        p.StatusProslave = StatusProslave.ORGANIZOVANO;
+                        db.SaveChanges();
                     }
                 }
             }
             refreshCards();
+        }
+
+        private void UrediProfilBtn_Click(object sender, RoutedEventArgs e)
+        {
+            EditProfile ep = new EditProfile(this, klijent);
+            ep.Show();
+            this.Hide();
         }
     }
 }

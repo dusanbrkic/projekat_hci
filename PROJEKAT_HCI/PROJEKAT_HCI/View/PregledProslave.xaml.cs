@@ -52,7 +52,7 @@ namespace PROJEKAT_HCI.View
 
         private void NazadBtn_Click(object sender, RoutedEventArgs e)
         {
-            KlijentWindow kw = new KlijentWindow(klijent);
+            PregledProslavaWindow kw = new PregledProslavaWindow(klijent);
             kw.Show();
             this.Close();
         }
@@ -77,6 +77,13 @@ namespace PROJEKAT_HCI.View
                 }
 
             }
+        }
+
+        private void UrediProfilBtn_Click(object sender, RoutedEventArgs e)
+        {
+            EditProfile ep = new EditProfile(this, klijent);
+            ep.Show();
+            this.Hide();
         }
     }
 }

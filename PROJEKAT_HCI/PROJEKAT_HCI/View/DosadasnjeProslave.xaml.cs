@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,32 +18,34 @@ using PROJEKAT_HCI.Model;
 namespace PROJEKAT_HCI.View
 {
     /// <summary>
-    /// Interaction logic for ObavestenjaWindow.xaml
+    /// Interaction logic for DosadasnjeProslave.xaml
     /// </summary>
-    public partial class ObavestenjaWindow : Window
+    /// 
+    
+    public partial class DosadasnjeProslave : Window
     {
         public Organizator Organizator { get; set; }
         public Window OrganizatorWindow { get; set; }
-
-        public ObavestenjaWindow(Organizator org, Window ow)
+        public DosadasnjeProslave(Organizator o, Window ow)
         {
-            Organizator = org;
-            OrganizatorWindow = ow;
-
             InitializeComponent();
 
-            using (var db = new ProjectDatabase()) {
+            Organizator = o;
+            OrganizatorWindow = ow;
 
-               var obavestenja = from obavestenje in db.Obavestenja
-                               where obavestenje.PredlogProslave.Proslava.Organizator.Id == Organizator.Id
-                               && obavestenje.Procitano == false
-                               orderby obavestenje.TimeStamp descending
-                               select obavestenje;
+            using (var db = new ProjectDatabase())
+            {
 
-                if (obavestenja == null)
+                var proslave = from proslava in db.Proslave
+                               where proslava.PredlogProslave.Proslava.Organizator.Id == Organizator.Id
+                               && proslava.StatusProslave == StatusProslave.ORGANIZOVANO
+                               orderby proslava.DatumOdrzavanja descending
+                               select proslava;
+
+                if (proslave == null)
                     return;
 
-                foreach (var obavestenje in obavestenja)
+                foreach (var proslava in proslave)
                 {
                     Card card = new Card();
                     card.Width = 340;
@@ -57,24 +58,20 @@ namespace PROJEKAT_HCI.View
                     b.Margin = new Thickness(5, 5, 5, 5);
                     b.VerticalAlignment = VerticalAlignment.Center;
                     b.Content = "POGLEDAJ";
-                    b.Tag = obavestenje;
+                    b.Tag = proslava;
                     b.Click += (object sender, RoutedEventArgs e) => {
-                        using (var database = new ProjectDatabase())
-                        {
-                            var ob = (from o in database.Obavestenja where o.Id == obavestenje.Id select o).FirstOrDefault();
-                            ob.Procitano = true;
-                            database.SaveChanges();
-                        }
                         //TODO otvoriti prozor organizovanja proslave
-                        var noviProzor = new OrganizatorProslava(OrganizatorWindow, obavestenje.PredlogProslave.Proslava);
-                        this.Close();
-                        noviProzor.Show();
+                        OrganizatorProslava pros = new OrganizatorProslava(this, proslava);
+                        this.Hide();
+                        pros.Show();
+
                     };
 
-                    TextBox tb = new TextBox() {
+                    TextBox tb = new TextBox()
+                    {
+                        IsReadOnly = true,
                         TextWrapping = TextWrapping.Wrap,
-                        Text = obavestenje.Sadrzaj + "\nProslava: " +
-                            obavestenje.PredlogProslave.Proslava.Naziv + "\nVreme: " + obavestenje.TimeStamp,
+                        Text = proslava.Naziv + "\nDatum odrzavanja: " + proslava.DatumOdrzavanja,
                         Width = 330,
                         Height = 90,
                         Margin = new Thickness(10, 10, 10, 10),
@@ -83,10 +80,9 @@ namespace PROJEKAT_HCI.View
                         FontSize = 16,
                         VerticalScrollBarVisibility = ScrollBarVisibility.Auto,
                         VerticalAlignment = VerticalAlignment.Stretch,
-                        AcceptsReturn = true,
-                        IsReadOnly = true
+                        AcceptsReturn = true
                     };
-                    
+
 
                     StackPanel sp = new StackPanel() { Orientation = Orientation.Vertical };
                     sp.Children.Add(tb);
@@ -103,8 +99,8 @@ namespace PROJEKAT_HCI.View
 
         private void Nazad_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();
             OrganizatorWindow.Show();
+            this.Close();
         }
     }
 }

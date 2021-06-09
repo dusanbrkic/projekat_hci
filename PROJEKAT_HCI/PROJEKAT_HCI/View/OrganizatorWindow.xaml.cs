@@ -65,5 +65,12 @@ namespace PROJEKAT_HCI.View
             ep.Show();
             this.Hide();
         }
+
+        private void Dosadasnje_Proslave_Click(object sender, RoutedEventArgs e)
+        {
+            DosadasnjeProslave dp = new DosadasnjeProslave(Organizator, this);
+            dp.Show();
+            this.Hide();
+        }
     }
 }

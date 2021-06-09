@@ -179,5 +179,12 @@ namespace PROJEKAT_HCI.View
             MainWindow.notifier.ShowSuccess("Uspesno ste dodali novu proslavu!");
             }
         }
+
+        private void UrediProfilBtn_Click(object sender, RoutedEventArgs e)
+        {
+            EditProfile ep = new EditProfile(this, klijent);
+            ep.Show();
+            this.Hide();
+        }
     }
 }
