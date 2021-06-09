@@ -12,17 +12,43 @@
             <ColumnDefinition Width="643*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="75*"></RowDefinition>
-            <RowDefinition Height="90*"></RowDefinition>
-            <RowDefinition Height="253*"></RowDefinition>
+            <RowDefinition Height="62*"></RowDefinition>
+            <RowDefinition Height="91*"></RowDefinition>
+            <RowDefinition Height="45*"></RowDefinition>
+            <RowDefinition Height="220*"/>
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
         <Label Background="{DynamicResource PrimaryHueDarkBrush}" Grid.ColumnSpan="2" Foreground="White" FontSize="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="DETALJI ZADATKA"/>
         <Button  Click="Nazad_Click" Grid.Column="0"  Foreground="White" Background="Red" FontSize="20" Height="Auto" Content="NAZAD"/>
-        <ScrollViewer Grid.Row="2" Grid.ColumnSpan="2" Grid.RowSpan="2">
+        <ScrollViewer Grid.Row="3" Grid.ColumnSpan="2" Grid.RowSpan="2">
             <WrapPanel Name="wrapper">
-                
+
             </WrapPanel>
         </ScrollViewer>
+        <StackPanel Grid.Row="1" Grid.Column="0">
+            <Label Margin="0 0 0 0" Background="{DynamicResource PrimaryHueDarkBrush}" Foreground="White" FontSize="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="Pretraga" Height="43"></Label>
+            <TextBox Name="SearchBox" TextChanged="Search_Changed" Background="White"   VerticalAlignment="Center" FontSize="18" Height="54"></TextBox>
+        </StackPanel>
+        <Grid Grid.Row="1" Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="130*"></ColumnDefinition>
+                <ColumnDefinition Width="180*"></ColumnDefinition>
+                <ColumnDefinition Width="178*"></ColumnDefinition>
+                <ColumnDefinition Width="149*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Label Grid.Column="0" Margin="0 0 0 0" Background="{DynamicResource PrimaryHueDarkBrush}" Foreground="White" FontSize="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="Naziv zadatka"/>
+            <Label Grid.Column="1" Margin="0 0 0 0" Background="{DynamicResource PrimaryHueDarkBrush}" Foreground="White" FontSize="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="Opis zadatka"/>
+            <Label Grid.Column="2" Margin="0 0 0 0" Background="{DynamicResource PrimaryHueDarkBrush}" Foreground="White" FontSize="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="Komenatar klijenta"/>
+            <TextBox Name="Naziv_Zadatka" TextChanged="Naziv_Zadatka_TextChanged" Background="White"   VerticalAlignment="Center" FontSize="18" Height="47" Margin="0,44,0,-1" Grid.RowSpan="2"/>
+            <TextBox Name="Opis_Zadatka" TextChanged="Opis_Zadatka_TextChanged" Grid.Column="1" Background="White"   VerticalAlignment="Center" FontSize="16" Height="47" Margin="0,44,0,-1" Grid.RowSpan="2"/>
+            <TextBox IsReadOnly="True" Name="Komentar" Grid.Column="2" Background="White"   VerticalAlignment="Center" FontSize="16" Height="47" Margin="0,44,0,-1" Grid.RowSpan="2"/>
+            <Button  Name="Menjac" Click="Menjac_Click" Grid.Column="3" Grid.RowSpan="2"  Foreground="White" Background="DarkGoldenrod" IsEnabled="False" FontSize="20" Height="Auto" Content="Izmeni"/>
+        </Grid>
+        <Label  Margin="0 0 0 0" Background="{DynamicResource PrimaryHueDarkBrush}" Foreground="White" FontSize="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.Row="2" Content="Ponuda"></Label>
+        <TextBox Name ="Ponuda_Text" IsReadOnly="True" Grid.Row="2" Foreground="White" Grid.Column="1" Height="Auto" Width="Auto" FontSize="16" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"></TextBox>
     </Grid>
 </Window>
