@@ -35,7 +35,7 @@
                 <Label Background="{DynamicResource PrimaryHueDarkBrush}" Foreground="White" FontSize="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="PROMENITE PONUDU ZADATKA" Margin="10,10,10,10"/>
                 <TextBox materialDesign:HintAssist.HelperText="Pretrazite ponude po opisu" x:Name="SearchBox"  TextChanged="Search_Changed" FontSize="18" Margin="10,10,10,10"/>
 
-                <WrapPanel HorizontalAlignment="Center" Name="wrapper" Margin="10,10,10,10" Width="775">
+                <WrapPanel Orientation="Horizontal" HorizontalAlignment="Center" Name="wrapper">
 
                 </WrapPanel>
             </StackPanel>
