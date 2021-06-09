@@ -29,7 +29,7 @@
                     materialDesign:HintAssist.HelperText="Naziv proslave"
                     Foreground="{DynamicResource PrimaryHueDarkBrush}"
                     materialDesign:HintAssist.IsFloating="True"
-                    Margin="50,0,50,5" Height="35" IsEnabled="False" />
+                    Margin="50,0,50,5" Height="35" IsReadOnly="True" />
 
             <TextBox
                 FontSize="11"
@@ -37,28 +37,28 @@
                     materialDesign:HintAssist.HelperText="Opis proslave"
                     Foreground="{DynamicResource PrimaryHueDarkBrush}"
                     materialDesign:HintAssist.IsFloating="True"
-                    Margin="50,0,50,5" Height="77" IsEnabled="False"  />
+                    Margin="50,0,50,5" Height="77" IsReadOnly="True"   />
             <TextBox
                 FontSize="11"
                     Name="Budzet"
                     materialDesign:HintAssist.HelperText="Budzet"
                     Foreground="{DynamicResource PrimaryHueDarkBrush}"
                     materialDesign:HintAssist.IsFloating="True"
-                    Margin="50,0,50,5" Height="35" IsEnabled="False"/>
+                    Margin="50,0,50,5" Height="35" IsReadOnly="True" />
             <TextBox
                 FontSize="11"
                     Name="Datum"
                     materialDesign:HintAssist.HelperText="Datum odrzavanja"
                     Foreground="{DynamicResource PrimaryHueDarkBrush}"
                     materialDesign:HintAssist.IsFloating="True"
-                    Margin="50,0,50,5" Height="35" IsEnabled="False"/>
+                    Margin="50,0,50,5" Height="35" IsReadOnly="True" />
             <TextBox
                 FontSize="11"
                     Name="Mesto"
                     materialDesign:HintAssist.HelperText="Mesto"
                     Foreground="{DynamicResource PrimaryHueDarkBrush}"
                     materialDesign:HintAssist.IsFloating="True"
-                    Margin="50,0,50,5" Height="35" IsEnabled="False"/>
+                    Margin="50,0,50,5" Height="35" IsReadOnly="True" />
 
             <TextBox
                 FontSize="11"
@@ -66,7 +66,7 @@
                     materialDesign:HintAssist.HelperText="Broj gostiju"
                     Foreground="{DynamicResource PrimaryHueDarkBrush}"
                     materialDesign:HintAssist.IsFloating="True"
-                    Margin="50,0,50,5" Height="35" IsEnabled="False"/>
+                    Margin="50,0,50,5" Height="35" IsReadOnly="True" />
 
             <TextBox
                 FontSize="11"
@@ -74,7 +74,7 @@
                     materialDesign:HintAssist.HelperText="Slavljenik"
                     Foreground="{DynamicResource PrimaryHueDarkBrush}"
                     materialDesign:HintAssist.IsFloating="True"
-                    Margin="50,0,50,5" Height="35" IsEnabled="False"/>
+                    Margin="50,0,50,5" Height="35" IsReadOnly="True" />
 
         </StackPanel>
 
