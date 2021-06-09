@@ -236,7 +236,15 @@ namespace PROJEKAT_HCI.View
 
         private void AzuriranjeSaradnikaBtn_Click(object sender, RoutedEventArgs e)
         {
+            Saradnik k = (Saradnik) SaradniciTable.SelectedItem;
+            if (k == null)
+            {
+                MaterialMessageBox.Show("Odaberite saradnika iz tabele", "Obavještenje", true);
+                return;
+            }
 
+            AzuriranjeSaradnikaWindow asw = new AzuriranjeSaradnikaWindow(k);
+            asw.ShowDialog();
         }
     }
 }

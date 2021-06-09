@@ -115,3 +115,5 @@ C:\Users\User\Documents\GitHub\projekat_hci\PROJEKAT_HCI\PROJEKAT_HCI\obj\Debug\
 C:\Users\User\Documents\GitHub\projekat_hci\PROJEKAT_HCI\PROJEKAT_HCI\obj\Debug\View\PregledProslavaWindow.baml
 C:\Users\User\Documents\GitHub\projekat_hci\PROJEKAT_HCI\PROJEKAT_HCI\obj\Debug\View\PregledProslave.baml
 C:\Users\User\Documents\GitHub\projekat_hci\PROJEKAT_HCI\PROJEKAT_HCI\obj\Debug\View\PregledZahtevaProslave.baml
+C:\Users\User\Documents\GitHub\projekat_hci\PROJEKAT_HCI\PROJEKAT_HCI\obj\Debug\View\AzuriranjeSaradnikaWindow.g.cs
+C:\Users\User\Documents\GitHub\projekat_hci\PROJEKAT_HCI\PROJEKAT_HCI\obj\Debug\View\AzuriranjeSaradnikaWindow.baml
