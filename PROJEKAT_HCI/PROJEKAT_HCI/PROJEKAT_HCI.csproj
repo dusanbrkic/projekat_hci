@@ -121,6 +121,9 @@
     <Compile Include="View\DodavanjeOrganizatoraWindow.xaml.cs">
       <DependentUpon>DodavanjeOrganizatoraWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\DodavanjePonudeAdminWindow.xaml.cs">
+      <DependentUpon>DodavanjePonudeAdminWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\DodavanjeSaradnikaWindow.xaml.cs">
       <DependentUpon>DodavanjeSaradnikaWindow.xaml</DependentUpon>
     </Compile>
@@ -209,6 +212,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\DodavanjeOrganizatoraWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\DodavanjePonudeAdminWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
