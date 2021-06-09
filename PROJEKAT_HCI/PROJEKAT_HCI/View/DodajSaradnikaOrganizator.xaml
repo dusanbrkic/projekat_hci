@@ -19,7 +19,7 @@
         </Grid.RowDefinitions>
         <Label Background="{DynamicResource PrimaryHueMidBrush}" Grid.ColumnSpan="4" Foreground="White" FontSize="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="NOV SARADNIK"/>
 
-        <Button Click="Nazad_Btn_Click"  Foreground="White" Background="Red" FontSize="20" Height="Auto" Content="NAZAD"/>
+        <Button Click="Nazad_Btn_Click"  Foreground="White" Background="Red" FontSize="20" Height="Auto" Content="NAZAD" Margin="0,0,134,0"/>
         <Grid Grid.Row="1" Grid.ColumnSpan="2">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="133*"></ColumnDefinition>
@@ -33,12 +33,12 @@
                   VerticalAlignment="Stretch"
                    materialDesign:HintAssist.IsFloating="True"
                   AcceptsReturn="True"
-                  Margin="10 10 10 10"
+                  Margin="10 0 10 10"
                   Foreground="Black"
                   VerticalScrollBarVisibility="Auto"
                   SpellCheck.IsEnabled="True"
                   materialDesign:HintAssist.HelperText="Unesite naziv saradnika"
-                  Height="49"></TextBox>
+                  Height="50"></TextBox>
                 <TextBox
                     Name="Lokacija"
                     FontSize="16"
@@ -51,7 +51,7 @@
                   VerticalScrollBarVisibility="Auto"
                   SpellCheck.IsEnabled="True"
                   materialDesign:HintAssist.HelperText="Unesite lokaciju saradnika"
-                  Height="49"></TextBox>
+                  Height="50"></TextBox>
                 <TextBox
                     Name="Opis"
                     FontSize="16"
@@ -64,11 +64,12 @@
                   VerticalScrollBarVisibility="Auto"
                   SpellCheck.IsEnabled="True"
                   materialDesign:HintAssist.HelperText="Unesite opis saradnika"
-                  Height="35"></TextBox>
+                  Height="68"></TextBox>
                 <ComboBox Name="Tip"
-                          materialDesign:HintAssist.HelperText="Odaberite vrstu saradnika"
+                          Margin="10 10 10 0"
+                          materialDesign:HintAssist.HelperText="Odaberite vrstu saradnika" Height="30"
                           ></ComboBox>
-                <Button Margin="20,40,20,10" Click="Nov_Saradnik_Ponuda_Btn" FontSize="20" Background="DarkGreen" Height="77" Content="DODAJTE SARADNIKA"/>
+                <Button Margin="20,20,20,10" Click="Nov_Saradnik_Ponuda_Btn" FontSize="20" Background="DarkGreen" Height="47" Content="DODAJTE SARADNIKA"/>
             </StackPanel>
             
             <StackPanel Name="slike" Grid.Column="1">

@@ -285,3 +285,5 @@ C:\Users\Dusan\Documents\GitHub\projekat_hci\PROJEKAT_HCI\PROJEKAT_HCI\obj\Debug
 C:\Users\Dusan\Documents\GitHub\projekat_hci\PROJEKAT_HCI\PROJEKAT_HCI\obj\Debug\PROJEKAT_HCI.pdb
 C:\Users\Dusan\Documents\GitHub\projekat_hci\PROJEKAT_HCI\PROJEKAT_HCI\obj\Debug\View\DosadasnjeProslave.g.cs
 C:\Users\Dusan\Documents\GitHub\projekat_hci\PROJEKAT_HCI\PROJEKAT_HCI\obj\Debug\View\DosadasnjeProslave.baml
+C:\Users\Dusan\Documents\GitHub\projekat_hci\PROJEKAT_HCI\PROJEKAT_HCI\obj\Debug\View\DodajSaradnikaOrganizator.g.cs
+C:\Users\Dusan\Documents\GitHub\projekat_hci\PROJEKAT_HCI\PROJEKAT_HCI\obj\Debug\View\DodajSaradnikaOrganizator.baml

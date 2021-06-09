@@ -28,10 +28,10 @@
             <ColumnDefinition Width="56*" />
         </Grid.ColumnDefinitions>
 
-        <Label Background="{DynamicResource PrimaryHueMidBrush}" Grid.ColumnSpan="8" Foreground="White" FontSize="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="OBAVESTENJA" Height="Auto" Margin="0,10,0,0"/>
+        <Label Background="{DynamicResource PrimaryHueMidBrush}" Grid.ColumnSpan="8" Foreground="White" FontSize="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="GLAVNA STRANA" Height="Auto" Margin="0,10,0,0"/>
 
-        <Button Click="Profil_Click" Grid.ColumnSpan="2" Background="DarkBlue" Foreground="White" FontSize="17" Content="PROFIL" Height="Auto" Margin="5,21,0,0" Grid.Column="6"/>
-        <Button Grid.ColumnSpan="2" VerticalContentAlignment="Center"    Grid.RowSpan="1" x:Name="Odj_Btn" Click="Odj_Btn_Click"  Foreground="White" Background="Red" FontSize="17"  Content="ODJAVA"  Height="Auto" Margin="0,21,0,0" />
+        <Button Click="Profil_Click" Grid.ColumnSpan="2" Background="DarkBlue" Foreground="White" FontSize="17" Content="PROFIL" Height="Auto" Margin="78,21,0,0" Grid.Column="6"/>
+        <Button Grid.ColumnSpan="2" VerticalContentAlignment="Center"    Grid.RowSpan="1" x:Name="Odj_Btn" Click="Odj_Btn_Click"  Foreground="White" Background="Red" FontSize="17"  Content="ODJAVA"  Height="Auto" Margin="0,21,71,0" />
 
         <Button VerticalAlignment="Center" Click="Saradnici_Btn_Click"  x:Name ="Saradnici_Btn"   Foreground="White" FontSize="27" Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="2" Height="122" Grid.RowSpan="2" Content="SARADNICI">
 
