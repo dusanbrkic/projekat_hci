@@ -5,12 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PROJEKAT_HCI.View"
         mc:Ignorable="d"
-        Title="PregledProslave" Height="450" Width="800">
-    <Grid Background="MediumPurple">
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        Title="PregledProslave"
+        Height="450"
+        Width="800">
+    <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="200" />
-            <ColumnDefinition Width="400*" />
             <ColumnDefinition Width="100" />
+            <ColumnDefinition Width="400*" />
             <ColumnDefinition Width="100" />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
@@ -18,51 +20,99 @@
             <RowDefinition Height="350*" />
             <RowDefinition Height="50" />
         </Grid.RowDefinitions>
-        <Label Content="Pregled proslave" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Background="Purple" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="0,0,0,0.6"/>
-        <Button Click="NazadBtn_Click" Name="NazadBtn" Grid.Column="3" Grid.Row="0" Content="Nazad" Background="LightBlue" Foreground="Black" Height="Auto"/>
-        <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto"  VerticalContentAlignment="Center" Grid.Row="1" Margin="0,0,0,0" RenderTransformOrigin="0.5,0.5" Grid.Column="0" Grid.ColumnSpan="4">
-            <StackPanel VerticalAlignment="Top" Background="MediumPurple">
+        <Label Content="Pregled proslave"
+               Grid.Row="0"
+               Grid.Column="0"
+               Grid.ColumnSpan="3"
+               Background="{DynamicResource PrimaryHueMidBrush}"
+               Foreground="White"
+               HorizontalContentAlignment="Center"
+               VerticalContentAlignment="Center"
+               Margin="0,0,0,0.6" />
+        <Button Name="UrediProfilBtn"
+                Grid.Column="0"
+                Grid.Row="0"
+                Background="{DynamicResource PrimaryHueMidBrush}"
+                Height="Auto"
+                HorizontalAlignment="Left"
+                Width="82"
+                Margin="1 1 1 1">
+            <Viewbox>
+                <materialDesign:PackIcon Kind="Account" />
+            </Viewbox>
+        </Button>
+        <Button Click="NazadBtn_Click"
+                Name="NazadBtn"
+                Grid.Column="3"
+                Grid.Row="0"
+                Height="Auto">
+            <Viewbox>
+                <materialDesign:PackIcon Kind="ArrowRightThick" />
+            </Viewbox>
+        </Button>
+        <ScrollViewer HorizontalScrollBarVisibility="Auto"
+                      VerticalScrollBarVisibility="Auto"
+                      VerticalContentAlignment="Center"
+                      Grid.Row="1"
+                      Margin="0,0,0,0"
+                      RenderTransformOrigin="0.5,0.5"
+                      Grid.Column="1"
+                      Grid.ColumnSpan="2">
+            <StackPanel VerticalAlignment="Top">
                 <Grid Margin="5">
-                    <Label Content="Naziv proslave:"/>
-                    <TextBox Margin="100,0,50,0" Name="NazivProslave"/>
+                    <TextBox x:Name="NazivProslave"
+                             materialDesign:HintAssist.Hint="Naziv proslave"
+                             materialDesign:HintAssist.HelperText="Naziv proslave"
+                             Margin="5 5 5 5"
+                             IsEnabled="False" />
                 </Grid>
                 <Grid Margin="5">
-                    <Label Content="Opis proslave:"/>
-                    <TextBox Margin="100,0,50,0"
-                             Name="OpisProslave" />
+                    <TextBox x:Name="OpisProslave"
+                             materialDesign:HintAssist.Hint="Opis proslave"
+                             materialDesign:HintAssist.HelperText="Opis proslave"
+                             Margin="5 5 5 5"
+                             IsEnabled="False" />
                 </Grid>
                 <Grid Margin="5">
-                    <Label Content="Budzet:"/>
-                    <TextBox Margin="100,0,50,0"
-                             Name="Budzet" />
+                    <DatePicker Name="DatumProslave"
+                                Width="200"
+                                Margin="5 5 5 5"
+                                HorizontalAlignment="Left"
+                                materialDesign:HintAssist.HelperText="Datum proslave"
+                                materialDesign:HintAssist.Hint="Datum proslave"
+                                materialDesign:CalendarAssist.IsHeaderVisible="False"
+                                IsEnabled="False"/>
                 </Grid>
                 <Grid Margin="5">
-                    <Label Content="Tema:"/>
-                    <TextBox Margin="100,0,50,0" />
+                    <TextBox x:Name="Budzet"
+                             materialDesign:HintAssist.Hint="Budzet"
+                             materialDesign:HintAssist.HelperText="Budzet"
+                             Margin="5 5 5 5"
+                             IsEnabled="False"/>
                 </Grid>
                 <Grid Margin="5">
-                    <Label Content="Datum:"/>
-                    <DatePicker Margin="100,0,50,0"  Name="dt_StartDateFrom" ></DatePicker>
+                    <TextBox x:Name="BrojGostiju"
+                             materialDesign:HintAssist.Hint="Broj gostiju"
+                             materialDesign:HintAssist.HelperText="Broj gostiju"
+                             Margin="5 5 5 5"
+                             IsEnabled="False"/>
                 </Grid>
                 <Grid Margin="5">
-                    <Label Content="Mesto:"/>
-                    <TextBox Margin="100,0,50,0" />
-                </Grid>
-                <Grid Margin="5">
-                    <Label Content="Broj gostiju:"/>
-                    <TextBox Margin="100,0,50,0" />
-                </Grid>
-                <Grid Margin="5">
-                    <Label Content="Pevac:"/>
-                    <TextBox Margin="100,0,50,0" />
-                </Grid>
-                <Grid Margin="5">
-                    <Label Content="Organizator:"/>
-                    <TextBox Margin="100,0,50,0" />
+                    <TextBox x:Name="Organizator"
+                             materialDesign:HintAssist.Hint="Organizator"
+                             materialDesign:HintAssist.HelperText="Organizator"
+                             Margin="5 5 5 5"
+                             IsEnabled="False"/>
                 </Grid>
             </StackPanel>
         </ScrollViewer>
-        <Button Name="PotvrdiZahtevBtn" Grid.Column="2" Grid.Row="2" Content="Otkazi proslavu" Foreground="Black" Background="LightBlue" Margin="0,8,62,10" Grid.ColumnSpan="2" />
+        <Button Name="PotvrdiZahtevBtn"
+                Grid.Column="1"
+                Grid.Row="2"
+                Content="Otkazi proslavu"
+                Margin="537,8,10,10"
+                Grid.ColumnSpan="2"
+                Click="PotvrdiZahtevBtn_Click" />
 
     </Grid>
 </Window>

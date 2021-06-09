@@ -15,8 +15,6 @@
             <ColumnDefinition></ColumnDefinition>
             <ColumnDefinition Width="60*"></ColumnDefinition>
             <ColumnDefinition Width="150*"></ColumnDefinition>
-            <ColumnDefinition Width="150*"></ColumnDefinition>
-            <ColumnDefinition Width="150*"></ColumnDefinition>
             <ColumnDefinition Width="60*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
@@ -35,6 +33,7 @@
                VerticalContentAlignment="Center"
                Margin="0,0,0,0" />
         <Button Name="UrediProfilBtn"
+                Click="UrediProfilBtn_Click"
                 Grid.Column="1"
                 Grid.Row="0"
                 Background="{DynamicResource PrimaryHueMidBrush}"
@@ -56,78 +55,74 @@
                 <materialDesign:PackIcon Kind="Logout" />
             </Viewbox>
         </Button>
-       <!-- <ScrollViewer  Grid.Column="0"
+        <ScrollViewer  Grid.Column="2"
                        Grid.Row="2"
-                       Grid.RowSpan="2"
-                       Grid.ColumnSpan="6"
+                       Grid.ColumnSpan="3"
                        VerticalScrollBarVisibility="Auto"
                        HorizontalScrollBarVisibility="Auto">
             <WrapPanel  Name="wrapper"
-                        HorizontalAlignment="Center">
+                        Width="604">
 
-            </WrapPanel>
-        </ScrollViewer> -->
-        <ScrollViewer  Grid.Column="0"
-                       Grid.Row="2"
-                       Grid.RowSpan="2"
-                       Grid.ColumnSpan="6"
-                       VerticalScrollBarVisibility="Auto"
-                       HorizontalScrollBarVisibility="Auto">
-            <WrapPanel  Name="wrapper"
-                        HorizontalAlignment="Center">
                 <materialDesign:Card Width="200"
                                      Height="300"
                                      Margin="5 5 5 5">
-                    <StackPanel Orientation="Vertical">
-                        <Image Width="200"
-                               Height="220"
-                               Margin="5,5,-5,5"
-                               VerticalAlignment="Center"
-                               Stretch="UniformToFill"
-                               Source="/Res/Images/klijentSlika1.jpg" />
-                        <Button Margin="5 20 5 5"
-                                Width="200"
-                                Height="30"
-                                Content="Nova proslava"
-                                Click="NovaProslavaBtn_Click" />
-                    </StackPanel>
+                    <Grid>
+                        <StackPanel Orientation="Vertical">
+                            <Image Width="200"
+                                   Height="220"
+                                   Margin="5,5,-5,5"
+                                   VerticalAlignment="Center"
+                                   Stretch="UniformToFill"
+                                   Source="/Res/Images/klijentSlika1.jpg" />
+                            <Button Margin="5 20 5 5"
+                                    Width="200"
+                                    Height="30"
+                                    Content="Nova proslava"
+                                    Click="NovaProslavaBtn_Click" />
+
+                        </StackPanel>
+                    </Grid>
                 </materialDesign:Card>
                 <materialDesign:Card Width="200"
                                      Height="300"
                                      Margin="5 5 5 5">
-                    <StackPanel Orientation="Vertical">
-                        <Image Width="200"
-                               Height="220"
-                               Margin="5 5 5 5"
-                               VerticalAlignment="Center"
-                               Stretch="UniformToFill"
-                               Source="/Res/Images/klijentSlika1.jpg">
-                        </Image>
-                        <Button Margin="5 20 5 5"
-                                Click="PregledProslavaBtn_Click"
-                                Width="200"
-                                Height="30">
-                            Pregled proslava
-                        </Button>
-                    </StackPanel>
+                    <Grid>
+                        <StackPanel Orientation="Vertical">
+                            <Image Width="200"
+                                   Height="220"
+                                   Margin="5 5 5 5"
+                                   VerticalAlignment="Center"
+                                   Stretch="UniformToFill"
+                                   Source="/Res/Images/klijentSlika1.jpg">
+                            </Image>
+                            <Button Margin="5 20 5 5"
+                                    Click="PregledProslavaBtn_Click"
+                                    Width="200"
+                                    Height="30">
+                                Pregled proslava
+                            </Button>
+                        </StackPanel>
+                    </Grid>
                 </materialDesign:Card>
                 <materialDesign:Card Width="200"
                                      Height="300"
                                      Margin="5 5 5 5">
-                    <StackPanel Orientation="Vertical">
-                        <Image Width="200"
-                               Height="220"
-                               Margin="5 5 5 5"
-                               VerticalAlignment="Center"
-                               Stretch="UniformToFill"
-                               Source="/Res/Images/klijentSlika1.jpg">
-                        </Image>
-                        <Button Margin="5 20 5 5"
-                                Width="200"
-                                Height="30">
-                            Pregled odrzanih proslava
-                        </Button>
-                    </StackPanel>
+                    <Grid>
+                        <StackPanel Orientation="Vertical">
+                            <Image Width="200"
+                                   Height="220"
+                                   Margin="5 5 5 5"
+                                   VerticalAlignment="Center"
+                                   Stretch="UniformToFill"
+                                   Source="/Res/Images/klijentSlika1.jpg">
+                            </Image>
+                            <Button Margin="5 20 5 5"
+                                    Width="200"
+                                    Height="30">
+                                Pregled odrzanih proslava
+                            </Button>
+                        </StackPanel>
+                    </Grid>
                 </materialDesign:Card>
             </WrapPanel>
         </ScrollViewer>
