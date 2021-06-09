@@ -27,7 +27,7 @@
         <StackPanel  HorizontalAlignment="Stretch" Name="Dugmici" Grid.Row="2" Grid.ColumnSpan="3"  Orientation="Horizontal" Margin="10,0">
             <Button Click="Dodaj_Zadatak_Click" Margin="0 5 20 5" Grid.Column="2" Foreground="White"  Background="{DynamicResource PrimaryHueMidBrush}" FontSize="20" Height="Auto" Content="DODAJ ZADATAK" Width="235"/>
             <Button Name="Detalji" Click="Detalji_Btn_Click" Margin="0 5 20 5" Grid.Column="2" Foreground="White"  Background="{DynamicResource PrimaryHueMidBrush}" FontSize="20" Height="Auto" Content="DETALJI ZADATKA" Width="228"/>
-            <Button  Margin="0 5 0 5" Grid.Column="2" Foreground="White"  Background="{DynamicResource PrimaryHueMidBrush}" FontSize="20" Height="Auto" Content="PREDLOG" Width="221"/>
+            <Button Name="Predlog" Click="Predlog_Click" Margin="0 5 0 5" Grid.Column="2" Foreground="White"  Background="{DynamicResource PrimaryHueMidBrush}" FontSize="20" Height="Auto" Content="PREDLOG" Width="221"/>
         </StackPanel>
         <Grid Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3">
             <Grid.RowDefinitions>

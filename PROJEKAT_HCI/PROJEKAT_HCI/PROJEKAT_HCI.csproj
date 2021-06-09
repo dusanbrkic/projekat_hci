@@ -66,6 +66,9 @@
       <HintPath>..\packages\ShowMeTheXAML.2.0.0\lib\net472\ShowMeTheXAML.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="SpicyTaco.AutoGrid, Version=1.2.29.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SpicyTaco.AutoGrid.1.2.29\lib\net40\SpicyTaco.AutoGrid.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
@@ -159,6 +162,9 @@
     </Compile>
     <Compile Include="View\OrganizatorWindow.xaml.cs">
       <DependentUpon>OrganizatorWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\PredlogProslaveOrganizator.xaml.cs">
+      <DependentUpon>PredlogProslaveOrganizator.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\PregledPonudaWindow.xaml.cs">
       <DependentUpon>PregledPonudaWindow.xaml</DependentUpon>
@@ -267,6 +273,10 @@
     <Page Include="View\OrganizatorWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\PredlogProslaveOrganizator.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="View\PregledPonudaWindow.xaml">
       <SubType>Designer</SubType>
