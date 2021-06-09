@@ -28,6 +28,14 @@ namespace PROJEKAT_HCI.View
         public DodavanjeSaradnikaWindow()
         {
             InitializeComponent();
+
+            foreach (TipSaradnika ss in Enum.GetValues(typeof(TipSaradnika)))
+            {
+
+                Tip.Items.Add(ss.ToString());
+
+
+            }
         }
 
         private void odustao_Click(object sender, RoutedEventArgs e)
@@ -48,9 +56,10 @@ namespace PROJEKAT_HCI.View
                         return;
 
                 } 
-                TipSaradnika t = Tip.Text == "RESTORAN" ? TipSaradnika.RESTORAN : TipSaradnika.POSLASTICARNICA;
+                Enum.TryParse(Tip.Text, out TipSaradnika t); 
                 Saradnik s = new Saradnik { Naziv = Naziv.Text, Opis = Opis.Text, Lokacija = Lokacija.Text, TipSaradnika =t };
 
+               
 
                 Ret = s;
                 db.Saradnici.Add(s);

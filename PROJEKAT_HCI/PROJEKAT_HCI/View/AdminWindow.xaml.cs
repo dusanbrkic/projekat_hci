@@ -316,6 +316,11 @@ namespace PROJEKAT_HCI.View
 
             if (e.PropertyName == "Klijent")
                 e.Cancel = true;
+            if(e.PropertyName == "Saradnik")
+            {
+                
+
+            }
 
         }
     }

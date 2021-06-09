@@ -81,8 +81,8 @@
 
                     </DataGrid>
 
-                    <Button Name="DodavanjeSaradnikaBtn" Click="DodavanjeSaradnikaBtn_Click" Margin="7,7,7,7" Grid.Row="3" Grid.Column="1" Width="150" Height="30" HorizontalAlignment="Right" VerticalAlignment="Bottom">Dodaj saradnike</Button>
-                    <Button Name="AzuriranjeSaradnikaBtn" Click="AzuriranjeSaradnikaBtn_Click" Margin="7,7,7,7" Grid.Row="3" Grid.Column="1" Width="150" Height="30" HorizontalAlignment="Left" VerticalAlignment="Bottom">Ažuriraj saradnika</Button>
+                    <Button Name="DodavanjeSaradnikaBtn" Click="DodavanjeSaradnikaBtn_Click" Margin="7,7,7,7" Grid.Row="3" Grid.Column="1" Width="160" Height="30" HorizontalAlignment="Right" VerticalAlignment="Bottom">Dodaj saradnike</Button>
+                    <Button Name="AzuriranjeSaradnikaBtn" Click="AzuriranjeSaradnikaBtn_Click" Margin="7,7,7,7" Grid.Row="3" Grid.Column="1" Width="160" Height="30" HorizontalAlignment="Left" VerticalAlignment="Bottom">Ažuriraj saradnika</Button>
 
                 </Grid>
                

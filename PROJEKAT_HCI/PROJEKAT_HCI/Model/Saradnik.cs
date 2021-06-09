@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace PROJEKAT_HCI.Model
 {
-    public enum TipSaradnika { RESTORAN, POSLASTICARNICA}
+    public enum TipSaradnika { RESTORAN, POSLASTICARNICA, MUZIKA, DEKORACIJE , OSTALO}
     public class Saradnik : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
@@ -31,7 +31,7 @@ namespace PROJEKAT_HCI.Model
         public string Opis { get { return _opis; } set { _opis = value; OnPropertyChanged("Opis"); } }
         public string Lokacija { get { return _lokacija; } set { _lokacija = value; OnPropertyChanged("Lokacija"); } }
         public List<Ponuda> Ponude { get; set; }
-        public TipSaradnika TipSaradnika { get { return _tip; } set { _tip = value; OnPropertyChanged("Tip"); } }
+        public TipSaradnika TipSaradnika { get { return _tip; } set { _tip = value; OnPropertyChanged("TipSaradnika"); } }
         
     }
 }

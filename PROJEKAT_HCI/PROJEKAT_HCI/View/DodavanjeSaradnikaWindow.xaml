@@ -62,8 +62,7 @@
                     VerticalContentAlignment="Center"
                     
                     Width="256" Height="35" Background="White">
-                    <ComboBoxItem >RESTORAN</ComboBoxItem>
-                    <ComboBoxItem>POSLASTIČARNICA</ComboBoxItem>
+                    
                 </ComboBox>
 
             </apex:ApexGrid>
