@@ -109,6 +109,9 @@
     <Compile Include="View\AzuriranjeOrganizatoraWindow.xaml.cs">
       <DependentUpon>AzuriranjeOrganizatoraWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\AzuriranjePonudeWindow.xaml.cs">
+      <DependentUpon>AzuriranjePonudeWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\AzuriranjeSaradnikaWindow.xaml.cs">
       <DependentUpon>AzuriranjeSaradnikaWindow.xaml</DependentUpon>
     </Compile>
@@ -120,6 +123,9 @@
     </Compile>
     <Compile Include="View\DodavanjeOrganizatoraWindow.xaml.cs">
       <DependentUpon>DodavanjeOrganizatoraWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\DodavanjePonudeAdminWindow.xaml.cs">
+      <DependentUpon>DodavanjePonudeAdminWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\DodavanjeSaradnikaWindow.xaml.cs">
       <DependentUpon>DodavanjeSaradnikaWindow.xaml</DependentUpon>
@@ -199,6 +205,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="View\AzuriranjePonudeWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\AzuriranjeSaradnikaWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -212,6 +222,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\DodavanjeOrganizatoraWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\DodavanjePonudeAdminWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

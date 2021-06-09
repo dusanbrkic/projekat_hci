@@ -85,8 +85,8 @@
 
 
             <StackPanel Orientation="Horizontal" Margin="10,10,0,0">
-                <Button Click="odustao_Click" Name="odustao" Content="Odustani" Width="80" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" Margin="116,0,136,0"  />
-                <Button Click="dodajKlijenta_Click" x:Name="dodajKlijenta" Content="Dodaj klijenta" Width="80" Margin="116,0,136,0"/>
+                <Button Click="odustao_Click" Name="odustao" Content="Odustani" Width="120" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" Margin="116,0,136,0"  />
+                <Button Click="dodajKlijenta_Click" x:Name="dodajKlijenta" Content="Dodaj klijenta" Width="120" Margin="60,0,136,0"/>
 
             </StackPanel>
 

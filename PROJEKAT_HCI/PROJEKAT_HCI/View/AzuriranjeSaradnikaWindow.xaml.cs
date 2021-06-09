@@ -29,7 +29,16 @@ namespace PROJEKAT_HCI.View
             Naziv.Text = s.Naziv;
             Opis.Text = s.Opis;
             Lokacija.Text = s.Lokacija;
-            Tip.SelectedIndex = s.TipSaradnika == TipSaradnika.RESTORAN ? 0 : 1;
+            
+            foreach (TipSaradnika ss in Enum.GetValues(typeof(TipSaradnika)))
+            {
+
+                Tip.Items.Add(ss.ToString());
+                
+
+            }
+
+            Tip.SelectedIndex = Tip.Items.IndexOf(s.TipSaradnika.ToString());
         }
 
         private void Azuriraj_saradnika_Click(object sender, RoutedEventArgs e)
@@ -40,7 +49,8 @@ namespace PROJEKAT_HCI.View
                 k2.Lokacija = Lokacija.Text;
                 k2.Naziv = Naziv.Text;
                 k2.Opis = Opis.Text;
-                k2.TipSaradnika = Tip.SelectedIndex == 0 ? TipSaradnika.RESTORAN : TipSaradnika.POSLASTICARNICA;
+                Enum.TryParse(Tip.Text, out TipSaradnika t);
+                k2.TipSaradnika = t;
                 db.SaveChanges();
 
             }
