@@ -88,7 +88,16 @@
                
             </TabItem>
             <TabItem Header="Ponude">
-                
+                <Grid>
+                    <DataGrid  ItemsSource="{Binding Path=Ponude}" AutoGeneratingColumn="PonudeTable_AutoGeneratingColumn"  IsReadOnly="True" Name="PonudeTable" Margin ="10,10,10,50 " Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" Grid.RowSpan="3" >
+
+
+                    </DataGrid>
+
+                    <Button Name="DodavanjePonudaBtn" Click="DodavanjePonudaBtn_Click" Margin="7,7,7,7" Grid.Row="3" Grid.Column="1" Width="150" Height="30" HorizontalAlignment="Right" VerticalAlignment="Bottom">Dodaj ponudu</Button>
+                    <Button Name="AzuriranjePonuda" Click="AzuriranjePonuda_Click" Margin="7,7,7,7" Grid.Row="3" Grid.Column="1" Width="150" Height="30" HorizontalAlignment="Left" VerticalAlignment="Bottom">Ažuriraj ponudu</Button>
+
+                </Grid>
             </TabItem>
 
 
