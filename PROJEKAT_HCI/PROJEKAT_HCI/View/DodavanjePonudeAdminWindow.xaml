@@ -44,14 +44,18 @@
             <RowDefinition Height="84*" />
 
         </Grid.RowDefinitions>
-        <Label Background="Purple" VerticalContentAlignment="Center" HorizontalContentAlignment="Center">Dodavanje saradnika</Label>
-        <StackPanel Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"  HorizontalAlignment="Center" VerticalAlignment="Center">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="80*"></ColumnDefinition>
+            <ColumnDefinition Width="20*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Label Background="Purple" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Grid.ColumnSpan="2">Dodavanje saradnika</Label>
+        <StackPanel Margin="0,10,5,5"  Grid.Row="1" Grid.Column="0"  HorizontalAlignment="Left" VerticalAlignment="Center">
 
-            <apex:ApexGrid Rows="auto,auto" Columns="auto,auto" Margin="150,0,0,0">
+            <apex:ApexGrid Rows="auto,auto" Columns="auto,auto" Margin="100,0,0,0">
                 <Label Content="Cijena" HorizontalAlignment="left" VerticalAlignment="Center" Foreground="Black" FontSize="15" Grid.RowSpan="2"/>
-                <TextBox Name="Cijena" Style="{StaticResource Textbox1}"  Margin="150,8,0,0"></TextBox>
+                <TextBox Name="Cijena" Style="{StaticResource Textbox1}"   Margin="150,8,0,0"></TextBox>
             </apex:ApexGrid>
-            <apex:ApexGrid Rows="auto,auto" Columns="auto,auto" Margin="150,0,0,0">
+            <apex:ApexGrid Rows="auto,auto" Columns="auto,auto" Margin="100,0,0,0">
 
                 <Label  Content="Saradnik" HorizontalAlignment="left" VerticalAlignment="Center" Foreground="Black" FontSize="15" Grid.RowSpan="2"/>
                 <ComboBox Margin="150,20,20,0"
@@ -70,14 +74,14 @@
 
 
 
-            <StackPanel  Orientation="Horizontal" Margin="150,0,0,0">
+            <StackPanel  Orientation="Horizontal" Margin="100,0,0,0">
                 <Label Margin="10,10,10,10" Content="Opis" HorizontalAlignment="left" VerticalAlignment="Top" Foreground="Black" FontSize="15" Grid.RowSpan="2"/>
 
 
 
                 <TextBox
                         Name="Opis"
-                        Style="{StaticResource MaterialDesignOutlinedTextBox}"
+                        Style="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}"
                         VerticalAlignment="Top"
                                         HorizontalAlignment="Right"
                         Height="100" Width="150"
@@ -89,28 +93,33 @@
                     Background="White"
                          />
             </StackPanel>
+        </StackPanel>
+        
+        
+        <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,100,0,0">
 
-            <apex:ApexGrid Rows="auto,auto" Columns="auto,auto" Margin="150,0,0,0">
-                <Image Margin="5 5 60 5" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Name="slika" Source="pack://application:,,,/Res/Images/default.jpg" Height="80"></Image>
+            <Image Margin="5 5 10 5"  VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Name="slika" Source="pack://application:,,,/Res/Images/default.jpg" Height="80"></Image>
 
-                <Button Margin="10 10 10 10"  x:Name="Dodaj_slikuBtn" Click="Dodaj_slikuBtn_Click" Grid.Column="1" FontSize="17 " Height="35" Content="DODAJTE SLIKU"/>
+            <Button Margin="10 10 10 10"  x:Name="Dodaj_slikuBtn" Click="Dodaj_slikuBtn_Click" Grid.Column="1" FontSize="17 " Height="35" Content="DODAJTE SLIKU"/>
 
-            </apex:ApexGrid>
-
-
-
+        </StackPanel>
+                
+            
 
 
 
 
 
-            <StackPanel Orientation="Horizontal" Margin="10,10,0,0">
+
+
+
+            <StackPanel Grid.Row="1"  Orientation="Horizontal" Margin="10,10,0,0" VerticalAlignment="Bottom" HorizontalAlignment="Center">
                 <Button Click="odustao_Click" Name="odustao" Width="140" Content="Odustani"  Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" Margin="116,0,136,0"  />
                 <Button Click="Dodaj_ponudu_Click" x:Name="Dodaj_ponudu" Content="Dodaj ponudu" Width="140" Margin="116,0,136,0"/>
 
             </StackPanel>
 
-        </StackPanel>
+        
 
 
     </Grid>

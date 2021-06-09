@@ -131,7 +131,11 @@ namespace PROJEKAT_HCI.View
             if (e.PropertyName == "Username")
                 e.Column.Header = "Korisničko ime";
 
+            if (e.PropertyName == "Zahtevi")
+                e.Cancel = true;
 
+            if (e.PropertyName == "Proslave")
+                e.Cancel = true;
         }
 
         private void AzurirajKlijentaBtn_Click(object sender, RoutedEventArgs e)
@@ -176,6 +180,10 @@ namespace PROJEKAT_HCI.View
 
             if (e.PropertyName == "Username")
                 e.Column.Header = "Korisničko ime";
+
+            if (e.PropertyName == "Proslave")
+                e.Cancel = true;
+               
 
         }
 
@@ -238,6 +246,9 @@ namespace PROJEKAT_HCI.View
 
             if (e.PropertyName == "Ponude")
                 e.Cancel = true;
+
+            if (e.PropertyName == "TipSaradnika")
+                e.Column.Header = "Tip saradnika";
 
         }
 
@@ -316,11 +327,7 @@ namespace PROJEKAT_HCI.View
 
             if (e.PropertyName == "Klijent")
                 e.Cancel = true;
-            if(e.PropertyName == "Saradnik")
-            {
-                
-
-            }
+           
 
         }
     }

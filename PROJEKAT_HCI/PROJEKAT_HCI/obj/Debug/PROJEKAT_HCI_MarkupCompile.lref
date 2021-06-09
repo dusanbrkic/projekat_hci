@@ -4,9 +4,12 @@ FC:\Users\User\Documents\GitHub\projekat_hci\PROJEKAT_HCI\PROJEKAT_HCI\MainWindo
 FC:\Users\User\Documents\GitHub\projekat_hci\PROJEKAT_HCI\PROJEKAT_HCI\View\AdminWindow.xaml;;
 FC:\Users\User\Documents\GitHub\projekat_hci\PROJEKAT_HCI\PROJEKAT_HCI\View\AzuriranjeKlijentaWindow.xaml;;
 FC:\Users\User\Documents\GitHub\projekat_hci\PROJEKAT_HCI\PROJEKAT_HCI\View\AzuriranjeOrganizatoraWindow.xaml;;
+FC:\Users\User\Documents\GitHub\projekat_hci\PROJEKAT_HCI\PROJEKAT_HCI\View\AzuriranjePonudeWindow.xaml;;
+FC:\Users\User\Documents\GitHub\projekat_hci\PROJEKAT_HCI\PROJEKAT_HCI\View\AzuriranjeSaradnikaWindow.xaml;;
 FC:\Users\User\Documents\GitHub\projekat_hci\PROJEKAT_HCI\PROJEKAT_HCI\View\DetaljiZadatka.xaml;;
 FC:\Users\User\Documents\GitHub\projekat_hci\PROJEKAT_HCI\PROJEKAT_HCI\View\DodavanjeKlijentaWindow.xaml;;
 FC:\Users\User\Documents\GitHub\projekat_hci\PROJEKAT_HCI\PROJEKAT_HCI\View\DodavanjeOrganizatoraWindow.xaml;;
+FC:\Users\User\Documents\GitHub\projekat_hci\PROJEKAT_HCI\PROJEKAT_HCI\View\DodavanjePonudeAdminWindow.xaml;;
 FC:\Users\User\Documents\GitHub\projekat_hci\PROJEKAT_HCI\PROJEKAT_HCI\View\DodavanjeSaradnikaWindow.xaml;;
 FC:\Users\User\Documents\GitHub\projekat_hci\PROJEKAT_HCI\PROJEKAT_HCI\View\EditProfile.xaml;;
 FC:\Users\User\Documents\GitHub\projekat_hci\PROJEKAT_HCI\PROJEKAT_HCI\View\KlijentWindow.xaml;;
@@ -18,13 +21,11 @@ FC:\Users\User\Documents\GitHub\projekat_hci\PROJEKAT_HCI\PROJEKAT_HCI\View\Orga
 FC:\Users\User\Documents\GitHub\projekat_hci\PROJEKAT_HCI\PROJEKAT_HCI\View\OrganizatorSaradnici.xaml;;
 FC:\Users\User\Documents\GitHub\projekat_hci\PROJEKAT_HCI\PROJEKAT_HCI\View\OrganizatorSaradnikWindow.xaml;;
 FC:\Users\User\Documents\GitHub\projekat_hci\PROJEKAT_HCI\PROJEKAT_HCI\View\OrganizatorWindow.xaml;;
+FC:\Users\User\Documents\GitHub\projekat_hci\PROJEKAT_HCI\PROJEKAT_HCI\View\PredlogProslaveOrganizator.xaml;;
 FC:\Users\User\Documents\GitHub\projekat_hci\PROJEKAT_HCI\PROJEKAT_HCI\View\PregledPonudaWindow.xaml;;
 FC:\Users\User\Documents\GitHub\projekat_hci\PROJEKAT_HCI\PROJEKAT_HCI\View\PregledPonude.xaml;;
 FC:\Users\User\Documents\GitHub\projekat_hci\PROJEKAT_HCI\PROJEKAT_HCI\View\PregledProslavaWindow.xaml;;
 FC:\Users\User\Documents\GitHub\projekat_hci\PROJEKAT_HCI\PROJEKAT_HCI\View\PregledProslave.xaml;;
 FC:\Users\User\Documents\GitHub\projekat_hci\PROJEKAT_HCI\PROJEKAT_HCI\View\PregledZahtevaProslave.xaml;;
 FC:\Users\User\Documents\GitHub\projekat_hci\PROJEKAT_HCI\PROJEKAT_HCI\View\RegistrationWindow.xaml;;
-FC:\Users\User\Documents\GitHub\projekat_hci\PROJEKAT_HCI\PROJEKAT_HCI\View\AzuriranjeSaradnikaWindow.xaml;;
-FC:\Users\User\Documents\GitHub\projekat_hci\PROJEKAT_HCI\PROJEKAT_HCI\View\DodavanjePonudeAdminWindow.xaml;;
-FC:\Users\User\Documents\GitHub\projekat_hci\PROJEKAT_HCI\PROJEKAT_HCI\View\AzuriranjePonudeWindow.xaml;;
 
