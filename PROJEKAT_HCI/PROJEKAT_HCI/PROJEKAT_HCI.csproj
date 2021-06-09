@@ -109,6 +109,9 @@
     <Compile Include="View\AzuriranjeOrganizatoraWindow.xaml.cs">
       <DependentUpon>AzuriranjeOrganizatoraWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\AzuriranjePonudeWindow.xaml.cs">
+      <DependentUpon>AzuriranjePonudeWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\AzuriranjeSaradnikaWindow.xaml.cs">
       <DependentUpon>AzuriranjeSaradnikaWindow.xaml</DependentUpon>
     </Compile>
@@ -198,6 +201,10 @@
     <Page Include="View\AzuriranjeOrganizatoraWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\AzuriranjePonudeWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\AzuriranjeSaradnikaWindow.xaml">
       <SubType>Designer</SubType>
