@@ -32,6 +32,11 @@ namespace PROJEKAT_HCI.Model
         public string Lokacija { get { return _lokacija; } set { _lokacija = value; OnPropertyChanged("Lokacija"); } }
         public List<Ponuda> Ponude { get; set; }
         public TipSaradnika TipSaradnika { get { return _tip; } set { _tip = value; OnPropertyChanged("TipSaradnika"); } }
-        
+
+
+       public override string  ToString() {
+
+            return _naziv;
+        }
     }
 }

@@ -5,11 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PROJEKAT_HCI.View"
         mc:Ignorable="d"
-        Title="DetaljiZadatka" Height="450" Width="800">
-    <Grid Background="MediumPurple">
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" xmlns:st="http://schemas.spicytaco.io/"
+        Title="DetaljiZadatka" Height="430" Width="750">
+    <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="149*"></ColumnDefinition>
-            <ColumnDefinition Width="643*"></ColumnDefinition>
+            <ColumnDefinition Width="521*"></ColumnDefinition>
+            <ColumnDefinition Width="150*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="62*"></RowDefinition>
@@ -18,37 +20,25 @@
             <RowDefinition Height="220*"/>
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
-        <Label Background="{DynamicResource PrimaryHueDarkBrush}" Grid.ColumnSpan="2" Foreground="White" FontSize="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="DETALJI ZADATKA"/>
+        <Label Background="{DynamicResource PrimaryHueDarkBrush}" Grid.ColumnSpan="3" Foreground="White" FontSize="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="DETALJI ZADATKA"/>
         <Button  Click="Nazad_Click" Grid.Column="0"  Foreground="White" Background="Red" FontSize="20" Height="Auto" Content="NAZAD"/>
-        <ScrollViewer Grid.Row="3" Grid.ColumnSpan="2" Grid.RowSpan="2">
-            <WrapPanel Name="wrapper">
+        <Button  Name="Menjac" Click="Menjac_Click"  Foreground="White" Background="DarkGoldenrod" IsEnabled="False" FontSize="20" Height="Auto" Content="Izmeni" Grid.Column="3"/>
+        <ScrollViewer Grid.ColumnSpan="3" Grid.RowSpan="3" Grid.Row="1">
+            <StackPanel Height="Auto">
+                <TextBox Name="Naziv_Zadatka" materialDesign:HintAssist.HelperText="Promenite naziv zadatka" TextChanged="Naziv_Zadatka_TextChanged"  FontSize="18" Margin="10,10,10,10"/>
+                <st:StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch" Height="100" Margin="10 10 10 10" >
+                    <TextBox HorizontalAlignment="Stretch" VerticalScrollBarVisibility="Auto" x:Name="Opis_Zadatka" materialDesign:HintAssist.HelperText="Unesite opis zadatka" TextChanged="Opis_Zadatka_TextChanged" FontSize="16" Margin="10,10,10,10" st:StackPanel.Fill="Fill"/>
+                    <TextBox Text="Klijent nije ostavio komentar." IsReadOnly="True" Name="Komentar" materialDesign:HintAssist.HelperText="Komentar klijenta" Background="White" FontSize="16" Margin="10,10,10,10" st:StackPanel.Fill="Fill"/>
+                </st:StackPanel>
 
-            </WrapPanel>
+                <TextBox Name ="Ponuda_Text" materialDesign:HintAssist.HelperText="Opis ponude zadatka" IsReadOnly="True" Height="55" Width="Auto" FontSize="16" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" VerticalScrollBarVisibility="Auto" Margin="10,10,10,10"/>
+                <Label Background="{DynamicResource PrimaryHueDarkBrush}" Foreground="White" FontSize="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="PROMENITE PONUDU ZADATKA" Margin="10,10,10,10"/>
+                <TextBox materialDesign:HintAssist.HelperText="Pretrazite ponude po opisu" x:Name="SearchBox"  TextChanged="Search_Changed" FontSize="18" Margin="10,10,10,10"/>
+
+                <WrapPanel Orientation="Horizontal" HorizontalAlignment="Center" Name="wrapper">
+
+                </WrapPanel>
+            </StackPanel>
         </ScrollViewer>
-        <StackPanel Grid.Row="1" Grid.Column="0">
-            <Label Margin="0 0 0 0" Background="{DynamicResource PrimaryHueDarkBrush}" Foreground="White" FontSize="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="Pretraga" Height="43"></Label>
-            <TextBox Name="SearchBox" TextChanged="Search_Changed" Background="White"   VerticalAlignment="Center" FontSize="18" Height="54"></TextBox>
-        </StackPanel>
-        <Grid Grid.Row="1" Grid.Column="1">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="130*"></ColumnDefinition>
-                <ColumnDefinition Width="180*"></ColumnDefinition>
-                <ColumnDefinition Width="178*"></ColumnDefinition>
-                <ColumnDefinition Width="149*"></ColumnDefinition>
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition></RowDefinition>
-                <RowDefinition></RowDefinition>
-            </Grid.RowDefinitions>
-            <Label Grid.Column="0" Margin="0 0 0 0" Background="{DynamicResource PrimaryHueDarkBrush}" Foreground="White" FontSize="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="Naziv zadatka"/>
-            <Label Grid.Column="1" Margin="0 0 0 0" Background="{DynamicResource PrimaryHueDarkBrush}" Foreground="White" FontSize="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="Opis zadatka"/>
-            <Label Grid.Column="2" Margin="0 0 0 0" Background="{DynamicResource PrimaryHueDarkBrush}" Foreground="White" FontSize="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="Komenatar klijenta"/>
-            <TextBox Name="Naziv_Zadatka" TextChanged="Naziv_Zadatka_TextChanged" Background="White"   VerticalAlignment="Center" FontSize="18" Height="47" Margin="0,44,0,-1" Grid.RowSpan="2"/>
-            <TextBox Name="Opis_Zadatka" TextChanged="Opis_Zadatka_TextChanged" Grid.Column="1" Background="White"   VerticalAlignment="Center" FontSize="16" Height="47" Margin="0,44,0,-1" Grid.RowSpan="2"/>
-            <TextBox IsReadOnly="True" Name="Komentar" Grid.Column="2" Background="White"   VerticalAlignment="Center" FontSize="16" Height="47" Margin="0,44,0,-1" Grid.RowSpan="2"/>
-            <Button  Name="Menjac" Click="Menjac_Click" Grid.Column="3" Grid.RowSpan="2"  Foreground="White" Background="DarkGoldenrod" IsEnabled="False" FontSize="20" Height="Auto" Content="Izmeni"/>
-        </Grid>
-        <Label  Margin="0 0 0 0" Background="{DynamicResource PrimaryHueDarkBrush}" Foreground="White" FontSize="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.Row="2" Content="Ponuda"></Label>
-        <TextBox Name ="Ponuda_Text" IsReadOnly="True" Grid.Row="2" Foreground="White" Grid.Column="1" Height="Auto" Width="Auto" FontSize="16" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"></TextBox>
     </Grid>
 </Window>

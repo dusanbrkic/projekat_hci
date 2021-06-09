@@ -59,6 +59,9 @@ namespace PROJEKAT_HCI.View
                     b.Width = 100;
                     b.Height = 50;
                     b.Margin = new Thickness(5, 5, 5, 5);
+                    var bc = new BrushConverter();
+                    b.Background = (Brush) bc.ConvertFrom("#673ab7");
+                    b.Foreground = Brushes.White;
                     b.Proslava = p;
                     b.VerticalAlignment = VerticalAlignment.Bottom;
                     //wrapper.Children.Add(b);
@@ -69,6 +72,8 @@ namespace PROJEKAT_HCI.View
                     b1.Width = 100;
                     b1.Height = 50;
                     b1.Margin = new Thickness(5, 20, 5, 5);
+                    b1.Background = (Brush)bc.ConvertFrom("#673ab7");
+                    b1.Foreground = Brushes.White;
                     b1.VerticalAlignment = VerticalAlignment.Bottom;
                     //wrapper.Children.Add(b1);
                     b1.Click += new RoutedEventHandler(Ponude_Btn_Click);
