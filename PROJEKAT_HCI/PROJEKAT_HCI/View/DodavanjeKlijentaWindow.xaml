@@ -37,7 +37,7 @@
 
     </Window.Resources>
     
-    <Grid Background="MediumPurple">
+    <Grid Background="White">
         <Grid.RowDefinitions >
             <RowDefinition  Height="13*" />
             <RowDefinition Height="84*" />

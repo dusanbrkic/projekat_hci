@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:PROJEKAT_HCI.View"
         mc:Ignorable="d"
          xmlns:apex="clr-namespace:Apex.Controls;assembly=Apex"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         Title="DodavanjeSaradnikaWindow" Height="450" Width="800">
     <Window.Resources>
         <Style TargetType="TextBox" x:Key="Textbox1">
@@ -62,10 +63,26 @@
 
             </apex:ApexGrid>
             
-            <apex:ApexGrid Rows="auto,auto" Columns="auto,auto" Margin="150,0,0,0">
-                <Label Content="Opis" HorizontalAlignment="left" VerticalAlignment="Top" Foreground="Black" FontSize="15" Grid.RowSpan="2"/>
-                <TextBox TextWrapping="Wrap" AcceptsReturn="True" VerticalScrollBarVisibility="Visible" Name="Opis"  Style="{StaticResource Textbox1}" Margin="150,8,0,0"></TextBox>
-            </apex:ApexGrid>
+            
+
+            <StackPanel  Orientation="Horizontal" Margin="150,0,0,0">
+                <Label Margin="10,10,10,10" Content="Opis" HorizontalAlignment="left" VerticalAlignment="Top" Foreground="Black" FontSize="15" Grid.RowSpan="2"/>
+
+
+
+                <TextBox
+                        Style="{StaticResource MaterialDesignOutlinedTextBox}"
+                        VerticalAlignment="Top"
+                                        HorizontalAlignment="Right"
+                        Height="100" Width="150"
+                        AcceptsReturn="True"
+                        TextWrapping="Wrap"
+                        VerticalScrollBarVisibility="Auto"
+                        materialDesign:HintAssist.Hint="This is a text area"  
+                        Margin="100,10,10,10"
+                    Background="White"
+                         />
+            </StackPanel>
             
 
             

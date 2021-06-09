@@ -4,11 +4,12 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PROJEKAT_HCI.View"
+         xmlns:dragablz="clr-namespace:Dragablz;assembly=Dragablz"
         mc:Ignorable="d"
         Title="AdminWindow" Height="450" Width="800">
     <Grid Background="MediumPurple">
 
-        <Grid.RowDefinitions >
+       <!-- <Grid.RowDefinitions >
             <RowDefinition  Height="16*" />
             <RowDefinition Height="28*" />
             <RowDefinition Height="28*" />
@@ -18,50 +19,92 @@
             <ColumnDefinition Width="15*" />
             <ColumnDefinition Width="70*" />
             <ColumnDefinition Width="15*" />
+        </Grid.ColumnDefinitions> -->
+       
+
+        
+
+        
+
+        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10*" />
+            <RowDefinition Height="90*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="85*" />
+            <ColumnDefinition Width="15*"/>
         </Grid.ColumnDefinitions>
-        <Label Content="Pregled organizatora" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Background="Purple" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"></Label>
-        <Button Click="OrganizatoriBtn_Click" Name="OrganizatoriBtn" Grid.Column="0" Grid.Row="1" Content="Organizatori" Background="#9b34eb" ></Button>
-        <Button Click="KlijentiBtn_Click" Name="KlijentiBtn" Grid.Column="0" Grid.Row="2" Content="Klijenti" Background="#9b34eb" ></Button>
-        <Button Click="SaradniciBtn_Click" Name="SaradniciBtn" Grid.Column="0" Grid.Row="3" Content="Saradnici" Background="#9b34eb" ></Button>
-        <Button Click="OdjavaBtn_Click" Name="OdjavaBtn" Grid.Column="3" Grid.Row="0" Content="Odjavite se" Background="Red"></Button>
+        <dragablz:TabablzControl Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" Grid.RowSpan="2" >
 
-        <DataGrid Name="OrganizatoriTable"  Margin ="10,10,10,50 " Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" Grid.RowSpan="3" >
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="Naziv" Width="20*"></DataGridTextColumn>
-                <DataGridTextColumn Header="Tip" Width="20*"></DataGridTextColumn>
-                <DataGridTextColumn Header="Lokacija" Width="20*"></DataGridTextColumn>
-                <DataGridTextColumn Header="Opis" Width="20*"></DataGridTextColumn>
-                <DataGridTextColumn Header="Lista ponuda" Width="20*"></DataGridTextColumn>
-               
-            </DataGrid.Columns>
-        </DataGrid>
+            <dragablz:TabablzControl.InterTabController >
+                <dragablz:InterTabController />
+            </dragablz:TabablzControl.InterTabController>
 
-        <DataGrid Name="KlijentiTable"  Margin ="10,10,10,50 " Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" Grid.RowSpan="3" >
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="Naziv" Width="20*"></DataGridTextColumn>
-                <DataGridTextColumn Header="Tip" Width="20*"></DataGridTextColumn>
-                <DataGridTextColumn Header="Lokacija" Width="20*"></DataGridTextColumn>
-                <DataGridTextColumn Header="Opis" Width="20*"></DataGridTextColumn>
-                <DataGridTextColumn Header="Lista ponuda" Width="20*"></DataGridTextColumn>
+            <TabItem Header="Organizatori">
+                <Grid>
 
-            </DataGrid.Columns>
-        </DataGrid>
 
-        <DataGrid Name="SaradniciTable" Margin ="10,10,10,50 " Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" Grid.RowSpan="3" >
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="Naziv" Width="20*"></DataGridTextColumn>
-                <DataGridTextColumn Header="Tip" Width="20*"></DataGridTextColumn>
-                <DataGridTextColumn Header="Lokacija" Width="20*"></DataGridTextColumn>
-                <DataGridTextColumn Header="Opis" Width="20*"></DataGridTextColumn>
-                <DataGridTextColumn Header="Lista ponuda" Width="20*"></DataGridTextColumn>
-                
+                    <DataGrid  ItemsSource="{Binding Path=Organizatori}" AutoGeneratingColumn="OrganizatoriTable_AutoGeneratingColumn"  IsReadOnly="True" Name="OrganizatoriTable"  Margin ="10,10,10,50 " Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" Grid.RowSpan="3" >
+                        
+                    </DataGrid>
                     
-            </DataGrid.Columns>
-            
-        </DataGrid>
+                        <Button Name="AzurirajOrganizatoraBtn" VerticalContentAlignment="Top" Click="AzurirajOrganizatoraBtn_Click" Margin="7,7,7,7" HorizontalContentAlignment="Center" Grid.Row="3" Grid.Column="1" Width="170" Height="30" HorizontalAlignment="Left" VerticalAlignment="Bottom">Azuriraj organizatora</Button>
+                    <Button Name="DodavanjeOrganizatoraBtn" VerticalContentAlignment="Top" Click="DodavanjeOrganizatoraBtn_Click" HorizontalContentAlignment="Center" Margin="7,7,7,7" Grid.Row="3" Grid.Column="1" Width="170" Height="30" HorizontalAlignment="Right" VerticalAlignment="Bottom">Dodaj organizatora</Button>
+                    
+                    
+                </Grid>
 
-        <Button Name="DodavanjeSaradnikaBtn" Click="DodavanjeSaradnikaBtn_Click" Margin="7" Grid.Row="3" Grid.Column="1" Width="100" Height="20" HorizontalAlignment="Right" VerticalAlignment="Bottom">Dodaj saradnike</Button>
-        <Button Name="DodavanjeOrganizatoraBtn" Click="DodavanjeOrganizatoraBtn_Click" Margin="7" Grid.Row="3" Grid.Column="1" Width="110" Height="20" HorizontalAlignment="Right" VerticalAlignment="Bottom">Dodaj organizatora</Button>
-        <Button Name="DodavanjeKlijentaBtn" Click="DodavanjeKlijentaBtn_Click" Margin="7" Grid.Row="3" Grid.Column="1" Width="100" Height="20" HorizontalAlignment="Right" VerticalAlignment="Bottom">Dodaj klijenta</Button>
+                
+            </TabItem>
+            
+            
+            <TabItem Header="Klijenti">
+                
+                <Grid>
+                    <DataGrid x:Name="KlijentiTable" ItemsSource="{Binding Path=Klijenti}" AutoGeneratingColumn="KlijentiTable_AutoGeneratingColumn"  IsReadOnly="True" Margin ="10,10,10,50 " Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" Grid.RowSpan="3" >
+                       
+                    </DataGrid>
+                    <Button Name="AzurirajKlijentaBtn" Click="AzurirajKlijentaBtn_Click" Margin="7,7,7,7" HorizontalContentAlignment="Center" Grid.Row="3" Grid.Column="1" Width="130" Height="25" HorizontalAlignment="Left" VerticalAlignment="Bottom">Azuriraj klijenta</Button>
+                    <Button Name="DodavanjeKlijentaBtn" Click="DodavanjeKlijentaBtn_Click" HorizontalContentAlignment="Center" Margin="7,7,7,7" Grid.Row="3" Grid.Column="1" Width="130" Height="25" HorizontalAlignment="Right" VerticalAlignment="Bottom">Dodaj klijenta</Button>
+                </Grid>
+               
+                
+            </TabItem>
+            
+            
+            
+            <TabItem Header="Saradnici">
+                <Grid>
+                    <DataGrid  Name="SaradniciTable" Margin ="10,10,10,50 " Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" Grid.RowSpan="3" >
+                        <DataGrid.Columns>
+                            <DataGridTextColumn  Header="Naziv" Width="20*"></DataGridTextColumn>
+                            <DataGridTextColumn   Header="Tip" Width="20*"></DataGridTextColumn>
+                            <DataGridTextColumn   Header="Lokacija" Width="20*"></DataGridTextColumn>
+                            <DataGridTextColumn   Header="Opis" Width="20*"></DataGridTextColumn>
+                            <DataGridTextColumn   Header="Lista ponuda" Width="20*"></DataGridTextColumn>
+
+
+                        </DataGrid.Columns>
+
+                    </DataGrid>
+
+                    <Button Name="DodavanjeSaradnikaBtn" Click="DodavanjeSaradnikaBtn_Click" Margin="7" Grid.Row="3" Grid.Column="1" Width="100" Height="20" HorizontalAlignment="Right" VerticalAlignment="Bottom">Dodaj saradnike</Button>
+
+
+                </Grid>
+               
+            </TabItem>
+
+
+
+
+
+        </dragablz:TabablzControl>
+
+        <Button Click="Odjava_Click" Name="Odjava" Grid.Column="1" Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Right"  Background="Red" Height="42" >Odjavite se</Button>
+
+
+
     </Grid>
 </Window>
