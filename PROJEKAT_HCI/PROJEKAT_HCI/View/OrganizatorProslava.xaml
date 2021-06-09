@@ -51,25 +51,39 @@
             <Label  Grid.Column="5" Foreground="White" FontSize="18" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="Obijeno"/>
             <Label  Grid.Column="6" Foreground="White" FontSize="18" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="Prihvaćeno"/>
             <Border CornerRadius="7" BorderBrush="{DynamicResource PrimaryHueMidBrush}" BorderThickness="6" Grid.Row="1" Grid.Column="0">
-                <StackPanel Drop="Target_Drop_Za_Uraditi" AllowDrop="True" Name="Za_uraditi_stek" Orientation="Vertical" Background="White"></StackPanel>
+                <ScrollViewer>
+                    <StackPanel Drop="Target_Drop_Za_Uraditi" AllowDrop="True" Name="Za_uraditi_stek" Orientation="Vertical" Background="White"></StackPanel>
+                </ScrollViewer>
             </Border>
             <Border CornerRadius="7" BorderBrush="{DynamicResource PrimaryHueMidBrush}" BorderThickness="6" Grid.Row="1" Grid.Column="1">
-                <StackPanel Drop="Target_Drop_U_Obradi" AllowDrop="True" Name="U_obradi_stek" Orientation="Vertical" Background="White"></StackPanel>
+                <ScrollViewer>
+                    <StackPanel Drop="Target_Drop_U_Obradi" AllowDrop="True" Name="U_obradi_stek" Orientation="Vertical" Background="White"></StackPanel>
+                </ScrollViewer>
             </Border>
             <Border CornerRadius="7" BorderBrush="{DynamicResource PrimaryHueMidBrush}" BorderThickness="6" Grid.Row="1" Grid.Column="2">
+                <ScrollViewer>
                 <StackPanel Drop="Target_Drop_Za_Poslati" AllowDrop="True" Name="Za_poslati_stek" Orientation="Vertical" Background="White"></StackPanel>
+                    </ScrollViewer>
             </Border>
             <Border CornerRadius="7" BorderBrush="{DynamicResource PrimaryHueMidBrush}" BorderThickness="6" Grid.Row="1" Grid.Column="3">
+                <ScrollViewer>
                 <StackPanel Name="Poslato_stek" Orientation="Vertical" Background="White"></StackPanel>
+                    </ScrollViewer>
             </Border>
             <Border CornerRadius="7" BorderBrush="{DynamicResource PrimaryHueMidBrush}" BorderThickness="6" Grid.Row="1" Grid.Column="4">
+                <ScrollViewer>
                 <StackPanel Drop="Target_Drop_Za_Izmenu" AllowDrop="True" Name="Za_izmenu_stek" Orientation="Vertical" Background="White"></StackPanel>
+                    </ScrollViewer>
             </Border>
             <Border CornerRadius="7" BorderBrush="{DynamicResource PrimaryHueMidBrush}" BorderThickness="6" Grid.Row="1" Grid.Column="5">
+                <ScrollViewer>
                 <StackPanel Name="Odbijeno_stek" Orientation="Vertical" Background="White"></StackPanel>
+                    </ScrollViewer>
             </Border>
             <Border  CornerRadius="7" BorderBrush="{DynamicResource PrimaryHueMidBrush}" BorderThickness="6" Grid.Row="1" Grid.Column="6">
+                <ScrollViewer>
                 <StackPanel Name="Prihvaceno_stek" Orientation="Vertical" Background="White"></StackPanel>
+                    </ScrollViewer>
             </Border>
 
         </Grid>
