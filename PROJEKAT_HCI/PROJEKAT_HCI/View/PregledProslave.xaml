@@ -36,7 +36,8 @@
                 Height="Auto"
                 HorizontalAlignment="Left"
                 Width="82"
-                Margin="1 1 1 1">
+                Margin="1 1 1 1"
+                Click="UrediProfilBtn_Click">
             <Viewbox>
                 <materialDesign:PackIcon Kind="Account" />
             </Viewbox>

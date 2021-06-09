@@ -6,7 +6,56 @@
         xmlns:local="clr-namespace:PROJEKAT_HCI.View"
         xmlns:dd="urn:gong-wpf-dragdrop"
         mc:Ignorable="d"
-        Title="RasporedSedenja" Height="450" Width="800">
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        Title="RasporedSedenja"
+        Height="450"
+        Width="800">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100"></ColumnDefinition>
+            <ColumnDefinition Width="300*"></ColumnDefinition>
+            <ColumnDefinition Width="95*"></ColumnDefinition>
+            <ColumnDefinition Width="197*"></ColumnDefinition>
+            <ColumnDefinition Width="100"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="178*"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Label Content="Raspored sedenja"
+               Foreground="White"
+               Grid.Row="0"
+               Grid.Column="0"
+               Grid.ColumnSpan="5"
+               FontSize="20"
+               Background="{DynamicResource PrimaryHueMidBrush}"
+               HorizontalContentAlignment="Center"
+               VerticalContentAlignment="Center"
+               Margin="0,0,0,0" />
+        <Button Name="UrediProfilBtn"
+                Grid.Column="0"
+                Grid.Row="0"
+                Background="{DynamicResource PrimaryHueMidBrush}"
+                Height="Auto"
+                HorizontalAlignment="Left"
+                Width="82">
+            <Viewbox>
+                <materialDesign:PackIcon Kind="Account" />
+            </Viewbox>
+        </Button>
+
+        <ScrollViewer Grid.Row="2"
+                      Grid.Column="1">
+            <StackPanel>
+
+            </StackPanel>
+        </ScrollViewer>
+        <Button Grid.Column="1"
+                Grid.Row="3"
+                Margin="50,9" Content="Ucitaj goste"
+                Click="Button_Click" />
+
     </Grid>
 </Window>

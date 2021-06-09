@@ -47,7 +47,8 @@
                 Background="{DynamicResource PrimaryHueMidBrush}"
                 Height="Auto"
                 HorizontalAlignment="Left"
-                Width="82">
+                Width="82"
+                Click="UrediProfilBtn_Click">
             <Viewbox>
                 <materialDesign:PackIcon Kind="Account" />
             </Viewbox>
