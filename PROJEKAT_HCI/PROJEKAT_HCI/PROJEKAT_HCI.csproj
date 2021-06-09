@@ -154,6 +154,9 @@
     <Compile Include="View\OrganizatorWindow.xaml.cs">
       <DependentUpon>OrganizatorWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\PredlogProslaveOrganizator.xaml.cs">
+      <DependentUpon>PredlogProslaveOrganizator.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\PregledPonudaWindow.xaml.cs">
       <DependentUpon>PregledPonudaWindow.xaml</DependentUpon>
     </Compile>
@@ -253,6 +256,10 @@
     <Page Include="View\OrganizatorWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\PredlogProslaveOrganizator.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="View\PregledPonudaWindow.xaml">
       <SubType>Designer</SubType>
