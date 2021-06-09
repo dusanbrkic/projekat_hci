@@ -21,6 +21,10 @@ namespace PROJEKAT_HCI.View
     /// </summary>
     public partial class DodavanjeSaradnikaWindow : Window
     {
+
+        private Saradnik _saradnik = null;
+        public Saradnik Ret { get { return _saradnik; } set { _saradnik = value; } }
+
         public DodavanjeSaradnikaWindow()
         {
             InitializeComponent();
@@ -28,13 +32,13 @@ namespace PROJEKAT_HCI.View
 
         private void odustao_Click(object sender, RoutedEventArgs e)
         {
-
+            this.Close();
         }
 
-        private void registruj_Click(object sender, RoutedEventArgs e)
-        {
-            
+        
 
+        private void Dodaj_saradnika_Click(object sender, RoutedEventArgs e)
+        {
             using (var db = new ProjectDatabase())
             {
 
@@ -43,15 +47,15 @@ namespace PROJEKAT_HCI.View
                     if (Naziv.Text == sar.Naziv)//vec postoji korisnik sa istim usernamemom
                         return;
 
-                }
+                } 
+                TipSaradnika t = Tip.Text == "RESTORAN" ? TipSaradnika.RESTORAN : TipSaradnika.POSLASTICARNICA;
+                Saradnik s = new Saradnik { Naziv = Naziv.Text, Opis = Opis.Text, Lokacija = Lokacija.Text, TipSaradnika =t };
 
-                //Klijent k = new Klijent { Id = db.klijenti.Count(), Ime = ime.Text, Prezime = prezime.Text, BrojTelefona = brojTelefona.Text, Email = email.Text, Password = password.Text, Username = username.Text };
 
-
-               // db.klijenti.Add(k);
-                //db.SaveChanges();
+                Ret = s;
+                db.Saradnici.Add(s);
+                db.SaveChanges();
             }
-
         }
     }
 }
