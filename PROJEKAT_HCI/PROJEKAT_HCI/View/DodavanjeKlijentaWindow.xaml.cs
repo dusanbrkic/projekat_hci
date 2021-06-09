@@ -58,7 +58,7 @@ namespace PROJEKAT_HCI.View
 
                 }
 
-                Klijent k = new Klijent { Id = db.Klijenti.Count(), Ime = ime.Text, Prezime = prezime.Text, BrojTelefona = brojTelefona.Text, Email = email.Text, Password = password.Text, Username = username.Text };
+                Klijent k = new Klijent { Id = db.Klijenti.Count(), Ime = ime.Text, Prezime = prezime.Text, BrojTelefona = brojTelefona.Text, Email = email.Text, Password = password.Password, Username = username.Text };
                 Ret = k;
 
                 db.Klijenti.Add(k);
