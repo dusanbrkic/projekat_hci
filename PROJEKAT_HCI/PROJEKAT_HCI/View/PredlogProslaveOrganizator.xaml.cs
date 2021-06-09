@@ -35,6 +35,7 @@ namespace PROJEKAT_HCI.View
                 Proslava pros = db.Proslave.Find(Proslava.Id);
                 PredlogProslave pp = db.Predlozi.Find(pros.PredlogProslave.Id);
                 Opis.Text = pp.Opis;
+                KomentarKlijenta.Text = pp.KomentarKlijenta;
                 foreach (var z in (from zad in db.Zadaci where
                                    (((zad.Status == Status_Zadatka.ZA_POSLATI) || (zad.Status == Status_Zadatka.PRIHVACENO)) &&
                                    (zad.PredlogProslave.Id==pp.Id)) select zad )  )
