@@ -122,7 +122,13 @@ namespace PROJEKAT_HCI.View
             DataObject data = new DataObject(c.Tag);
             //data.
             //Console.WriteLine(((Zadatak)c.Tag).Opis);
-            NosenZadatak = (Zadatak)c.Tag;
+            Zadatak zz = (Zadatak)c.Tag;
+            if (zz.Status == Status_Zadatka.POSLATO || zz.Status == Status_Zadatka.PRIHVACENO)
+            {
+                //MainWindow.notifier.ShowWarning("Ne možete da premeštate prihvaćene i poslate zadatke!");
+                return;
+            }
+            NosenZadatak = zz;
             NosenaKartica = c;
             DragDrop.DoDragDrop(c, data, DragDropEffects.Move);
 
@@ -156,6 +162,14 @@ namespace PROJEKAT_HCI.View
         }
         public void Target_Drop_Za_Poslati(object sender, DragEventArgs args)
         {
+            using (var db = new ProjectDatabase())
+            {
+                Zadatak z = db.Zadaci.Find(NosenZadatak.Id);
+                if (z.Ponuda == null) {
+                    MainWindow.notifier.ShowError("Zadatak mora imati pridruženu ponudu da bi mogao da se pošalje!");
+                    return;
+                }
+            }
             StackPanel sp = (StackPanel)NosenaKartica.Parent;
             sp.Children.Remove(NosenaKartica);
             Za_poslati_stek.Children.Add(NosenaKartica);
@@ -230,6 +244,13 @@ namespace PROJEKAT_HCI.View
             this.Hide();
             dz.Show();
 
+        }
+
+        private void Predlog_Click(object sender, RoutedEventArgs e)
+        {
+            PredlogProslaveOrganizator ppo = new PredlogProslaveOrganizator(Proslava, this);
+            this.Hide();
+            ppo.Show();
         }
     }
 }
