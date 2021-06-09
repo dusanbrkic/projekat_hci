@@ -1,4 +1,5 @@
-﻿using PROJEKAT_HCI.MENAGER;
+﻿using PROJEKAT_HCI.Database;
+
 using PROJEKAT_HCI.Model;
 using System;
 using System.Collections.Generic;
@@ -40,20 +41,20 @@ namespace PROJEKAT_HCI.View
             if (againPassword.Text != password.Text)
                 return;*/
 
-            using (var db = new ManagerFactory())
+            using (var db = new ProjectDatabase())
             {
 
-                foreach (Klijent klijent in db.klijenti)
+                foreach (Klijent klijent in db.Klijenti)
                 {
                     //if (username.Text == klijent.Username)//vec postoji korisnik sa istim usernamemom
                        // return;
 
                 }
 
-                Klijent k = new Klijent { Id = db.klijenti.Count(), Ime = ime.Text, Prezime = prezime.Text, BrojTelefona = brojTelefona.Text, Email = email.Text, Password = password.Text, Username = username.Text };
+                Klijent k = new Klijent { Id = db.Klijenti.Count(), Ime = ime.Text, Prezime = prezime.Text, BrojTelefona = brojTelefona.Text, Email = email.Text, Password = password.Text, Username = username.Text };
                 Ret = k;
 
-                db.klijenti.Add(k);
+                db.Klijenti.Add(k);
                 db.SaveChanges();
             }
             
@@ -63,7 +64,7 @@ namespace PROJEKAT_HCI.View
 
         private void odustao_Click(object sender, RoutedEventArgs e)
         {
-
+            this.Close();
         }
     }
 }

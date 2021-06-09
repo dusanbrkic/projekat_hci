@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\User\Documents\GitHub\projekat_hci\PROJEKAT_HCI\PROJEKAT_HCI\App.xaml
-101028259464
+241594103325
 
-27-1603989032
-22211190733
-MainWindow.xaml;View\AdminWindow.xaml;View\AzuriranjeKlijentaWindow.xaml;View\AzuriranjeOrganizatoraWindow.xaml;View\DodavanjeKlijentaWindow.xaml;View\DodavanjeOrganizatoraWindow.xaml;View\DodavanjeSaradnikaWindow.xaml;View\OrganizatorSaradnici.xaml;View\OrganizatorWindow.xaml;View\RegistrationWindow.xaml;
+43874962931
+29-730836674
+MainWindow.xaml;View\AdminWindow.xaml;View\AzuriranjeKlijentaWindow.xaml;View\AzuriranjeOrganizatoraWindow.xaml;View\DetaljiZadatka.xaml;View\DodavanjeKlijentaWindow.xaml;View\DodavanjeOrganizatoraWindow.xaml;View\DodavanjeSaradnikaWindow.xaml;View\EditProfile.xaml;View\KlijentWindow.xaml;View\NovaProslavaWindow.xaml;View\NovaPonudaOrganizator.xaml;View\ObavestenjaWindow.xaml;View\OrganizacijaProslavaWindow.xaml;View\OrganizatorProslava.xaml;View\OrganizatorSaradnici.xaml;View\OrganizatorSaradnikWindow.xaml;View\OrganizatorWindow.xaml;View\PregledPonudaWindow.xaml;View\PregledPonude.xaml;View\PregledProslavaWindow.xaml;View\PregledProslave.xaml;View\PregledZahtevaProslave.xaml;View\RegistrationWindow.xaml;
 
 True
 

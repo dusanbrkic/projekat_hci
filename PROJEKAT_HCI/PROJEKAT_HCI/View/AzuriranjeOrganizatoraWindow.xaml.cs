@@ -1,4 +1,4 @@
-﻿using PROJEKAT_HCI.MENAGER;
+﻿using PROJEKAT_HCI.Database;
 using PROJEKAT_HCI.Model;
 using System;
 using System.Collections.Generic;
@@ -40,9 +40,9 @@ namespace PROJEKAT_HCI.View
 
         private void Azuriraj_Click(object sender, RoutedEventArgs e)
         {
-            using (var db = new ManagerFactory())
+            using (var db = new ProjectDatabase())
             {
-                var k2 = db.organizatori.First(a => a.Id == k.Id);
+                var k2 = db.Organizatori.First(a => a.Id == k.Id);
                 
                 k2.Ime = ime.Text;
                 k2.Prezime = prezime.Text;
