@@ -181,6 +181,9 @@
     <Compile Include="View\PregledZahtevaProslave.xaml.cs">
       <DependentUpon>PregledZahtevaProslave.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\RasporedSedenja.xaml.cs">
+      <DependentUpon>RasporedSedenja.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\RegistrationWindow.xaml.cs">
       <DependentUpon>RegistrationWindow.xaml</DependentUpon>
     </Compile>
@@ -295,6 +298,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\PregledZahtevaProslave.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\RasporedSedenja.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
