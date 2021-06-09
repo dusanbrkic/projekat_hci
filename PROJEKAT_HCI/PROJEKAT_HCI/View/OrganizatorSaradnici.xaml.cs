@@ -28,11 +28,18 @@ namespace PROJEKAT_HCI.View
         public OrganizatorSaradnici()
         {
             InitializeComponent();
+            Dodaj_Saradnike();
+            
+            
+        }
 
+        public void Dodaj_Saradnike()
+        {
+            wrapper.Children.Clear();
             using (var db = new ProjectDatabase())
             {
-                 foreach(Saradnik s in db.Saradnici.ToList())
-                 {
+                foreach (Saradnik s in db.Saradnici.ToList())
+                {
                     Card card = new Card();
                     card.Width = 340;
                     card.Height = 200;
@@ -75,7 +82,6 @@ namespace PROJEKAT_HCI.View
                     wrapper.Children.Add(card);
                 }
             }
-            
         }
 
         private void Saradnik_Btn_Click(object sender, RoutedEventArgs e)
@@ -92,6 +98,13 @@ namespace PROJEKAT_HCI.View
         {
             this.Close();
             ow.Show();
+        }
+
+        private void Nov_Saradnik_Btn_Click(object sender, RoutedEventArgs e)
+        {
+            DodajSaradnikaOrganizator dso = new DodajSaradnikaOrganizator(this);
+            this.Hide();
+            dso.Show();
         }
     }
 }

@@ -121,6 +121,9 @@
     <Compile Include="View\DetaljiZadatka.xaml.cs">
       <DependentUpon>DetaljiZadatka.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\DodajSaradnikaOrganizator.xaml.cs">
+      <DependentUpon>DodajSaradnikaOrganizator.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\DodavanjeKlijentaWindow.xaml.cs">
       <DependentUpon>DodavanjeKlijentaWindow.xaml</DependentUpon>
     </Compile>
@@ -223,6 +226,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\DetaljiZadatka.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\DodajSaradnikaOrganizator.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -118,12 +118,7 @@ namespace PROJEKAT_HCI.View
                 src.EndInit();
                 slika.Source = src;
                 imgSrc = newPath;
-                //Image img = new Image();
                 
-                //slike.Children.Add(img);
-                //slika.Source = new BitmapImage(new Uri(newPath));
-                //Image_Btn.Background = new ImageBrush(new BitmapImage(newPath));
-                //Console.WriteLine(Directory.GetCurrentDirectory());
             }
         }
         
