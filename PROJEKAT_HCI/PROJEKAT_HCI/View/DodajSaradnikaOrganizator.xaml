@@ -1,0 +1,82 @@
+﻿<Window x:Class="PROJEKAT_HCI.View.DodajSaradnikaOrganizator"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:local="clr-namespace:PROJEKAT_HCI.View"
+        mc:Ignorable="d"
+        Title="DodajSaradnikaOrganizator" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="61*"></ColumnDefinition>
+            <ColumnDefinition Width="141*"></ColumnDefinition>
+
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="78*"></RowDefinition>
+            <RowDefinition Height="341*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Label Background="{DynamicResource PrimaryHueMidBrush}" Grid.ColumnSpan="4" Foreground="White" FontSize="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="NOV SARADNIK"/>
+
+        <Button Click="Nazad_Btn_Click"  Foreground="White" Background="Red" FontSize="20" Height="Auto" Content="NAZAD" Margin="0,0,134,0"/>
+        <Grid Grid.Row="1" Grid.ColumnSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="133*"></ColumnDefinition>
+                <ColumnDefinition Width="65*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="0">
+                <TextBox
+                    Name="Naziv"
+                    FontSize="16"
+                  TextWrapping="Wrap"
+                  VerticalAlignment="Stretch"
+                   materialDesign:HintAssist.IsFloating="True"
+                  AcceptsReturn="True"
+                  Margin="10 0 10 10"
+                  Foreground="Black"
+                  VerticalScrollBarVisibility="Auto"
+                  SpellCheck.IsEnabled="True"
+                  materialDesign:HintAssist.HelperText="Unesite naziv saradnika"
+                  Height="50"></TextBox>
+                <TextBox
+                    Name="Lokacija"
+                    FontSize="16"
+                  TextWrapping="Wrap"
+                  VerticalAlignment="Stretch"
+                   materialDesign:HintAssist.IsFloating="True"
+                  AcceptsReturn="True"
+                  Margin="10 10 10 10"
+                  Foreground="Black"
+                  VerticalScrollBarVisibility="Auto"
+                  SpellCheck.IsEnabled="True"
+                  materialDesign:HintAssist.HelperText="Unesite lokaciju saradnika"
+                  Height="50"></TextBox>
+                <TextBox
+                    Name="Opis"
+                    FontSize="16"
+                    Foreground="Black"
+                  TextWrapping="Wrap"
+                  VerticalAlignment="Stretch"
+                   materialDesign:HintAssist.IsFloating="True"
+                  AcceptsReturn="True"
+                  Margin="10 10 10 10"
+                  VerticalScrollBarVisibility="Auto"
+                  SpellCheck.IsEnabled="True"
+                  materialDesign:HintAssist.HelperText="Unesite opis saradnika"
+                  Height="68"></TextBox>
+                <ComboBox Name="Tip"
+                          Margin="10 10 10 0"
+                          materialDesign:HintAssist.HelperText="Odaberite vrstu saradnika" Height="30"
+                          ></ComboBox>
+                <Button Margin="20,20,20,10" Click="Nov_Saradnik_Ponuda_Btn" FontSize="20" Background="DarkGreen" Height="47" Content="DODAJTE SARADNIKA"/>
+            </StackPanel>
+            
+            <StackPanel Name="slike" Grid.Column="1">
+                <Image Margin="5 5 5 5" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Name="slika" Source="pack://application:,,,/Res/Images/default.jpg" Height="221"></Image>
+
+                <Button Margin="10 10 10 10"  x:Name="Image_Btn" Click="Image_Btn_Click" Grid.Column="1" FontSize="17 " Height="71" Content="DODAJTE SLIKU"/>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>

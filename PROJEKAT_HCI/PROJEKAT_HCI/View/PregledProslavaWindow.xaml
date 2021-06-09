@@ -30,6 +30,7 @@
             <Viewbox>
                 <materialDesign:PackIcon Kind="ArrowRightThick" />
             </Viewbox></Button>
+
         <Label Content="Pregled proslava" Foreground="White" FontSize="16"
                Grid.Row="0"
                Grid.Column="0"
@@ -38,6 +39,19 @@
                HorizontalContentAlignment="Center"
                VerticalContentAlignment="Center"
                Margin="0,0,0,0" />
+        <Button Name="UrediProfilBtn"
+                Grid.Column="0"
+                Grid.Row="0"
+                Background="{DynamicResource PrimaryHueMidBrush}"
+                Height="Auto"
+                HorizontalAlignment="Left"
+                Width="82"
+                Margin="1 1 1 1"
+                Click="UrediProfilBtn_Click">
+            <Viewbox>
+                <materialDesign:PackIcon Kind="Account" />
+            </Viewbox>
+        </Button>
         <TextBox Grid.Column="2"
                  Grid.ColumnSpan="2"
                  Grid.Row="1"

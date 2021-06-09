@@ -33,7 +33,7 @@ namespace PROJEKAT_HCI.View
             using (var db = new ProjectDatabase())
             {
                 //var proslave = (from p in db.Proslave where p.Klijent.Id == klijent.Id select p);
-                foreach (Proslava p in (from p in db.Proslave where p.Klijent.Id == klijent.Id && p.StatusProslave != StatusProslave.OTKAZANA select p).ToList())
+                foreach (Proslava p in (from p in db.Proslave where p.Klijent.Id == klijent.Id && p.StatusProslave != StatusProslave.OTKAZANA && p.StatusProslave != StatusProslave.ORGANIZOVANO select p).ToList())
                 {
                     Card card = new Card();
                     card.Width = 220;
@@ -59,6 +59,9 @@ namespace PROJEKAT_HCI.View
                     b.Width = 100;
                     b.Height = 50;
                     b.Margin = new Thickness(5, 5, 5, 5);
+                    var bc = new BrushConverter();
+                    b.Background = (Brush) bc.ConvertFrom("#673ab7");
+                    b.Foreground = Brushes.White;
                     b.Proslava = p;
                     b.VerticalAlignment = VerticalAlignment.Bottom;
                     //wrapper.Children.Add(b);
@@ -69,6 +72,8 @@ namespace PROJEKAT_HCI.View
                     b1.Width = 100;
                     b1.Height = 50;
                     b1.Margin = new Thickness(5, 20, 5, 5);
+                    b1.Background = (Brush)bc.ConvertFrom("#673ab7");
+                    b1.Foreground = Brushes.White;
                     b1.VerticalAlignment = VerticalAlignment.Bottom;
                     //wrapper.Children.Add(b1);
                     b1.Click += new RoutedEventHandler(Ponude_Btn_Click);
@@ -118,7 +123,7 @@ namespace PROJEKAT_HCI.View
             wrapper.Children.Clear();
             using (var db = new ProjectDatabase())
             {
-                foreach (Proslava p in (from p in db.Proslave where p.Klijent.Id == klijent.Id && p.Naziv.Contains(search.Text) && p.StatusProslave != StatusProslave.OTKAZANA select p).ToList())
+                foreach (Proslava p in (from p in db.Proslave where p.Klijent.Id == klijent.Id && p.Naziv.Contains(search.Text) && p.StatusProslave != StatusProslave.OTKAZANA && p.StatusProslave != StatusProslave.ORGANIZOVANO select p).ToList())
                 {
                     Card card = new Card();
                     card.Width = 220;
@@ -139,12 +144,16 @@ namespace PROJEKAT_HCI.View
                         VerticalAlignment = VerticalAlignment.Stretch,
                         AcceptsReturn = true
                     };
+                    BrushConverter bc = new BrushConverter();
                     Dugme b = new Dugme();
                     b.Content = "Pregled proslave";
                     b.Width = 100;
                     b.Height = 50;
+                    b.Proslava = p;
                     b.Margin = new Thickness(5, 5, 5, 5);
                     b.VerticalAlignment = VerticalAlignment.Bottom;
+                    b.Background = (Brush)bc.ConvertFrom("#673ab7");
+                    b.Foreground = Brushes.White;
                     //wrapper.Children.Add(b);
                     b.Click += new RoutedEventHandler(Proslava_Btn_Click);
                     Dugme b1 = new Dugme();
@@ -153,6 +162,9 @@ namespace PROJEKAT_HCI.View
                     b1.Height = 50;
                     b1.Margin = new Thickness(5, 20, 5, 5);
                     b1.VerticalAlignment = VerticalAlignment.Bottom;
+                    b1.Proslava = p;
+                    b1.Background = (Brush)bc.ConvertFrom("#673ab7");
+                    b1.Foreground = Brushes.White;
                     //wrapper.Children.Add(b1);
                     b1.Click += new RoutedEventHandler(Ponude_Btn_Click);
                     StackPanel sp = new StackPanel() { Orientation = Orientation.Horizontal };
@@ -170,6 +182,13 @@ namespace PROJEKAT_HCI.View
                 }
             }
 
+        }
+
+        private void UrediProfilBtn_Click(object sender, RoutedEventArgs e)
+        {
+            EditProfile ep = new EditProfile(this, klijent);
+            ep.Show();
+            this.Hide();
         }
     }
 }

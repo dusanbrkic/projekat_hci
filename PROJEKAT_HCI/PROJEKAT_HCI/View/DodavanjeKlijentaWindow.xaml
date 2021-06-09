@@ -4,9 +4,9 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PROJEKAT_HCI.View"
+        xmlns:apex="clr-namespace:Apex.Controls;assembly=Apex"
         mc:Ignorable="d"
-         xmlns:apex="clr-namespace:Apex.Controls;assembly=Apex"
-        Title="DodavanjeKlijentaWindow" Height="450" Width="600">
+        Title="Dodavanje klijenta" Height="450" Width="800">
     <Window.Resources>
         <Style TargetType="TextBox" x:Key="Textbox1">
             <Setter Property="Padding" Value="7"/>
@@ -36,62 +36,58 @@
         </Style>
 
     </Window.Resources>
-    
+
     <Grid Background="White">
         <Grid.RowDefinitions >
             <RowDefinition  Height="13*" />
             <RowDefinition Height="84*" />
-            
+
         </Grid.RowDefinitions>
-        <Label Background="Purple" VerticalContentAlignment="Center" HorizontalContentAlignment="Center">Dodavanje klijenta</Label>
+        <Label Background="{StaticResource PrimaryHueDarkBrush}" Foreground="White" FontSize="20" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Content="Dodavanje klijenta"/>
         <StackPanel Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"  HorizontalAlignment="Center" VerticalAlignment="Center">
-            <apex:ApexGrid Rows="auto,auto" Columns="auto,auto" Margin="150,0,0,0">
-                <Label Content="Ime" HorizontalAlignment="left" VerticalAlignment="Top" Foreground="Black" FontSize="15" Grid.RowSpan="2"/>
-                <TextBox Name="ime" Style="{StaticResource Textbox1}"  Margin="150,8,0,0"></TextBox>
+            <apex:ApexGrid Rows="auto,auto" Columns="auto,auto" Margin="50,0,0,0">
+                <Label Content="Ime" HorizontalAlignment="left" VerticalAlignment="Bottom" Foreground="Black" FontSize="15" Grid.RowSpan="2"/>
+                <TextBox Name="ime" Width="300"  Margin="150,8,0,0"></TextBox>
             </apex:ApexGrid>
-            <apex:ApexGrid Rows="auto,auto" Columns="auto,auto" Margin="150,0,0,0">
+            <apex:ApexGrid Rows="auto,auto" Columns="auto,auto" Margin="50,0,0,0">
 
-                <Label Content="Prezime" HorizontalAlignment="left" VerticalAlignment="Top" Foreground="Black" FontSize="15" Grid.RowSpan="2"/>
-                <TextBox Name="prezime"  Style="{StaticResource Textbox1}" Margin="150,8,0,0"></TextBox>
-
-            </apex:ApexGrid>
-            <apex:ApexGrid Rows="auto,auto" Columns="auto,auto" Margin="150,0,0,0">
-                <Label Content="Email" HorizontalAlignment="left" VerticalAlignment="Top" Foreground="Black" FontSize="15" Grid.RowSpan="2"/>
-                <TextBox Name="email"   Style="{StaticResource Textbox1}" Margin="150,8,0,0"></TextBox>
+                <Label Content="Prezime" HorizontalAlignment="left" VerticalAlignment="Bottom" Foreground="Black" FontSize="15" Grid.RowSpan="2"/>
+                <TextBox Name="prezime"  Width="300" Margin="150,8,0,0"></TextBox>
 
             </apex:ApexGrid>
-            <apex:ApexGrid Rows="auto,auto" Columns="auto,auto" Margin="150,0,0,0">
-                <Label Content="Broj telefona" HorizontalAlignment="left" VerticalAlignment="Top" Foreground="Black" FontSize="15" Grid.RowSpan="2"/>
-                <TextBox Name="brojTelefona"  Style="{StaticResource Textbox1}" Margin="150,8,0,0"></TextBox>
+            <apex:ApexGrid Rows="auto,auto" Columns="auto,auto" Margin="50,0,0,0">
+                <Label Content="Email" HorizontalAlignment="left" VerticalAlignment="Bottom" Foreground="Black" FontSize="15" Grid.RowSpan="2"/>
+                <TextBox Name="email"   Width="300" Margin="150,8,0,0"></TextBox>
 
             </apex:ApexGrid>
-            <apex:ApexGrid Rows="auto,auto" Columns="auto,auto" Margin="150,0,0,0">
-                <Label Content="Korisnicko ime" HorizontalAlignment="left" VerticalAlignment="Top" Foreground="Black" FontSize="15" Grid.RowSpan="2"/>
-                <TextBox Name="username"   Style="{StaticResource Textbox1}" Margin="150,8,0,0"></TextBox>
-            </apex:ApexGrid>
+            <apex:ApexGrid Rows="auto,auto" Columns="auto,auto" Margin="50,0,0,0">
+                <Label Content="Broj telefona" HorizontalAlignment="left" VerticalAlignment="Bottom" Foreground="Black" FontSize="15" Grid.RowSpan="2"/>
+                <TextBox Name="brojTelefona"  Width="300" Margin="150,8,0,0"></TextBox>
 
-            <apex:ApexGrid Rows="auto,auto" Columns="auto,auto" Margin="150,0,0,0">
-                <Label Content="Sifra" HorizontalAlignment="left" VerticalAlignment="Top" Foreground="Black" FontSize="15" Grid.RowSpan="2"/>
-                <TextBox Name="password"  Style="{StaticResource Textbox1}" Margin="150,8,0,0"></TextBox>
             </apex:ApexGrid>
-
-            <apex:ApexGrid Rows="auto,auto" Columns="auto,auto" Margin="150,0,0,0">
-                <Label Content="Potvrdite sifru" HorizontalAlignment="left" VerticalAlignment="Top" Foreground="Black" FontSize="15" Grid.RowSpan="2"/>
-                <TextBox Name="againPassword"   Style="{StaticResource Textbox1}" Margin="150,8,0,0"></TextBox>
+            <apex:ApexGrid Rows="auto,auto" Columns="auto,auto" Margin="50,0,0,0">
+                <Label Content="Korisnicko ime" HorizontalAlignment="left" VerticalAlignment="Bottom" Foreground="Black" FontSize="15" Grid.RowSpan="2"/>
+                <TextBox Name="username"   Width="300" Margin="150,8,0,0"></TextBox>
+            </apex:ApexGrid>
+            <apex:ApexGrid Rows="auto,auto" Columns="auto,auto" Margin="50,0,0,0">
+                <Label Content="Lozinka" HorizontalAlignment="left" VerticalAlignment="Bottom" Foreground="Black" FontSize="15" Grid.RowSpan="2"/>
+                <PasswordBox Name="password"   Width="300" Margin="150,8,0,0"></PasswordBox>
+            </apex:ApexGrid>
+            <apex:ApexGrid Rows="auto,auto" Columns="auto,auto" Margin="50,0,0,0">
+                <Label Content="Ponovite lozinku" HorizontalAlignment="left" VerticalAlignment="Bottom" Foreground="Black" FontSize="15" Grid.RowSpan="2"/>
+                <PasswordBox Name="againPassword"   Width="300" Margin="150,8,0,0"></PasswordBox>
             </apex:ApexGrid>
 
 
 
 
 
-            <StackPanel Orientation="Horizontal" Margin="10,10,0,0">
-                <Button Click="odustao_Click" Name="odustao" Content="Odustani" Width="120" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" Margin="116,0,136,0"  />
-                <Button Click="dodajKlijenta_Click" x:Name="dodajKlijenta" Content="Dodaj klijenta" Width="120" Margin="60,0,136,0"/>
+            <StackPanel Orientation="Horizontal" Margin="10,30,0,0">
+                <Button Click="odustao_Click" Name="odustao" Content="Odustani" Width="150" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" Margin="50,0,100,0"  />
+                <Button Click="dodajKlijenta_Click" x:Name="Azuriraj" Content="Dodaj klijenta" Width="150" Margin="0,0,0,0"/>
 
             </StackPanel>
-
         </StackPanel>
-
-
     </Grid>
+
 </Window>

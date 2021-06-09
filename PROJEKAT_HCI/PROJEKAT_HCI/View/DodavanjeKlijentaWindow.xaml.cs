@@ -1,5 +1,4 @@
 ﻿using PROJEKAT_HCI.Database;
-
 using PROJEKAT_HCI.Model;
 using System;
 using System.Collections.Generic;
@@ -58,7 +57,7 @@ namespace PROJEKAT_HCI.View
 
                 }
 
-                Klijent k = new Klijent { Id = db.Klijenti.Count(), Ime = ime.Text, Prezime = prezime.Text, BrojTelefona = brojTelefona.Text, Email = email.Text, Password = password.Text, Username = username.Text };
+                Klijent k = new Klijent { Id = db.Klijenti.Count(), Ime = ime.Text, Prezime = prezime.Text, BrojTelefona = brojTelefona.Text, Email = email.Text, Password = password.Password, Username = username.Text };
                 Ret = k;
 
                 db.Klijenti.Add(k);
