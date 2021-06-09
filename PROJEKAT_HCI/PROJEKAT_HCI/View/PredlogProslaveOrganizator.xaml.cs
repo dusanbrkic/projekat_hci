@@ -15,6 +15,7 @@ using PROJEKAT_HCI.Model;
 using PROJEKAT_HCI.Database;
 using MaterialDesignThemes.Wpf;
 using ToastNotifications.Messages;
+using WPFCustomMessageBox;
 
 namespace PROJEKAT_HCI.View
 {
@@ -104,6 +105,11 @@ namespace PROJEKAT_HCI.View
 
         private void Predlog_Click(object sender, RoutedEventArgs e)
         {
+            MessageBoxResult res = CustomMessageBox.ShowYesNo("Da li sigurno želite da pošaljete ovaj predlog klijentu?", "Potvrda", "Da", "Ne");
+            if (res == MessageBoxResult.No)
+            {
+                return;
+            }
             using (var db = new ProjectDatabase())
             {
                 Proslava pros = db.Proslave.Find(Proslava.Id);
