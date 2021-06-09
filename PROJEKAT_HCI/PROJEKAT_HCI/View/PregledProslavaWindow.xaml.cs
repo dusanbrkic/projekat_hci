@@ -33,7 +33,7 @@ namespace PROJEKAT_HCI.View
             using (var db = new ProjectDatabase())
             {
                 //var proslave = (from p in db.Proslave where p.Klijent.Id == klijent.Id select p);
-                foreach (Proslava p in (from p in db.Proslave where p.Klijent.Id == klijent.Id select p).ToList())
+                foreach (Proslava p in (from p in db.Proslave where p.Klijent.Id == klijent.Id && p.StatusProslave != StatusProslave.OTKAZANA select p).ToList())
                 {
                     Card card = new Card();
                     card.Width = 220;
@@ -118,7 +118,7 @@ namespace PROJEKAT_HCI.View
             wrapper.Children.Clear();
             using (var db = new ProjectDatabase())
             {
-                foreach (Proslava p in (from p in db.Proslave where p.Klijent.Id == klijent.Id && p.Naziv.Contains(search.Text) select p).ToList())
+                foreach (Proslava p in (from p in db.Proslave where p.Klijent.Id == klijent.Id && p.Naziv.Contains(search.Text) && p.StatusProslave != StatusProslave.OTKAZANA select p).ToList())
                 {
                     Card card = new Card();
                     card.Width = 220;

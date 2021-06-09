@@ -33,12 +33,6 @@ namespace PROJEKAT_HCI.View
             set;
         }
 
-        public ObservableCollection<Ponuda> Ponude
-        {
-            get;
-            set;
-        }
-
         public MainWindow mw { get; set; }
         public ObservableCollection<Organizator> Organizatori
         {
@@ -59,7 +53,7 @@ namespace PROJEKAT_HCI.View
                 Klijenti = new ObservableCollection<Klijent>((from k in db.Klijenti select k).ToList());
                 Organizatori = new ObservableCollection<Organizator>((from k in db.Organizatori select k).ToList());
                 Saradnici = new ObservableCollection<Saradnik>((from k in db.Saradnici select k).ToList());
-                Ponude = new ObservableCollection<Ponuda>((from k in db.Ponude select k).ToList());
+
             }
 
 
@@ -242,8 +236,7 @@ namespace PROJEKAT_HCI.View
 
         private void AzuriranjeSaradnikaBtn_Click(object sender, RoutedEventArgs e)
         {
-            
-            Saradnik k = (Saradnik) SaradniciTable2.SelectedItem;
+            Saradnik k = (Saradnik) SaradniciTable.SelectedItem;
             if (k == null)
             {
                 MaterialMessageBox.Show("Odaberite saradnika iz tabele", "Obavještenje", true);
@@ -252,42 +245,6 @@ namespace PROJEKAT_HCI.View
 
             AzuriranjeSaradnikaWindow asw = new AzuriranjeSaradnikaWindow(k);
             asw.ShowDialog();
-
-
-            var k2 = Saradnici.FirstOrDefault(i => i.Id == k.Id);
-            using (var db = new ProjectDatabase())
-            {
-                var item = db.Saradnici.First(i => i.Id == k.Id);
-                k2.Naziv = item.Naziv;
-                k2.Lokacija = item.Lokacija;
-                k2.Opis = item.Opis;
-                k2.TipSaradnika = item.TipSaradnika;
-                
-
-            }
-        }
-
-        private void AzuriranjePonudeBtn_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void DodavavanjePonudaBtn_Click(object sender, RoutedEventArgs e)
-        {
-            DodavanjePonudeAdminWindow dp = new DodavanjePonudeAdminWindow();
-            dp.ShowDialog();
-        }
-
-        private void PonudeTable_AutoGeneratingColumn(object sender, DataGridAutoGeneratingColumnEventArgs e)
-        {
-            if (e.PropertyName == "Id")
-                e.Cancel = true;
-
-            if (e.PropertyName == "Slika")
-                e.Cancel = true;
-
-            if (e.PropertyName == "Klijent")
-                e.Cancel = true;
         }
     }
 }

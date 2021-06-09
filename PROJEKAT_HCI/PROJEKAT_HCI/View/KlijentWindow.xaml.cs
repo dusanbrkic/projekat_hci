@@ -97,7 +97,7 @@ namespace PROJEKAT_HCI.View
         }
         private void NovaProslavaBtn_Click(object sender, RoutedEventArgs e)
         {
-            NovaProslavaWindow npw = new NovaProslavaWindow();
+            NovaProslavaWindow npw = new NovaProslavaWindow(klijent);
             npw.Show();
             this.Close();
         }
@@ -129,6 +129,13 @@ namespace PROJEKAT_HCI.View
         private String getName(object sender, RoutedEventArgs e)
         {
             return klijent.Ime;
+        }
+
+        private void UrediProfilBtn_Click(object sender, RoutedEventArgs e)
+        {
+            EditProfile ep = new EditProfile(this, klijent);
+            ep.Show();
+            this.Hide();
         }
     }
 }
