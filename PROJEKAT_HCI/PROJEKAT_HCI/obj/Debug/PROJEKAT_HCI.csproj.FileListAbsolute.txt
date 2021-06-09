@@ -187,3 +187,5 @@ C:\Users\Filip\git\projekat_hci\PROJEKAT_HCI\PROJEKAT_HCI\obj\Debug\View\Pregled
 C:\Users\Filip\git\projekat_hci\PROJEKAT_HCI\PROJEKAT_HCI\obj\Debug\View\PregledProslave.baml
 C:\Users\Filip\git\projekat_hci\PROJEKAT_HCI\PROJEKAT_HCI\obj\Debug\View\PregledZahtevaProslave.baml
 C:\Users\Filip\git\projekat_hci\PROJEKAT_HCI\PROJEKAT_HCI\obj\Debug\View\RasporedSedenja.baml
+C:\Users\Filip\git\projekat_hci\PROJEKAT_HCI\PROJEKAT_HCI\obj\Debug\View\DodajSaradnikaOrganizator.g.cs
+C:\Users\Filip\git\projekat_hci\PROJEKAT_HCI\PROJEKAT_HCI\obj\Debug\View\DodajSaradnikaOrganizator.baml

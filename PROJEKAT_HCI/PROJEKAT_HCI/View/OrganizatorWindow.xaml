@@ -8,8 +8,8 @@
         Title="OrganizatorWindow" Height="430" Width="750">
     <Grid Background="White" Height="419" VerticalAlignment="Bottom">
         <Grid.RowDefinitions >
-            <RowDefinition  Height="75*" />
-            <RowDefinition Height="37*" />
+            <RowDefinition  Height="89*" />
+            <RowDefinition Height="23*" />
             <RowDefinition Height="74*" />
             <RowDefinition Height="48*" />
             <RowDefinition Height="35*" />
@@ -28,13 +28,13 @@
             <ColumnDefinition Width="56*" />
         </Grid.ColumnDefinitions>
 
-        <Label Background="{DynamicResource PrimaryHueMidBrush}" Grid.ColumnSpan="8" Foreground="White" FontSize="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="OBAVESTENJA" Margin="0,21,0,17" Grid.RowSpan="2"/>
+        <Label Background="{DynamicResource PrimaryHueMidBrush}" Grid.ColumnSpan="8" Foreground="White" FontSize="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="OBAVESTENJA" Height="Auto" Margin="0,10,0,0"/>
 
-        <Button Click="Profil_Click" Grid.ColumnSpan="2" Background="DarkBlue" Foreground="White" FontSize="17" Content="PROFIL" Height="Auto" Margin="5,21,0,17" Grid.RowSpan="2" Grid.Column="6"/>
-        <Button x:Name="Odj_Btn" Click="Odj_Btn_Click" Grid.ColumnSpan="2" Foreground="White" Background="Red" FontSize="17" RenderTransformOrigin="0.5,0.5" Content="ODJAVA" Margin="-5,22,77,16" Height="Auto" Grid.RowSpan="2"/>
+        <Button Click="Profil_Click" Grid.ColumnSpan="2" Background="DarkBlue" Foreground="White" FontSize="17" Content="PROFIL" Height="Auto" Margin="5,21,0,0" Grid.Column="6"/>
+        <Button Grid.ColumnSpan="2" VerticalContentAlignment="Center"    Grid.RowSpan="1" x:Name="Odj_Btn" Click="Odj_Btn_Click"  Foreground="White" Background="Red" FontSize="17"  Content="ODJAVA"  Height="Auto" Margin="0,21,0,0" />
 
         <Button VerticalAlignment="Center" Click="Saradnici_Btn_Click"  x:Name ="Saradnici_Btn"   Foreground="White" FontSize="27" Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="2" Height="122" Grid.RowSpan="2" Content="SARADNICI">
-            
+
         </Button>
 
         <Button x:Name ="Obav_Btn" Click="Obav_Btn_Click" Foreground="White"  FontSize="27" Grid.Column="5" Grid.Row="2" Grid.ColumnSpan="2" Height="Auto" Grid.RowSpan="2" Content="OBAVESTENJA"/>
