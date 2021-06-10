@@ -37,15 +37,19 @@ namespace PROJEKAT_HCI.View
 
         private void registruj_Click(object sender, RoutedEventArgs e)
         {
-            if (username.Text == "" || password.Password == "" || ime.Text == "" || prezime.Text == "" || brojTelefona.Text == "")
+            if (username.Text == "" || password.Password == "" || ime.Text == "" || prezime.Text == "" || brojTelefona.Text == "" || email.Text == "")
             {
-                Console.WriteLine("Greska");
+                MainWindow.notifier.ShowWarning("Sva polja moraju biti popunjena !");
                 return;
             }
 
 
             if (againPassword.Password != password.Password)
+            {
+                MainWindow.notifier.ShowWarning("Lozinke se moraju poklapati !");
                 return;
+            }
+                
 
             using (var db = new ProjectDatabase())
             {
@@ -53,7 +57,20 @@ namespace PROJEKAT_HCI.View
                 foreach (Organizator org in db.Organizatori)
                 {
                     if (username.Text == org.Username)//vec postoji korisnik sa istim usernamemom
+                    {
+                        MainWindow.notifier.ShowWarning("Već postoji korisnik sa unijetim korisničkim imenom !");
                         return;
+                    } 
+
+                }
+
+                foreach (Klijent org in db.Klijenti)
+                {
+                    if (username.Text == org.Username)//vec postoji korisnik sa istim usernamemom
+                    {
+                        MainWindow.notifier.ShowWarning("Već postoji korisnik sa unijetim korisničkim imenom !");
+                        return;
+                    }
 
                 }
 

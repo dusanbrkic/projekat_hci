@@ -48,6 +48,13 @@ namespace PROJEKAT_HCI.View
 
         private void Dodaj_saradnika_Click(object sender, RoutedEventArgs e)
         {
+            if (Naziv.Text == "" || Opis.Text == "" || Tip.SelectedIndex == -1 || Lokacija.Text == "")
+            {
+                MainWindow.notifier.ShowWarning("Sva polja moraju biti popunjena !");
+                return;
+            }
+
+
             using (var db = new ProjectDatabase())
             {
 

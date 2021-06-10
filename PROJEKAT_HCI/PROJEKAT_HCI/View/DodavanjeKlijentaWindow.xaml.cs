@@ -38,24 +38,38 @@ namespace PROJEKAT_HCI.View
 
         private void dodajKlijenta_Click(object sender, RoutedEventArgs e)
         {
-            /* if (username.Text == "" || password.Text == "" || ime.Text == "" || prezime.Text == "" || brojTelefona.Text == "")
+            if (username.Text == "" || password.Password == "" || ime.Text == "" || prezime.Text == "" || brojTelefona.Text == "" || email.Text == "")
             {
-                Console.WriteLine("Greska");
+                MainWindow.notifier.ShowWarning("Sva polja moraju biti popunjena !");
                 return;
             }
 
 
-            if (againPassword.Text != password.Text)
-                return;*/
+            if (againPassword.Password != password.Password)
+            {
+                MainWindow.notifier.ShowWarning("Lozinke se moraju poklapati !");
+                return;
+            }
 
             using (var db = new ProjectDatabase())
             {
 
                 foreach (Klijent klijent in db.Klijenti)
                 {
-                    //if (username.Text == klijent.Username)//vec postoji korisnik sa istim usernamemom
-                    // return;
+                    if (username.Text == klijent.Username)
+                    {
+                        MainWindow.notifier.ShowWarning("Postoji korisnik sa unijetim korisničkim imenom!");
+                        return;
+                    }
+                }
 
+                foreach (Organizator klijent in db.Organizatori)
+                {
+                    if (username.Text == klijent.Username)
+                    {
+                        MainWindow.notifier.ShowWarning("Postoji korisnik sa unijetim korisničkim imenom!");
+                        return;
+                    }
                 }
 
                 Klijent k = new Klijent { Id = db.Klijenti.Count(), Ime = ime.Text, Prezime = prezime.Text, BrojTelefona = brojTelefona.Text, Email = email.Text, Password = password.Password, Username = username.Text };

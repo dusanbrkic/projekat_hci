@@ -38,11 +38,29 @@ namespace PROJEKAT_HCI.View
                 }
                 
             }
+            imgSrc = null;
             
         }
 
         private void Dodaj_ponudu_Click(object sender, RoutedEventArgs e)
         {
+            if (Cijena.Text == "" || Opis.Text == "" || Saradnik.SelectedIndex == -1 || imgSrc == null)
+            {
+                MainWindow.notifier.ShowWarning("Sva polja moraju biti popunjena !");
+                return;
+            }
+
+            try
+            {
+                int i = int.Parse(Cijena.Text);
+
+            }
+            catch (Exception ee)
+            {
+                MainWindow.notifier.ShowWarning("Cijena mora biti isključivo broj");
+                return;
+            }
+
             using (var db = new ProjectDatabase())
             {
                 

@@ -57,19 +57,31 @@ namespace PROJEKAT_HCI.View
 
         private void Azuriraj_ponudu_Click(object sender, RoutedEventArgs e)
         {
+
+            if (Cijena.Text == "" || Opis.Text == "" || Saradnik.SelectedIndex == -1)
+            {
+                MainWindow.notifier.ShowWarning("Sva polja moraju biti popunjena !");
+                return;
+            }
+
+            try
+            {
+                int i = int.Parse(Cijena.Text);
+
+            }catch(Exception ee)
+            {
+                MainWindow.notifier.ShowWarning("Cijena mora biti isključivo broj");
+                return;
+            }
+               
+            
             using (var db = new ProjectDatabase())
             {
 
                 Saradnik sk = db.Saradnici.FirstOrDefault(saradnik => saradnik.Naziv == Saradnik.Text);
                 if (sk == null)
                     return;
-                /*Ponuda p = new Ponuda()
-                {
-                    Cena = int.Parse(Cijena.Text),
-                    Opis = Opis.Text,
-                    Slika = imgSrc,
-                    Saradnik = sk
-                };*/
+                
                 var k2 = db.Ponude.First(a => a.Id == p.Id);
                 k2.Cena = int.Parse(Cijena.Text);
                 k2.Opis = Opis.Text;
