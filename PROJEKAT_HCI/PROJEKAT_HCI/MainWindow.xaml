@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:PROJEKAT_HCI"
         mc:Ignorable="d"
         xmlns:apex="clr-namespace:Apex.Controls;assembly=Apex"
-        Title="MainWindow" Height="430" Width="750"
+        Title="ORGANIZACIJA-PROSLAVA.IO" Height="430" Width="750"
          xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
          TextElement.Foreground="{DynamicResource MaterialDesignBody}"
          TextElement.FontWeight="Regular"

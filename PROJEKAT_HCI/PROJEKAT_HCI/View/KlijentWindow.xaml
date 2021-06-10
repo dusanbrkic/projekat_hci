@@ -7,7 +7,7 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:smtx="clr-namespace:ShowMeTheXAML;assembly=ShowMeTheXAML"
         mc:Ignorable="d"
-        Title="KlijentWindow"
+        Title="ORGANIZACIJA-PROSLAVA.IO"
         Height="450"
         Width="800">
     <Grid>

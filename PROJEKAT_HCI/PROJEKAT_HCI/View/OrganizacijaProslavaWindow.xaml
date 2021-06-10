@@ -6,7 +6,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PROJEKAT_HCI.View"
         mc:Ignorable="d"
-        Title="OrganizacijaProslavaWindow" Height="430" Width="750"
+        Title="ORGANIZACIJA-PROSLAVA.IO" Height="430" Width="750"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
          TextElement.FontWeight="Regular"
          TextElement.FontSize="16"

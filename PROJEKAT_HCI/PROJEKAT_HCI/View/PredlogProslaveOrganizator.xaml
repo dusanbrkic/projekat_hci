@@ -8,7 +8,7 @@
         xmlns:local="clr-namespace:PROJEKAT_HCI.View"
         
         mc:Ignorable="d"
-        Title="PredlogProslaveOrganizator" Height="430" Width="750">
+        Title="ORGANIZACIJA-PROSLAVA.IO" Height="430" Width="750">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="194*"></ColumnDefinition>

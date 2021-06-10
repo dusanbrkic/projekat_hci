@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:PROJEKAT_HCI.View"
         mc:Ignorable="d"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-        Title="PregledZahtevaProslave" Height="450" Width="800">
+        Title="ORGANIZACIJA-PROSLAVA.IO" Height="450" Width="800">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="104*"></ColumnDefinition>

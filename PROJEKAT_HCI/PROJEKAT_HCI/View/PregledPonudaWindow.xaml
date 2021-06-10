@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PROJEKAT_HCI.View"
         mc:Ignorable="d"
-        Title="OrganizatorSaradnici"
+        Title="ORGANIZACIJA-PROSLAVA.IO"
         Height="450"
         Width="800">
     <Grid Background="MediumPurple">

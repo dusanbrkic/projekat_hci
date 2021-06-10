@@ -7,7 +7,7 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:dragablz="http://dragablz.net/winfx/xaml/dragablz"
         mc:Ignorable="d"
-        Title="Pregled ponude proslave"
+        Title="ORGANIZACIJA-PROSLAVA.IO"
         Height="450"
         Width="800">
     <Window.Resources>

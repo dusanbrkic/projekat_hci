@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:PROJEKAT_HCI.View"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="OrganizatorSaradnici"
+        Title="ORGANIZACIJA-PROSLAVA.IO"
         Height="450"
         Width="800">
     <Grid MinHeight="50">

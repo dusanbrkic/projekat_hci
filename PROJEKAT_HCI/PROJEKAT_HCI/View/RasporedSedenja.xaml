@@ -7,7 +7,7 @@
         xmlns:dd="urn:gong-wpf-dragdrop"
         mc:Ignorable="d"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-        Title="RasporedSedenja"
+        Title="ORGANIZACIJA-PROSLAVA.IO"
         Height="450"
         Width="800">
     <Grid>

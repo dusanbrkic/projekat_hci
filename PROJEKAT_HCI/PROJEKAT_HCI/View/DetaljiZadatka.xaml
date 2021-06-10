@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:PROJEKAT_HCI.View"
         mc:Ignorable="d"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" xmlns:st="http://schemas.spicytaco.io/"
-        Title="DetaljiZadatka" Height="430" Width="750">
+        Title="ORGANIZACIJA-PROSLAVA.IO" Height="430" Width="750">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="149*"></ColumnDefinition>

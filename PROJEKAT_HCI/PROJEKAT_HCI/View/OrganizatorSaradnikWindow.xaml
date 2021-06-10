@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PROJEKAT_HCI.View"
         mc:Ignorable="d"
-        Title="OrganizatorSaradnikWindow" Height="450" Width="800">
+        Title="ORGANIZACIJA-PROSLAVA.IO" Height="450" Width="800">
     <Grid Background="White">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="82*"></ColumnDefinition>
