@@ -25,14 +25,14 @@ namespace PROJEKAT_HCI.Model
         private string _slika;
         private int _cena;
         private string _opis;
-        private Klijent _klijent;
+        private Saradnik _saradnik;
         [Key]
         public int Id { get; set; }
-        public String Slika { get { return _slika; } set { _slika = value; OnPropertyChanged("Naziv"); } }
-        public string Opis { get { return _opis; } set { _opis = value; OnPropertyChanged("Naziv"); } }
-        public int Cena { get { return _cena; } set { _cena = value; OnPropertyChanged("Naziv"); } }
-        public virtual Saradnik Saradnik { get; set; }
-        public virtual Klijent  Klijent { get { return _klijent; } set { _klijent = value; OnPropertyChanged("Naziv"); } }
+        public String Slika { get { return _slika; } set { _slika = value; OnPropertyChanged("Slika"); } }
+        public string Opis { get { return _opis; } set { _opis = value; OnPropertyChanged("Opis"); } }
+        public int Cena { get { return _cena; } set { _cena = value; OnPropertyChanged("Cena"); } }
+        public virtual Saradnik Saradnik { get { return _saradnik; } set { _saradnik = value; OnPropertyChanged("Saradnik"); } }
+        public virtual Klijent  Klijent { get; set; }
 
     }
 }

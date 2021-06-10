@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Dusan\Documents\GitHub\projekat_hci\PROJEKAT_HCI\PROJEKAT_HCI\obj\Debug\
+C:\Users\User\Documents\GitHub\projekat_hci\PROJEKAT_HCI\PROJEKAT_HCI\obj\Debug\
 PROJEKAT_HCI
 none
 false
 DEBUG;TRACE
-C:\Users\Dusan\Documents\GitHub\projekat_hci\PROJEKAT_HCI\PROJEKAT_HCI\App.xaml
-31-173627895
+C:\Users\User\Documents\GitHub\projekat_hci\PROJEKAT_HCI\PROJEKAT_HCI\App.xaml
+321065720487
 
-49257553492
-30875921560
-MainWindow.xaml;View\AdminWindow.xaml;View\AzuriranjeKlijentaWindow.xaml;View\AzuriranjeOrganizatoraWindow.xaml;View\AzuriranjePonudeWindow.xaml;View\AzuriranjeSaradnikaWindow.xaml;View\DetaljiZadatka.xaml;View\DodajSaradnikaOrganizator.xaml;View\DodavanjeKlijentaWindow.xaml;View\DodavanjeOrganizatoraWindow.xaml;View\DodavanjePonudeAdminWindow.xaml;View\DodavanjeSaradnikaWindow.xaml;View\DosadasnjeProslave.xaml;View\EditProfile.xaml;View\KlijentWindow.xaml;View\NovaProslavaWindow.xaml;View\NovaPonudaOrganizator.xaml;View\ObavestenjaWindow.xaml;View\OrganizacijaProslavaWindow.xaml;View\OrganizatorProslava.xaml;View\OrganizatorSaradnici.xaml;View\OrganizatorSaradnikWindow.xaml;View\OrganizatorWindow.xaml;View\PredlogProslaveOrganizator.xaml;View\PregledPonudaWindow.xaml;View\PregledPonude.xaml;View\PregledProslavaWindow.xaml;View\PregledProslave.xaml;View\PregledZahtevaProslave.xaml;View\RasporedSedenja.xaml;View\RegistrationWindow.xaml;
+50339110909
+30-258911789
+MainWindow.xaml;View\AdminWindow.xaml;View\AzuriranjeKlijentaWindow.xaml;View\AzuriranjeOrganizatoraWindow.xaml;View\AzuriranjePonudeWindow.xaml;View\AzuriranjeSaradnikaWindow.xaml;View\DetaljiZadatka.xaml;View\DodajSaradnikaOrganizator.xaml;View\DodavanjeKlijentaWindow.xaml;View\DodavanjeOrganizatoraWindow.xaml;View\DodavanjePonudeAdminWindow.xaml;View\DodavanjeSaradnikaWindow.xaml;View\DosadasnjeProslave.xaml;View\EditProfile.xaml;View\KlijentWindow.xaml;View\NovaProslavaWindow.xaml;View\NovaPonudaOrganizator.xaml;View\ObavestenjaWindow.xaml;View\OrganizacijaProslavaWindow.xaml;View\OrganizatorProslava.xaml;View\OrganizatorSaradnici.xaml;View\OrganizatorSaradnikWindow.xaml;View\OrganizatorWindow.xaml;View\PredlogProslaveOrganizator.xaml;View\PregledOdrzanihProslava.xaml;View\PregledPonudaWindow.xaml;View\PregledPonude.xaml;View\PregledProslavaWindow.xaml;View\PregledProslave.xaml;View\PregledZahtevaProslave.xaml;View\RasporedSedenja.xaml;View\RegistrationWindow.xaml;
 
 False
 
