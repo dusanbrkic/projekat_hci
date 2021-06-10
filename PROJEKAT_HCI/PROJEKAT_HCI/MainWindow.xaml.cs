@@ -131,8 +131,7 @@ namespace PROJEKAT_HCI
         private void pomoc_Click(object sender, RoutedEventArgs e)
         {
             String docPath = "../../../../Dokumentacija.pdf";
-            Console.WriteLine(System.IO.Path.GetFullPath(docPath));
-            System.Diagnostics.Process.Start(docPath);
+            System.Diagnostics.Process.Start(System.IO.Path.GetFullPath(docPath));
         }
     }
 }
