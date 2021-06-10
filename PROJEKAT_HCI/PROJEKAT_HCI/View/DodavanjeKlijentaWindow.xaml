@@ -66,7 +66,7 @@
 
             </apex:ApexGrid>
             <apex:ApexGrid Rows="auto,auto" Columns="auto,auto" Margin="50,0,0,0">
-                <Label Content="Korisnicko ime" HorizontalAlignment="left" VerticalAlignment="Bottom" Foreground="Black" FontSize="15" Grid.RowSpan="2"/>
+                <Label Content="Korisničko ime" HorizontalAlignment="left" VerticalAlignment="Bottom" Foreground="Black" FontSize="15" Grid.RowSpan="2"/>
                 <TextBox Name="username"   Width="300" Margin="150,8,0,0"></TextBox>
             </apex:ApexGrid>
             <apex:ApexGrid Rows="auto,auto" Columns="auto,auto" Margin="50,0,0,0">

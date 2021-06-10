@@ -69,7 +69,7 @@
                 Name="username"
                 
               
-              materialDesign:HintAssist.HelperText="Unesite korisnicko ime"
+              materialDesign:HintAssist.HelperText="Unesite korisničko ime"
                 Foreground="{DynamicResource PrimaryHueDarkBrush}"
           materialDesign:HintAssist.IsFloating="True"
           Margin="0 12 0 0"
