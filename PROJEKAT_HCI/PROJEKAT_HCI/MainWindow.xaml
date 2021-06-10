@@ -93,11 +93,11 @@
             <Button
                     Style="{StaticResource MaterialDesignRaisedButton}"
 
-                    Click="registruj_Click" x:Name="registruj" Content="Nemas nalog? Registruj se" Margin="148,0,140,0"/>
+                    Click="registruj_Click" x:Name="registruj" Content="Nemaš nalog? Registruj se" Margin="148,0,140,0"/>
             <Button
                     Style="{StaticResource MaterialDesignRaisedButton}"
 
-                    Click="pomoc_Click" x:Name="pomoc" Content="Pomoc" Margin="148,20,140,10" Grid.Row="1" Width="101"/>
+                    Click="pomoc_Click" x:Name="pomoc" Content="Pomoć" Margin="148,20,140,10" Grid.Row="1" Width="101"/>
         </StackPanel>
 
 
