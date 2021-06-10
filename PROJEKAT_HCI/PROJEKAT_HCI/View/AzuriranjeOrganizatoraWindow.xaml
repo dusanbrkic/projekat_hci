@@ -69,14 +69,7 @@
                 <Label Content="Korisničko ime" HorizontalAlignment="left" VerticalAlignment="Bottom" Foreground="Black" FontSize="15" Grid.RowSpan="2"/>
                 <TextBox IsReadOnly="True" Name="username"   Width="300" Margin="150,8,0,0"></TextBox>
             </apex:ApexGrid>
-            <apex:ApexGrid Rows="auto,auto" Columns="auto,auto" Margin="50,0,0,0">
-                <Label Content="Lozinka" HorizontalAlignment="left" VerticalAlignment="Bottom" Foreground="Black" FontSize="15" Grid.RowSpan="2"/>
-                <PasswordBox Name="password"   Width="300" Margin="150,8,0,0"></PasswordBox>
-            </apex:ApexGrid>
-            <apex:ApexGrid Rows="auto,auto" Columns="auto,auto" Margin="50,0,0,0">
-                <Label Content="Ponovite lozinku" HorizontalAlignment="left" VerticalAlignment="Bottom" Foreground="Black" FontSize="15" Grid.RowSpan="2"/>
-                <PasswordBox Name="againPassword"   Width="300" Margin="150,8,0,0"></PasswordBox>
-            </apex:ApexGrid>
+            
 
 
 

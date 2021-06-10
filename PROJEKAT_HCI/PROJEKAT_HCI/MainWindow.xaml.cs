@@ -35,14 +35,20 @@ namespace PROJEKAT_HCI
         private void Prijava_Click(object sender, RoutedEventArgs e)
         {
             if (username.Text == "" || password.Password == "")
+            {
+                MainWindow.notifier.ShowWarning("Popunite sva polja");
                 return;
+            }
+                
 
             if (username.Text == "admin" && password.Password == "admin")
             {
                 AdminWindow a = new AdminWindow();
+
                 a.mw = this;
                 a.Show();
                 this.Hide();
+                return;
             }
             if (username.Text == "org" && password.Password == "org")
             {
@@ -54,6 +60,7 @@ namespace PROJEKAT_HCI
                 or.Show();
                 or.mw = this;
                 this.Hide();
+                return;
             }
             if(username.Text == "user" && password.Password == "user")
             {
@@ -61,6 +68,7 @@ namespace PROJEKAT_HCI
                 kw.Show();
                 kw.Mw = this;
                 this.Hide();
+                return;
             }
             using (var db = new ProjectDatabase()) {
                 var organizator = (from o in db.Organizatori
@@ -89,21 +97,19 @@ namespace PROJEKAT_HCI
                             MainWindow.notifier.ShowInformation("Imate " + obavestenja.Count().ToString() + " novih obavestenja!");
 
                     this.Hide();
-                }
-                if (k == null)
-                {
-                    MainWindow.notifier.ShowWarning("Provjerite lozinku i korisničko ime");
                     return;
                 }
+                
                 if (typeof(Klijent).IsInstanceOfType(k))
                 {
                     KlijentWindow kw = new KlijentWindow(k as Klijent);
                     kw.Show();
                     kw.Mw = this;
                     this.Hide();
+                    return;
                 }
 
-
+                MainWindow.notifier.ShowWarning("Proverite lozinku i korisničko ime");
             }
         }
             
