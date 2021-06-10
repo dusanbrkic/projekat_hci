@@ -15,6 +15,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.IO;
 using ToastNotifications.Messages;
 
 namespace PROJEKAT_HCI
@@ -126,5 +127,12 @@ namespace PROJEKAT_HCI
 
             cfg.Dispatcher = Application.Current.Dispatcher;
         });
+
+        private void pomoc_Click(object sender, RoutedEventArgs e)
+        {
+            String docPath = "../../../../Dokumentacija.pdf";
+            Console.WriteLine(System.IO.Path.GetFullPath(docPath));
+            System.Diagnostics.Process.Start(docPath);
+        }
     }
 }

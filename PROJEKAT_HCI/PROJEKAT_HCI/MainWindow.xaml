@@ -64,7 +64,7 @@
 
         <Button Grid.Row="0"  Background="{DynamicResource PrimaryHueMidBrush}" Height="Auto">ORGANIZACIJA-PROSLAVA.IO</Button>
 
-        <StackPanel Background="White" Grid.Row="1" Grid.Column="0" Orientation="Vertical"  HorizontalAlignment="Center" VerticalAlignment="Center" Height="277" Margin="112,65,112,57">
+        <StackPanel Background="White" Grid.Row="1" Grid.Column="0" Orientation="Vertical"  HorizontalAlignment="Center" VerticalAlignment="Center" Height="276" Margin="112,36,112,27">
             <TextBox
                 Name="username"
                 
@@ -94,7 +94,10 @@
                     Style="{StaticResource MaterialDesignRaisedButton}"
 
                     Click="registruj_Click" x:Name="registruj" Content="Nemas nalog? Registruj se" Margin="148,0,140,0"/>
+            <Button
+                    Style="{StaticResource MaterialDesignRaisedButton}"
 
+                    Click="pomoc_Click" x:Name="pomoc" Content="Pomoc" Margin="148,20,140,10" Grid.Row="1" Width="101"/>
         </StackPanel>
 
 
