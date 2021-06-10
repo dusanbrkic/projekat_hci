@@ -92,6 +92,7 @@ namespace PROJEKAT_HCI
                 }
                 if (k == null)
                 {
+                    MainWindow.notifier.ShowWarning("Provjerite lozinku i korisničko ime");
                     return;
                 }
                 if (typeof(Klijent).IsInstanceOfType(k))
@@ -132,7 +133,7 @@ namespace PROJEKAT_HCI
         {
             String docPath = "../../../../Dokumentacija.pdf";
             Console.WriteLine(System.IO.Path.GetFullPath(docPath));
-            System.Diagnostics.Process.Start(docPath);
+            System.Diagnostics.Process.Start(System.IO.Path.GetFullPath(docPath));
         }
     }
 }

@@ -13,6 +13,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using ToastNotifications.Messages;
 
 namespace PROJEKAT_HCI.View
 {
@@ -21,10 +22,10 @@ namespace PROJEKAT_HCI.View
     /// </summary>
     public partial class RegistrationWindow : Window
     {
-        Window MainWindow { get; set; }
+        Window MainWindow2 { get; set; }
         public RegistrationWindow(Window mw)
         {
-            MainWindow = mw;
+            MainWindow2 = mw;
             InitializeComponent();
         }
 
@@ -32,13 +33,17 @@ namespace PROJEKAT_HCI.View
         {
             if (Username.Text == "" || Password.Password == "" || Ime.Text == "" || Prezime.Text == "" || BrojTelefona.Text == "")
             {
-                Console.WriteLine("Greska");
+                MainWindow.notifier.ShowWarning("Sva polja moraju biti popunjena !");
                 return;
             }
 
 
             if (PasswordPotvrda.Password != Password.Password)
+            {
+                MainWindow.notifier.ShowWarning("Lozinke se ne poklapaju!");
                 return;
+            }
+               
 
             using (var db = new ProjectDatabase())
             {
@@ -46,7 +51,11 @@ namespace PROJEKAT_HCI.View
                 foreach (Klijent klijent in db.Klijenti)
                 {
                     if (Username.Text == klijent.Username)//vec postoji korisnik sa istim usernamemom
+                    {
+                        MainWindow.notifier.ShowWarning("Postoji korisnik sa unijetim korisničkim imenom!");
                         return;
+                    }
+                       
 
                 }
 
@@ -56,11 +65,15 @@ namespace PROJEKAT_HCI.View
                 db.Klijenti.Add(k);
                 db.SaveChanges();
             }
+
+            MainWindow2.Show();
+            this.Close();
+
         }
 
         private void Nazad_Button_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow.Show();
+            MainWindow2.Show();
             this.Close();
         }
     }
