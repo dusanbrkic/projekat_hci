@@ -25,7 +25,7 @@
             <RowDefinition Height="37*"></RowDefinition>
             <RowDefinition Height="178*"></RowDefinition>
         </Grid.RowDefinitions>
-        <Label Background="{DynamicResource PrimaryHueMidBrush}" Grid.ColumnSpan="3" Foreground="White" FontSize="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="ORGANIZOVANE PROSLAVE"/>
+        <Label Background="{DynamicResource PrimaryHueMidBrush}" Grid.ColumnSpan="3" Foreground="White" FontSize="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="DOSADASNJE PROSLAVE"/>
         <ScrollViewer Background="{DynamicResource PrimaryHueLightBrush}"  Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="3" HorizontalAlignment="Center">
             <WrapPanel  Name="wrapper">
 

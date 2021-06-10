@@ -17,7 +17,7 @@
             <RowDefinition Height="37*"></RowDefinition>
             <RowDefinition Height="178*"></RowDefinition>
         </Grid.RowDefinitions>
-        <Label Background="{DynamicResource PrimaryHueMidBrush}" Grid.ColumnSpan="4" Foreground="White" FontSize="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="OBAVESTENJA"/>
+        <Label Background="{DynamicResource PrimaryHueMidBrush}" Grid.ColumnSpan="4" Foreground="White" FontSize="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="NOVA PONUDA"/>
 
         <Button Click="Nazad_Btn_Click"  Foreground="White" Background="Red" FontSize="20" Height="Auto" Content="NAZAD" Margin="0,0,49,0"/>
         <Grid Grid.Row="1" Grid.ColumnSpan="3">
