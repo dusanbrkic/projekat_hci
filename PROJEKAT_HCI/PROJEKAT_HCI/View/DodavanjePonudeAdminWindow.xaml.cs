@@ -15,6 +15,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using ToastNotifications.Messages;
 
 namespace PROJEKAT_HCI.View
 {
@@ -59,6 +60,9 @@ namespace PROJEKAT_HCI.View
                 db.Ponude.Add(p);
                 db.SaveChanges();
             }
+
+            MainWindow.notifier.ShowInformation("Ponuda je uspješno dodata.");
+            this.Close();
         }
 
         private void odustao_Click(object sender, RoutedEventArgs e)

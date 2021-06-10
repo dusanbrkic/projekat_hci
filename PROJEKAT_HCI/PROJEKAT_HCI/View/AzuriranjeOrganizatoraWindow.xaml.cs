@@ -13,6 +13,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using ToastNotifications.Messages;
 
 namespace PROJEKAT_HCI.View
 {
@@ -52,7 +53,9 @@ namespace PROJEKAT_HCI.View
                 db.SaveChanges();
 
             }
-            MessageBox.Show("Klijent je uspjesno azuriran.");
+
+            MainWindow.notifier.ShowInformation("Organizator je uspješno ažuriran.");
+            
             this.Close();
         }
     }

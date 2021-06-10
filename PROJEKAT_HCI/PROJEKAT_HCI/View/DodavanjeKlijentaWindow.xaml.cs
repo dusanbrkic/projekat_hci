@@ -13,6 +13,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using ToastNotifications.Messages;
 
 namespace PROJEKAT_HCI.View
 {
@@ -63,6 +64,8 @@ namespace PROJEKAT_HCI.View
                 db.Klijenti.Add(k);
                 db.SaveChanges();
             }
+
+            MainWindow.notifier.ShowInformation("Klijent je uspješno dodat.");
 
             this.Close();
 

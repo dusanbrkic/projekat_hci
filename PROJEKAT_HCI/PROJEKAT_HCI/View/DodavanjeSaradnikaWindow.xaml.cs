@@ -13,6 +13,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using ToastNotifications.Messages;
 
 namespace PROJEKAT_HCI.View
 {
@@ -65,6 +66,8 @@ namespace PROJEKAT_HCI.View
                 db.Saradnici.Add(s);
                 db.SaveChanges();
             }
+            MainWindow.notifier.ShowInformation("Saradnik je uspješno dodat.");
+            this.Close();
         }
     }
 }
